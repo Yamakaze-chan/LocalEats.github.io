@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gallery | MelbourneRES</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playwrite+DK+Loopet:wght@100..400&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --primary-color: #a96700;
+        --secondary-color: #ffffff;
+        --highlight-color: #ffd58a;
+        --light-bg: #f8f9fa;
+        --lightbox-bg: rgba(0, 0, 0, 0.75);
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background-color: var(--light-bg);
+      }
+
+      .navbar {
+        background-color: var(--primary-color);
+        padding: 1rem 0;
+      }
+
+      .navbar-brand,
+      .nav-link {
+        color: var(--secondary-color) !important;
+      }
+
+      .navbar-brand {
+        font-family: "Playwrite DK Loopet", cursive;
+      }
+
+      .btn-primary {
+        background-color: var(--primary-color);
+        border-color: var(--primary-color);
+      }
+
+      .hero-section {
+        background: linear-gradient(
+            rgba(169, 103, 0, 0.8),
+            rgba(169, 103, 0, 0.8)
+          ),
+          url("https://lh3.googleusercontent.com/gps-cs-s/AC9h4npKumbPRrZ_U22nd_Etfn_JDebVCJRo9XLKLT90I-ajHib3yCsEuKjeht4v1b3Z6Tj5NJs-l6GIFMlGYDifzcgDNrQDbnVMj_ECwoggqM6wcsjMG2DyUdhixpXF4M_i-oI0Qe3Q-g=s1360-w1360-h1020-rw");
+        background-size: cover;
+        background-position: center;
+        color: white;
+        padding: 100px 0;
+        margin-bottom: 40px;
+      }
+
+      .section-title {
+        font-family: "Playwrite DK Loopet", cursive;
+        color: var(--primary-color);
+        margin-bottom: 30px;
+        position: relative;
+        text-align: center;
+      }
+
+      .section-title:after {
+        content: "";
+        display: block;
+        width: 80px;
+        height: 4px;
+        background-color: var(--highlight-color);
+        margin: 15px auto 0;
+      }
+
+      .gallery-item {
+        display: block;
+        overflow: hidden;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+        height: 100%;
+      }
+
+      .gallery-item img {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+      }
+
+      .gallery-item:hover {
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+      }
+
+      .gallery-item:hover img {
+        transform: scale(1.05);
+      }
+
+      /* Lightbox Modal Styles */
+      .lightbox-modal .modal-content {
+        background-color: var(--lightbox-bg);
+        border: none;
+      }
+
+      .lightbox-modal .btn-close {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        z-index: 10;
+        filter: invert(1);
+        opacity: 0.8;
+      }
+
+      .lightbox-modal .modal-body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+      }
+
+      .lightbox-modal .carousel-item {
+        text-align: center;
+      }
+
+      .lightbox-modal .carousel-item img {
+        height: 80vh;
+        width: auto;
+        max-width: 100%;
+        margin: 0 auto;
+      }
+
+      .lightbox-modal .carousel-caption {
+        background-color: var(--lightbox-bg);
+        right: 0;
+        left: 0;
+        bottom: 0;
+        padding-bottom: 2rem;
+      }
+
+      .lightbox-modal .carousel-control-prev,
+      .lightbox-modal .carousel-control-next {
+        width: 50px;
+      }
+
+      footer {
+        background-color: var(--primary-color);
+        color: white;
+        padding: 30px 0;
+        margin-top: 50px;
+      }
+
+      .footer-links a {
+        color: var(--highlight-color);
+        text-decoration: none;
+      }
+
+      .footer-links a:hover {
+        text-decoration: underline;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      .fade-in {
+        animation: fadeIn 0.8s ease;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="fixed-top page-header" style="background-color: #a96700">
+      <div class="container-fluid container-fluid-max">
+        <nav id="navbar" class="navbar navbar-expand-lg navbar-dark">
+          <a class="navbar-brand" href="#"
+            ><i class="fa-solid fa-utensils" style="margin-right: 10px"></i
+            >MelbourneRES</a
+          >
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div
+            class="collapse navbar-collapse justify-content-lg-end"
+            id="navbarNav"
+          >
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link text-white" href="index.html">Homepage</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="about.html">About us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="services.html">Services</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="#">Gallery</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="job.html">Jobs</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="staff.html">Staff</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="bar.html">Bar</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="menu.html">Menu</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="booking.html"
+                  >Tour Booking</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="contact.html">Contact</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="reference.html"
+                  >Reference</a
+                >
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section text-center">
+      <div class="container">
+        <h1 class="display-4 fw-bold mb-3">Our Gallery</h1>
+        <p class="lead mb-4">
+          Experience the vibrant atmosphere of MelbourneRES through our photos
+        </p>
+      </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <div class="container mb-5 fade-in">
+      <h2 class="section-title">Photo Gallery</h2>
+
+      <div id="gallery_list" class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+
+      </div>
+    </div>
+
+    <!-- Lightbox Modal -->
+    <div
+      class="modal fade lightbox-modal"
+      id="lightboxModal"
+      tabindex="-1"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+          <div class="modal-body d-block">
+            <div
+              id="lightboxCarousel"
+              class="carousel slide"
+              data-ride="carousel"
+            >
+              <div class="carousel-inner">
+
+              </div>
+              <button
+                class="carousel-control-prev"
+                type="button"
+                data-bs-target="#lightboxCarousel"
+                data-bs-slide="prev"
+              >
+                <span
+                  class="carousel-control-prev-icon"
+                  aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button
+                class="carousel-control-next"
+                type="button"
+                data-bs-target="#lightboxCarousel"
+                data-bs-slide="next"
+              >
+                <span
+                  class="carousel-control-next-icon"
+                  aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 mb-4 mb-md-0">
+            <h5><i class="fas fa-utensils me-2"></i>MelbourneRES</h5>
+            <p>Providing heartfelt hospitality in Melbourne</p>
+          </div>
+          <div class="col-md-4 mb-4 mb-md-0">
+            <h5>Quick Links</h5>
+            <ul class="list-unstyled footer-links">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="gallery.html">Gallery</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div class="col-md-4">
+            <h5>Connect With Us</h5>
+            <a href="#" class="text-white me-3"
+              ><i class="fab fa-facebook-f fa-lg"></i
+            ></a>
+            <a href="#" class="text-white me-3"
+              ><i class="fab fa-instagram fa-lg"></i
+            ></a>
+            <a href="#" class="text-white me-3"
+              ><i class="fab fa-tripadvisor fa-lg"></i
+            ></a>
+          </div>
+        </div>
+        <hr class="my-4 bg-white" />
+        <p class="mb-0 text-center">
+          &copy; 2025 MelbourneRES. All rights reserved.
+        </p>
+        <p class="text-center mb-0">
+          <a href="#" class="footer-links">Privacy Policy</a> |
+          <a href="#" class="footer-links">FAQ</a>
+        </p>
+      </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          const imageData = [
+            {
+              img: "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nqm5GFi5Iu1QtF7gGtc8yWAE9zD9tnrWpqs3kIj1JHNpbZDM1UhLTssqg6cQm9KGde8xcWuVdxGxJ9Kad5QKaNlE4O_IPKcqEpiDtbOkxcGTc9jOYjW3o5bgJyh16thleBvnZOchQ=s1360-w1360-h1020-rw",
+              name: "Hochi Mama"
+            },
+            {
+                img: "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nqtVu4hJTAX7qsa86FudDp4IdvXkjLcuCK7aS367NqUszRJjXkzPSHqjXiTEoMabH6kMhEMhnuGzSBH86zJSQwpwOPuTHHaVT7LRl1Phe8eVZIBqwTAAYOXqVCM8mca89kAtTUPog=s1360-w1360-h1020-rw",
+                name: "NOMAD Melbourne"
+            },
+            {
+                img: "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nqg53XqGjOOpyuB6vRvbF07gZnQKhT2mJwZ2eqE1gluYQxFaWDbY1NMKGC2D2H_2ULIEQtpNrfpMGnAHdeJKXeRkLjfkaSJI5Wj16Lbv3vUHqZBAYQckVzjT_4v1qK36pgIgZTvkA=s1360-w1360-h1020-rw",
+                name: "NOMAD Melbourne"
+            },
+            {
+                img: "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nqCx5Q80a7ZFNVsnQPoZubUaUuXgjGzGbRA_UIZJ9HQ72_92OtGT1awd--6dV7ATOWZyvHQhdpRc17i7OlW5RDv4HC0k15FPc0Ij9TJ6CBHhQAC7XvvOj9ZoUom9Y5JrZimU7aj=s1360-w1360-h1020-rw",
+                name: "NOMAD Melbourne"
+            },
+            {
+                img: "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nrwYsduWpZCtorxXvoJ6FqczVf1DP3BC39dmOaT2_mOWZre9k3ZktKgt4al1LBX0WPjOAStyffd-gGnYqbgVi355DzlAucROXf5cHyw2_a2UaGs1FnZ7mXSPJrObU8EVv3Qks7chg=s1360-w1360-h1020-rw",
+                name: "NOMAD Melbourne"
+            },
+            {
+                img: "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nrThz7nH450TvFs9scoOkDFBs5Dc_07nkJfnwUblvcW8UnJS_9BB0HmfkytB9rso_ZGgXZ9ty6x_Y9GIRD-j_w9z6WpkEnmaLbN2rOy8aOsnaQGvAoa7JoU0sRsybX3KBLbv7d4=s1360-w1360-h1020-rw",
+                name: "NOMAD Melbourne"
+            },
+            {
+                img: "https://lh3.googleusercontent.com/gps-cs-s/AC9h4np4nB_4aueEA2xquyDGPX5HQgQTgMhWNF1ADreBhxcoQmPYSLqkOFdWUkkklIt_c6xibLB8HMTxnxRylSZpTmykanYzm0twjg5D2LOvn__kNrfTKRs8ueoJxbDcVl7dqCwombEb=s1360-w1360-h1020-rw",
+                name: "NOMAD Melbourne"
+            },
+            {
+                img: "https://lh3.googleusercontent.com/p/AF1QipPX2WM-qZz5iodoMq8OK8gjjaizBUKwasYv0yAp=s1360-w1360-h1020-rw",
+                name: "Hochi Mama"
+            },
+            {
+                img: "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nrq7mo-qsH2LfoMYg7dw6CM1PG9PZAi9WDuNpQWImq102QmpUXhi_3k11-vX830qNcVI_n7K2lmKK9qg2Z6N8EbXsRsWKhFkeRjMKFjCet_JjxHhlaqrQqs3GzHASZMrbknU5C3=s1360-w1360-h1020-rw",
+                name: "Hochi Mama"
+            },
+            {
+                img: "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nrKdG137WBlKE4ycYmXImm2YNOR-1VhQSpsc61vIO3OTcFEn25bvY6BtIxZ-QsJenWU-14TGknp8Whv6_W991o4OOC1ZH2EUCRP6alCSUlT56pln7CJeSqCl_t5htktdgKqWVmWBQ=s1360-w1360-h1020-rw",
+                name: "Hochi Mama"
+            }
+          ];
+        
+          const galleryList = document.getElementById("gallery_list");
+          const carouselInner = document.querySelector(".carousel-inner");
+        
+          imageData.forEach((data, index) => {
+            galleryList.insertAdjacentHTML('beforeend', `
+              <div class="col">
+                <a
+                  href="${data.img}"
+                  class="gallery-item"
+                  data-bs-toggle="modal"
+                  data-bs-target="#lightboxModal"
+                  data-title="${data.name}"
+                >
+                  <img
+                    src="${data.img}"
+                    alt="${data.name}"
+                    class="img-fluid"
+                  />
+                </a>
+              </div>
+            `);
+
+            carouselInner.insertAdjacentHTML('beforeend', `
+              <div class="carousel-item ${index === 0 ? "active" : ""}">
+                <img
+                  src="${data.img}"
+                  class="d-block w-100 object-fit-contain"
+                  alt="${data.name}"
+                />
+                <div class="carousel-caption d-block">
+                  <h5>${data.name}</h5>
+                </div>
+              </div>
+            `);
+          });
+        
+          const lightboxModal = document.getElementById("lightboxModal");
+          const carousel = document.querySelector("#lightboxCarousel");
+          const bsCarousel = new bootstrap.Carousel(carousel);
+          const bsModal = new bootstrap.Modal(lightboxModal);
+        
+          // Handle gallery item clicks
+          document.querySelectorAll(".gallery-item").forEach((item, index) => {
+            item.addEventListener("click", function (e) {
+              e.preventDefault();
+              bsCarousel.to(index);
+              bsModal.show();
+            });
+          });
+        
+          // Keyboard navigation in lightbox
+          lightboxModal.addEventListener("keydown", function (e) {
+            if (e.key === "ArrowLeft") {
+              bsCarousel.prev();
+            } else if (e.key === "ArrowRight") {
+              bsCarousel.next();
+            } else if (e.key === "Escape") {
+              bsModal.hide();
+            }
+          });
+        });
+        </script>
+        
+  </body>
+</html>

@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bars | MelbourneRES</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playwrite+DK+Loopet:wght@100..400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-color: #a96700;
+            --secondary-color: #ffffff;
+        }
+        
+        body {
+            background-color: #f8f9fa;
+        }
+        
+        .page-header {
+        background-color: #a96700;
+      }
+
+      .navbar {
+        background-color: var(--main-color);
+        padding: 1rem 0;
+      }
+
+      .navbar-brand {
+        font-family: "Playwrite DK Loopet", cursive;
+      }
+
+      .section-title {
+        font-size: 2.2rem;
+        font-weight: bold;
+        color: var(--main-color);
+        text-align: center;
+        font-family: "Playwrite DK Loopet", cursive;
+        font-optical-sizing: auto;
+        font-weight: bold;
+        font-style: normal;
+      }
+
+      .about-img {
+        width: 100%;
+        border-radius: 10px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+      }
+
+      .about-img:hover {
+        transform: scale(1.03);
+      }
+
+      .about-text {
+        font-size: 1.1rem;
+        line-height: 1.6;
+        color: #333;
+        animation: fadeInUp 0.8s ease;
+      }
+
+      .footer {
+        background-color: #333;
+        color: #fff;
+        padding: 2rem 0;
+      }
+
+      .footer a {
+        color: #ffd58a;
+        text-decoration: none;
+      }
+
+      .footer a:hover {
+        text-decoration: underline;
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+        
+        .btn-primary {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+        
+        .btn-outline-primary {
+            color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+        
+        .btn-outline-primary:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .card {
+            transition: transform 0.3s;
+            margin-bottom: 20px;
+            cursor: pointer;
+            border: none;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            height: 100%;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+        }
+        
+        .card-img-top {
+            height: 180px;
+            object-fit: cover;
+            width: 100%;
+        }
+        
+        .hero-section {
+            background: linear-gradient(rgba(169, 103, 0, 0.8), rgba(169, 103, 0, 0.8)), 
+                        url('https://images.unsplash.com/photo-1514933651103-005eec06c04b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 0;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 20px 0;
+            margin-top: 50px;
+        }
+        
+        .active-filter {
+            background-color: var(--primary-color) !important;
+            color: white !important;
+        }
+        
+        .modal-header {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        #noResults {
+            display: none;
+        }
+        
+        .card-body {
+            padding: 1.25rem;
+        }
+        
+        .card-title {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+        
+        .card-text {
+            color: #6c757d;
+            margin-bottom: 0.75rem;
+            font-size: 0.85rem;
+        }
+        
+        .bar-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.75rem;
+        }
+        
+        .bar-type {
+            text-transform: capitalize;
+            color: var(--primary-color);
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+        
+        .bar-rating {
+            background-color: #28a745;
+            color: white;
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+        }
+        
+        .bar-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+            margin-bottom: 1rem;
+        }
+        
+        .feature-badge {
+            background-color: #f8f9fa;
+            color: #495057;
+            padding: 0.3rem 0.6rem;
+            border-radius: 50px;
+            font-size: 0.7rem;
+            border: 1px solid #dee2e6;
+        }
+        
+        .btn-view {
+            width: 100%;
+            font-weight: 500;
+            font-size: 0.85rem;
+            padding: 0.4rem 0.8rem;
+        }
+        
+        /* Medium devices (tablets, 768px and up) */
+        @media (min-width: 768px) and (max-width: 991.98px) {
+            .card {
+                margin-bottom: 15px;
+            }
+            
+            .card-img-top {
+                height: 150px;
+            }
+            
+            .card-body {
+                padding: 1rem;
+            }
+            
+            .card-title {
+                font-size: 1rem;
+            }
+            
+            .card-text {
+                font-size: 0.8rem;
+                margin-bottom: 0.5rem;
+            }
+            
+            .bar-features {
+                margin-bottom: 0.75rem;
+            }
+            
+            .feature-badge {
+                padding: 0.25rem 0.5rem;
+                font-size: 0.65rem;
+            }
+            
+            .btn-view {
+                font-size: 0.8rem;
+            }
+            
+            .filter-btn {
+                font-size: 0.85rem;
+                padding: 0.35rem 0.7rem;
+            }
+        }
+        
+        /* Small devices (landscape phones, less than 768px) */
+        @media (max-width: 767.98px) {
+            .card-img-top {
+                height: 120px;
+            }
+            
+            .filter-btn {
+                font-size: 0.8rem;
+                padding: 0.3rem 0.6rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="fixed-top page-header">
+        <div class="container-fluid container-fluid-max">
+          <nav id="navbar" class="navbar navbar-expand-lg navbar-dark">
+            <a class="navbar-brand" href="#"><i class="fa-solid fa-utensils" style="margin-right: 10px;"></i>MelbourneRES</a>
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-toggle="collapse"
+              data-target="#navbarNav"
+              aria-controls="navbarNav"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div
+              class="collapse navbar-collapse justify-content-lg-end"
+              id="navbarNav"
+            >
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link text-white" href="index.html">Homepage</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-white" href="about.html"
+                    >About us</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-white" href="services.html"
+                    >Services</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-white" href="gallery.html">Gallery</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-white" href="job.html">Jobs</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-white" href="staff.html">Staff</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-white" href="#">Bar</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-white" href="menu.html">Menu</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-white" href="booking.html">Tour Booking</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-white" href="contact.html">Contact</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-white" href="reference.html">Reference</a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section" style="margin-top: 72px">
+        <div class="container">
+            <h1 class="display-5 fw-bold mb-3" style="font-family: Playwrite DK Loopet;">Discover the Best Bars in Melbourne</h1>
+            <p class="lead mb-4">Find your perfect night out with our curated bar selection</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Filter Section -->
+        <div class="row mb-4">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title"><i class="fas fa-filter me-2"></i>Filter Options</h5>
+                        <div class="d-flex flex-wrap gap-2">
+                            <button class="btn btn-outline-primary filter-btn active-filter" data-filter="all">All Bars</button>
+                            <button class="btn btn-outline-primary filter-btn" data-filter="cocktail"><i class="fas fa-cocktail me-1"></i> Cocktail</button>
+                            <button class="btn btn-outline-primary filter-btn" data-filter="beer"><i class="fas fa-beer me-1"></i> Beer</button>
+                            <button class="btn btn-outline-primary filter-btn" data-filter="sports"><i class="fas fa-tv me-1"></i> Sports</button>
+                            <button class="btn btn-outline-primary filter-btn" data-filter="lounge"><i class="fas fa-couch me-1"></i> Lounge</button>
+                            <button class="btn btn-outline-primary filter-btn" data-filter="dive"><i class="fas fa-umbrella-beach me-1"></i> Dive</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bars Listing -->
+        <h2 class="mb-4"><i class="fas fa-map-marker-alt me-2"></i>Popular Bars Nearby</h2>
+        <div id="noResults" class="alert alert-warning">
+            <i class="fas fa-exclamation-circle me-2"></i>No bars match your filters. Try adjusting your selection.
+        </div>
+        <div class="row g-3" id="barsContainer">
+            <!-- Bars will be dynamically inserted here by JavaScript -->
+        </div>
+
+        <!-- Bar Detail Modal -->
+        <div class="modal fade" id="barModal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modalBarName"></h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <img src="" class="img-fluid rounded mb-3" id="modalBarImage" alt="">
+                                <div class="d-flex flex-wrap gap-2 mb-3" id="modalBarTags">
+                                    <!-- Tags will be inserted here -->
+                                </div>
+                                <div class="mb-3">
+                                    <h6><i class="fas fa-map-marked-alt me-2"></i>Address</h6>
+                                    <p id="modalBarAddress"></p>
+                                </div>
+                                <div class="mb-3">
+                                    <h6><i class="far fa-clock me-2"></i>Hours</h6>
+                                    <p id="modalBarHours"></p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="d-flex justify-content-between align-items-center mb-3">
+                                    <h6><i class="fas fa-star me-2"></i>Rating</h6>
+                                    <span class="badge bg-success" id="modalBarRating"></span>
+                                </div>
+                                <div class="mb-3">
+                                    <h6><i class="fas fa-info-circle me-2"></i>About</h6>
+                                    <p id="modalBarDescription"></p>
+                                </div>
+                                <div class="mb-3">
+                                    <h6><i class="fas fa-list-ul me-2"></i>Features</h6>
+                                    <ul id="modalBarFeatures" class="list-unstyled">
+                                        <!-- Features will be inserted here -->
+                                    </ul>
+                                </div>
+                                <div class="mb-3">
+                                    <h6><i class="fas fa-tag me-2"></i>Price Range</h6>
+                                    <p id="modalBarPrice"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary"><i class="fas fa-directions me-2"></i>Get Directions</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer text-center">
+        <div class="container">
+          <p>© 2025 MelbourneRES. All rights reserved.</p>
+          <p>
+            <a href="#">Privacy Policy</a> | <a href="#">FAQ</a>
+          </p>
+          <p>
+            Made with <i class="fas fa-heart text-danger"></i> by
+            <a href="http://georgemartsoukos.com/" target="_blank">George Martsoukos</a>
+          </p>
+        </div>
+      </footer>
+
+      <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <script>
+        const bars = [
+            {
+                id: 1,
+                name: "The Golden Tap",
+                type: "cocktail",
+                image: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+                rating: 4.8,
+                description: "Upscale cocktail bar with artisan drinks and a cozy atmosphere. Our mixologists create innovative cocktails using locally-sourced ingredients.",
+                features: ["Craft Cocktails", "Live Music", "Happy Hour", "Knowledgeable Staff"],
+                address: "123 Main Street, Your City",
+                hours: "Mon-Thu: 4pm-12am | Fri-Sat: 4pm-2am | Sun: 5pm-11pm",
+                price: "$$$",
+                tags: ["trending", "popular"]
+            },
+            {
+                id: 2,
+                name: "Hops & Barley",
+                type: "beer",
+                image: "https://images.unsplash.com/photo-1514933651103-005eec06c04b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+                rating: 4.5,
+                description: "Local craft beer haven with 30+ rotating taps and delicious pub food. We feature rare brews from local microbreweries.",
+                features: ["Craft Beer", "Outdoor Seating", "Trivia Night", "Food Available"],
+                address: "456 Oak Avenue, Your City",
+                hours: "Mon-Sun: 11am-2am",
+                price: "$$",
+                tags: ["local favorite"]
+            },
+            {
+                id: 3,
+                name: "The Sports Den",
+                type: "sports",
+                image: "https://images.unsplash.com/photo-1572116469696-31de0f17cc34?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+                rating: 4.3,
+                description: "The ultimate sports viewing experience with 20+ HD screens. Perfect spot to catch the game with friends.",
+                features: ["Game Day Specials", "Wings", "Pool Tables", "Large Screens"],
+                address: "789 Elm Road, Your City",
+                hours: "Mon-Fri: 11am-2am | Sat-Sun: 10am-2am",
+                price: "$$",
+                tags: []
+            },
+            {
+                id: 4,
+                name: "Velvet Lounge",
+                type: "lounge",
+                image: "https://images.unsplash.com/photo-1436076863939-06870fe779c2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+                rating: 4.7,
+                description: "Sophisticated lounge with craft cocktails and DJ nights. Our VIP service offers exclusive bottle selections.",
+                features: ["VIP Bottle Service", "DJ Nights", "Late Night", "Dress Code"],
+                address: "321 Pine Boulevard, Your City",
+                hours: "Wed-Sat: 8pm-4am",
+                price: "$$$",
+                tags: ["upscale"]
+            },
+            {
+                id: 5,
+                name: "The Whiskey Barrel",
+                type: "cocktail",
+                image: "https://images.unsplash.com/photo-1538481199705-c710c4e965fc?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+                rating: 4.6,
+                description: "Over 200 whiskeys from around the world in a rustic setting. Weekly whiskey tasting events.",
+                features: ["Whiskey Tastings", "Cigar Patio", "Knowledgeable Staff", "Reservations"],
+                address: "654 Maple Lane, Your City",
+                hours: "Tue-Sun: 5pm-1am",
+                price: "$$$",
+                tags: ["expert staff"]
+            },
+            {
+                id: 6,
+                name: "The Dive",
+                type: "dive",
+                image: "https://images.unsplash.com/photo-1566633806327-68e152aaf26d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+                rating: 4.2,
+                description: "No frills, just cheap drinks and good times. Cash only establishment with a loyal local following.",
+                features: ["Cheap Drinks", "Karaoke", "Cash Only", "Late Night"],
+                address: "987 Cedar Street, Your City",
+                hours: "Mon-Sun: 12pm-4am",
+                price: "$",
+                tags: ["cash only"]
+            }
+        ];
+
+        const barsContainer = document.getElementById('barsContainer');
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const noResults = document.getElementById('noResults');
+        const barModal = new bootstrap.Modal(document.getElementById('barModal'));
+        let currentFilter = 'all';
+
+        function init() {
+            renderBars();
+            setupEventListeners();
+        }
+
+        function setupEventListeners() {
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    filterButtons.forEach(btn => btn.classList.remove('active-filter'));
+                    button.classList.add('active-filter');
+                    currentFilter = button.dataset.filter;
+                    renderBars();
+                });
+            });
+        }
+
+        function getFilteredBars() {
+            if (currentFilter === 'all') {
+                return [...bars];
+            }
+            return bars.filter(bar => bar.type === currentFilter);
+        }
+
+        function renderBars() {
+            const filteredBars = getFilteredBars();
+            
+            if (filteredBars.length === 0) {
+                noResults.style.display = 'block';
+                barsContainer.style.display = 'none';
+            } else {
+                noResults.style.display = 'none';
+                barsContainer.style.display = 'flex';
+                
+                barsContainer.innerHTML = filteredBars.map(bar => `
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="card" data-id="${bar.id}">
+                            <img src="${bar.image}" class="card-img-top" alt="${bar.name}">
+                            <div class="card-body d-flex flex-column justify-content-between">
+                                <div class="bar-meta">
+                                    <span class="bar-type">${bar.type.replace('-', ' ')}</span>
+                                    <span class="bar-rating">${bar.rating} <i class="fas fa-star"></i></span>
+                                </div>
+                                <h5 class="card-title">${bar.name}</h5>
+                                <p class="card-text">${bar.description.substring(0, 100)}...</p>
+                                <div class="bar-features">
+                                    ${bar.features.slice(0, 3).map(feature => 
+                                        `<span class="feature-badge">${feature}</span>`
+                                    ).join('')}
+                                </div>
+                                <button class="btn btn-primary btn-view view-details" data-id="${bar.id}">
+                                    <i class="fas fa-eye me-2"></i>View Details
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                `).join('');
+
+                document.querySelectorAll('.view-details').forEach(button => {
+                    button.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        const barId = parseInt(button.dataset.id);
+                        showBarDetails(barId);
+                    });
+                });
+                
+                document.querySelectorAll('.card').forEach(card => {
+                    card.addEventListener('click', () => {
+                        const barId = parseInt(card.dataset.id);
+                        showBarDetails(barId);
+                    });
+                });
+            }
+        }
+
+        function showBarDetails(barId) {
+            const bar = bars.find(b => b.id === barId);
+            if (!bar) return;
+            
+            document.getElementById('modalBarName').textContent = bar.name;
+            document.getElementById('modalBarImage').src = bar.image;
+            document.getElementById('modalBarImage').alt = bar.name;
+            document.getElementById('modalBarRating').textContent = `${bar.rating} ★`;
+            document.getElementById('modalBarDescription').textContent = bar.description;
+            document.getElementById('modalBarAddress').textContent = bar.address;
+            document.getElementById('modalBarHours').textContent = bar.hours;
+            document.getElementById('modalBarPrice').textContent = bar.price;
+
+            const tagsContainer = document.getElementById('modalBarTags');
+            tagsContainer.innerHTML = bar.tags.map(tag => 
+                `<span class="badge bg-secondary">${tag}</span>`
+            ).join('');
+
+            const featuresContainer = document.getElementById('modalBarFeatures');
+            featuresContainer.innerHTML = bar.features.map(feature => 
+                `<li><i class="fas fa-check-circle text-success me-2"></i>${feature}</li>`
+            ).join('');
+            
+            barModal.show();
+        }
+
+        init();
+    </script>
+</body>
+</html>

@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | MelbourneRES</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playwrite+DK+Loopet:wght@100..400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #a96700;
+            --secondary-color: #ffffff;
+            --highlight-color: #ffd58a;
+            --light-bg: #f8f9fa;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--light-bg);
+        }
+        
+        .navbar {
+            background-color: var(--primary-color);
+            padding: 1rem 0;
+        }
+        
+        .navbar-brand, .nav-link {
+            color: var(--secondary-color) !important;
+        }
+        
+        .navbar-brand {
+            font-family: 'Playwrite DK Loopet', cursive;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+        
+        .btn-outline-primary {
+            color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+        
+        .btn-outline-primary:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .hero-section {
+            background: linear-gradient(rgba(169, 103, 0, 0.8), rgba(169, 103, 0, 0.8)), 
+                        url('https://lh3.googleusercontent.com/p/AF1QipP9pXiyv0ORKTBagUdyUgwLAri5_9OWrWp38IbG=s1360-w1360-h1020-rw');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 0;
+            margin-bottom: 40px;
+        }
+        
+        .about-card {
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            padding: 30px;
+            margin-bottom: 30px;
+            background-color: white;
+        }
+        
+        .section-title {
+            font-family: 'Playwrite DK Loopet', cursive;
+            color: var(--primary-color);
+            margin-bottom: 30px;
+            position: relative;
+        }
+        
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background-color: var(--highlight-color);
+            margin: 15px auto 0;
+        }
+        
+        .about-img {
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            width: 100%;
+        }
+        
+        .about-img:hover {
+            transform: scale(1.03);
+        }
+        
+        .highlight {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+        
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 30px 0;
+            margin-top: 50px;
+        }
+        
+        .footer-links a {
+            color: var(--highlight-color);
+            text-decoration: none;
+        }
+        
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .fade-in {
+            animation: fadeInUp 0.8s ease;
+        }
+    </style>
+</head>
+<body>
+  <header class="fixed-top page-header" style="background-color: #a96700;">
+    <div class="container-fluid container-fluid-max">
+      <nav id="navbar" class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="#"><i class="fa-solid fa-utensils" style="margin-right: 10px;"></i>MelbourneRES</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse justify-content-lg-end"
+          id="navbarNav"
+        >
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link text-white" href="index.html">Homepage</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="#"
+                >About us</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="services.html"
+                >Services</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="gallery.html">Gallery</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="job.html">Jobs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="staff.html">Staff</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="bar.html">Bar</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="menu.html">Menu</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="booking.html">Tour Booking</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="contact.html">Contact</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="reference.html">Reference</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </header>
+    <section class="hero-section text-center">
+        <div class="container">
+            <h1 class="display-4 fw-bold mb-3">About MelbourneRES</h1>
+            <p class="lead mb-4">Where hospitality meets heart in the vibrant soul of Melbourne</p>
+        </div>
+    </section>
+    <div class="container mb-5">
+        <div class="row">
+            <div class="col-lg-6 mb-4 fade-in">
+                <div class="about-card">
+                    <h2 class="section-title text-center">Our Story</h2>
+                    <p class="lead">
+                        At <span class="highlight" style="font-family: 'Playwrite DK Loopet', cursive;">MelbourneRES</span>, hospitality isn't just something we provide — it's something we live and breathe.
+                    </p>
+                    <p>
+                        It's the way we greet you with a smile, how we remember your favourite drink, and the care we put into every detail. We believe that true hospitality is about creating meaningful connections, and that every guest should feel like they're being welcomed into a home, not just a venue.
+                    </p>
+                    <p>
+                        Located in the lively heart of Melbourne, our space is designed to bring people together. Whether you're popping in for a casual lunch, planning a birthday, or attending a curated event, MelbourneRES is a place where moments turn into lasting memories.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="col-lg-6 mb-4 fade-in">
+                <div class="about-card">
+                    <img src="https://lh3.googleusercontent.com/p/AF1QipP9pXiyv0ORKTBagUdyUgwLAri5_9OWrWp38IbG=s1360-w1360-h1020-rw" alt="MelbourneRES Interior" class="about-img">
+                </div>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-12">
+                <div class="about-card fade-in">
+                    <h2 class="section-title text-center">Our Philosophy</h2>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p>
+                                What sets us apart is our commitment to making every experience personal. We don't believe in one-size-fits-all service. Whether you're here for a quiet moment alone or a lively gathering with friends, we listen, adapt, and go the extra mile to make sure your time with us feels just right.
+                            </p>
+                            <p>
+                                We've poured our heart into every corner — from the layout of the space to the warmth of our team — so you feel relaxed and truly looked after. It's this attention to detail — the human touch — that keeps our guests coming back.
+                            </p>
+                        </div>
+                        <div class="col-md-6">
+                            <p>
+                                At the end of the day, we're not just serving meals or hosting events. We're building relationships, one guest at a time. And we're honoured to be a small part of your story — whatever brings you through our doors.
+                            </p>
+                            <div class="text-center mt-4">
+                                <a href="booking.html" class="btn btn-primary btn-lg">
+                                    <i class="fas fa-calendar-alt me-2"></i> Book Your Experience
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <h5><i class="fas fa-utensils me-2"></i>MelbourneRES</h5>
+                    <p>Providing heartfelt hospitality in Melbourne since 2023</p>
+                </div>
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Connect With Us</h5>
+                    <a href="#" class="text-white me-3"><i class="fab fa-facebook-f fa-lg"></i></a>
+                    <a href="#" class="text-white me-3"><i class="fab fa-instagram fa-lg"></i></a>
+                    <a href="#" class="text-white me-3"><i class="fab fa-tripadvisor fa-lg"></i></a>
+                </div>
+            </div>
+            <hr class="my-4 bg-white">
+            <p class="mb-0 text-center">&copy; 2025 MelbourneRES. All rights reserved.</p>
+            <p class="text-center mb-0">
+                <a href="#" class="footer-links">Privacy Policy</a> | <a href="#" class="footer-links">FAQ</a>
+            </p>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <script>
+        // Simple animation trigger
+        document.addEventListener('DOMContentLoaded', function() {
+            const fadeElements = document.querySelectorAll('.fade-in');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.animationPlayState = 'running';
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            fadeElements.forEach(el => {
+                observer.observe(el);
+                el.style.animationPlayState = 'paused';
+            });
+        });
+    </script>
+</body>
+</html>

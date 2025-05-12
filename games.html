@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Games | MelbourneRES</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playwrite+DK+Loopet:wght@100..400&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --primary-color: #a96700;
+      --secondary-color: #ffffff;
+      --highlight-color: #ffd58a;
+      --light-bg: #f8f9fa;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--light-bg);
+    }
+
+    .navbar {
+      background-color: var(--primary-color);
+    }
+
+    .navbar-brand, .nav-link {
+      color: var(--secondary-color) !important;
+    }
+
+    .navbar-brand {
+      font-family: 'Playwrite DK Loopet', cursive;
+    }
+
+    .hero-section {
+      background: linear-gradient(rgba(169, 103, 0, 0.8), rgba(169, 103, 0, 0.8)),
+                  url('https://images.unsplash.com/photo-1549924231-f129b911e442?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      padding: 100px 0;
+      margin-bottom: 40px;
+    }
+
+    .section-title {
+      font-family: 'Playwrite DK Loopet', cursive;
+      color: var(--primary-color);
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    .section-title:after {
+      content: '';
+      display: block;
+      width: 80px;
+      height: 4px;
+      background-color: var(--highlight-color);
+      margin: 15px auto 0;
+    }
+
+    .game-card {
+      border: none;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      overflow: hidden;
+      transition: transform 0.3s ease;
+      height: 100%;
+    }
+
+    .game-card:hover {
+      transform: translateY(-8px);
+    }
+
+    .game-img {
+      height: 200px;
+      object-fit: cover;
+      width: 100%;
+    }
+
+    footer {
+      background-color: var(--primary-color);
+      color: white;
+      padding: 30px 0;
+      margin-top: 50px;
+    }
+
+    .footer-links a {
+      color: var(--highlight-color);
+      text-decoration: none;
+    }
+
+    .footer-links a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#"><i class="fas fa-utensils me-2"></i>MelbourneRES</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Events</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Services</a></li>
+          <li class="nav-item"><a class="nav-link active" href="#">Games</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero-section" style="margin-top: 72px">
+    <div class="container text-center">
+      <h1 class="display-5 fw-bold">Game Experiences</h1>
+      <p class="lead">Where great food meets great fun</p>
+    </div>
+  </section>
+
+  <!-- Game Sections -->
+  <div class="container mb-5">
+    <h2 class="section-title">Play & Dine With Us</h2>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+      <div class="col">
+        <div class="game-card">
+          <img src="https://images.unsplash.com/photo-1578933478789-37b6a99d345e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" class="game-img" alt="Game Night">
+          <div class="card-body text-center">
+            <h5 class="card-title">Weekly Game Night</h5>
+            <p class="card-text">Join our Thursday game night with trivia, card games, and team challenges!</p>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="game-card">
+          <img src="https://images.unsplash.com/photo-1610116306796-8039b9c52f17?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" class="game-img" alt="Board Game Rentals">
+          <div class="card-body text-center">
+            <h5 class="card-title">Board Game Rentals</h5>
+            <p class="card-text">Enjoy classic and new titles right at your table—free for all guests!</p>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="game-card">
+          <img src="https://images.unsplash.com/photo-1633379503131-f68c51f991d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" class="game-img" alt="Themed Competitions">
+          <div class="card-body text-center">
+            <h5 class="card-title">Themed Competitions</h5>
+            <p class="card-text">Monthly themed challenges with prizes—cosplay, mystery night, and more!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 mb-4 mb-md-0">
+          <h5><i class="fas fa-utensils me-2"></i>MelbourneRES</h5>
+          <p>Delicious dining, delightful games—come play with us!</p>
+        </div>
+        <div class="col-md-4 mb-4 mb-md-0">
+          <h5>Quick Links</h5>
+          <ul class="list-unstyled footer-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Games</a></li>
+            <li><a href="#">Events</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <h5>Stay Connected</h5>
+          <a href="#" class="text-white me-3"><i class="fab fa-facebook-f fa-lg"></i></a>
+          <a href="#" class="text-white me-3"><i class="fab fa-instagram fa-lg"></i></a>
+          <a href="#" class="text-white"><i class="fab fa-twitter fa-lg"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jobs | MelbourneRES</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Playwrite+DK+Loopet:wght@100..400&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        :root {
+            --primary-color: #a96700;
+            --secondary-color: #ffffff;
+            --highlight-color: #ffd58a;
+            --light-bg: #f8f9fa;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--light-bg);
+        }
+        
+        .navbar {
+            background-color: var(--primary-color);
+            padding: 1rem 0; 
+        }
+        
+        .navbar-brand, .nav-link {
+            color: var(--secondary-color) !important;
+        }
+        
+        .navbar-brand {
+            font-family: 'Playwrite DK Loopet', cursive;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+        
+        .btn-outline-primary {
+            color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+        
+        .btn-outline-primary:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .hero-section {
+            background: linear-gradient(rgba(169, 103, 0, 0.8), rgba(169, 103, 0, 0.8)), 
+                        url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 0;
+            margin-bottom: 40px;
+        }
+        
+        .job-card {
+            border: 2px solid var(--primary-color);
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+            overflow: hidden;
+        }
+        
+        .job-header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 15px 20px;
+        }
+        
+        .job-logo {
+            width: 100px;
+            height: 100px;
+            object-fit: contain;
+            margin: 0 auto;
+            display: block;
+        }
+        
+        .job-detail {
+            margin-bottom: 10px;
+        }
+        
+        .job-detail i {
+            color: var(--primary-color);
+            width: 20px;
+            text-align: center;
+            margin-right: 10px;
+        }
+        
+        .section-title {
+            font-family: 'Playwrite DK Loopet', cursive;
+            color: var(--primary-color);
+            margin-bottom: 30px;
+            position: relative;
+            text-align: center;
+        }
+        
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background-color: var(--highlight-color);
+            margin: 15px auto 0;
+        }
+        
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 30px 0;
+            margin-top: 50px;
+        }
+        
+        .footer-links a {
+            color: var(--highlight-color);
+            text-decoration: none;
+        }
+        
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.8s ease;
+        }
+    </style>
+</head>
+<body>
+    <header class="fixed-top page-header" style="background-color: #a96700;">
+    <div class="container-fluid container-fluid-max">
+      <nav id="navbar" class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="#"><i class="fa-solid fa-utensils" style="margin-right: 10px;"></i>MelbourneRES</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse justify-content-lg-end"
+          id="navbarNav"
+        >
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link text-white" href="index.html">Homepage</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="about.html"
+                >About us</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="services.html"
+                >Services</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="gallery.html">Gallery</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="#">Jobs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="staff.html">Staff</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="bar.html">Bar</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="menu.html">Menu</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="b">Tour Booking</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="contact.html">Contact</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="reference.html">Reference</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section text-center">
+        <div class="container">
+            <h1 class="display-4 fw-bold mb-3">Join Our Team</h1>
+            <p class="lead mb-4">Exciting career opportunities at MelbourneRES</p>
+        </div>
+    </section>
+
+    <!-- Jobs Section -->
+    <div class="container mb-5 fade-in">
+        <h2 class="section-title">Current Openings</h2>
+        
+        <div id="job_list" class="row">
+            <!-- Jobs will be inserted here by JavaScript -->
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <h5><i class="fas fa-utensils me-2"></i>MelbourneRES</h5>
+                    <p>Providing heartfelt hospitality in Melbourne</p>
+                </div>
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled footer-links">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Jobs</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Connect With Us</h5>
+                    <a href="#" class="text-white me-3"><i class="fab fa-facebook-f fa-lg"></i></a>
+                    <a href="#" class="text-white me-3"><i class="fab fa-instagram fa-lg"></i></a>
+                    <a href="#" class="text-white me-3"><i class="fab fa-linkedin fa-lg"></i></a>
+                </div>
+            </div>
+            <hr class="my-4 bg-white">
+            <p class="mb-0 text-center">&copy; 2025 MelbourneRES. All rights reserved.</p>
+            <p class="text-center mb-0">
+                <a href="#" class="footer-links">Privacy Policy</a> | <a href="#" class="footer-links">FAQ</a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const jobData = [
+            {
+                link: "https://www.seek.com.au/job/84053024",
+                logo: "https://image-service-cdn.seek.com.au/343b632e4bdcef603ce29413b85194fd3f3be914/f3c5292cec0e05e4272d9bf9146f390d366481d0",
+                name: "Section Waiter / Wine Team",
+                location: "Fitzroy North, Melbourne VIC",
+                position: "Waiting Staff (Hospitality & Tourism)",
+                type: "Part time",
+                salary: "$26 – $39 per hour"
+            },
+            {
+                link: "#",
+                logo: "https://via.placeholder.com/100",
+                name: "Head Chef",
+                location: "Melbourne CBD, VIC",
+                position: "Chefs/Cooks (Hospitality & Tourism)",
+                type: "Full time",
+                salary: "$70,000 – $85,000 per year"
+            },
+            {
+                link: "#",
+                logo: "https://via.placeholder.com/100",
+                name: "Restaurant Manager",
+                location: "Fitzroy, Melbourne VIC",
+                position: "Management (Hospitality & Tourism)",
+                type: "Full time",
+                salary: "$75,000 – $90,000 per year"
+            }
+        ];
+
+        // Function to render job listings
+        function renderJobs() {
+            const jobList = document.getElementById('job_list');
+            
+            jobData.forEach((job) => {
+                const jobCol = document.createElement('div');
+                jobCol.className = 'col-md-6 col-lg-4 mb-4';
+                
+                jobCol.innerHTML = `
+                    <div class="job-card h-100">
+                        <div class="job-header">
+                            <h5 class="mb-0">${job.name}</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="row mb-3">
+                                <div class="col-12 text-center mb-3">
+                                    <img src="${job.logo}" alt="${job.name} logo" class="job-logo">
+                                </div>
+                                <div class="col-12">
+                                    <p class="job-detail"><i class="fas fa-map-marker-alt"></i> ${job.location}</p>
+                                    <p class="job-detail"><i class="fas fa-briefcase"></i> ${job.position}</p>
+                                    <p class="job-detail"><i class="fas fa-clock"></i> ${job.type}</p>
+                                    <p class="job-detail"><i class="fas fa-dollar-sign"></i> ${job.salary}</p>
+                                </div>
+                            </div>
+                            <div class="text-center mt-3">
+                                <a href="${job.link}" class="btn btn-outline-primary" target="_blank">
+                                    Apply Now <i class="fas fa-arrow-right ms-2"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                
+                jobList.appendChild(jobCol);
+            });
+        }
+
+        // Initialize when DOM is loaded
+        document.addEventListener('DOMContentLoaded', renderJobs);
+    </script>
+</body>
+</html>

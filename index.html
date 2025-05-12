@@ -1,0 +1,1524 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, minimum-scale=1"
+    />
+    <title>MelbourneRES</title>
+    <link rel="icon" type="image/x-icon" href="" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playwrite+DK+Loopet:wght@100..400&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --lightblue: #f6f9fc;
+        --red: #d64041;
+        --primary-color: #a96700;
+        --secondary-color: #ffffff;
+        --highlight-color: #ffd58a;
+        --light-bg: #f8f9fa;
+      }
+
+      a,
+      a:hover {
+        color: inherit;
+      }
+
+      a:hover {
+        text-decoration: none;
+      }
+
+      .bg-lightblue {
+        background: var(--lightblue);
+      }
+
+      .bg-red {
+        background: var(--red);
+      }
+
+      .text-red {
+        color: var(--red);
+      }
+
+      .container-fluid-max {
+        max-width: 1440px;
+      }
+
+      .cover {
+        background: no-repeat center/cover;
+      }
+
+      .p-15 {
+        padding: 15px;
+      }
+
+      .carousel-item img {
+        width: 75%;
+        height: auto;
+        border-radius: 15px;
+        justify-self: center;
+        object-fit: contain;
+      }
+
+      .scroll .page-header {
+        background: #a96700;
+      }
+
+      .scroll .hero {
+        transform: scale(0.98);
+      }
+
+      .navbar-brand {
+        font-family: "Playwrite DK Loopet", cursive;
+        font-optical-sizing: auto;
+        font-weight: normal;
+        font-style: normal;
+      }
+      .page-header {
+        transition: background 0.5s ease-in-out;
+      }
+
+      .page-header .navbar {
+        padding: 1rem 0;
+      }
+
+      .page-header .navbar-toggler {
+        border-color: var(--white);
+      }
+
+      .hero {
+        background-attachment: fixed;
+        transition: transform 0.5s ease-in-out;
+        background-image: url("https://www.melbourne.crowneplaza.com/wp-content/uploads/2024/12/Crowne-Plaza-Blogs-2022-06-29T111848.641.png");
+        background-size: cover;
+      }
+
+      .hero::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: linear-gradient(
+          rgba(0, 0, 0, 0.5) 0,
+          rgba(0, 0, 0, 0.3) 50%,
+          rgba(0, 0, 0, 0.1) 100%
+        );
+      }
+
+      .hero .container-fluid {
+        z-index: 10;
+      }
+
+      .popular-destinations figure {
+        margin-bottom: 30px;
+      }
+
+      .popular-destinations figcaption {
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: rgba(0, 0, 0, 0.3);
+      }
+
+      .popular-destinations img {
+        filter: grayscale(100%) blur(3px);
+        transition: transform 0.5s, filter 0.75s;
+      }
+
+      .popular-destinations .modal-img {
+        filter: none;
+      }
+
+      .popular-destinations a:hover img {
+        transform: scale(1.25);
+        filter: none;
+      }
+
+      .popular-destinations a:hover figcaption img,
+      .popular-destinations a:hover figcaption h3 {
+        display: none;
+      }
+
+      .page-footer .footer-links {
+        text-align: right;
+      }
+
+      footer {
+        background-color: var(--primary-color);
+        color: white;
+        padding: 30px 0;
+        margin-top: 50px;
+      }
+
+      .footer-links a {
+        color: var(--highlight-color);
+        text-decoration: none;
+      }
+
+      .footer-links a:hover {
+        text-decoration: underline;
+      }
+
+      @media screen and (max-width: 991px) {
+        .page-header {
+          background: #a96700;
+        }
+      }
+
+      /* SMALL SCREENS */
+      @media screen and (max-width: 767px) {
+        .page-footer .footer-child {
+          text-align: center;
+        }
+      }
+    </style>
+  </head>
+
+  <body
+    translate="no"
+    data-spy="scroll"
+    data-target="#navbar"
+    data-offset="72"
+    class="position-relative"
+  >
+    <header class="fixed-top page-header">
+      <div class="container-fluid container-fluid-max">
+        <nav id="navbar" class="navbar navbar-expand-lg navbar-dark">
+          <a class="navbar-brand" href="#home"
+            ><i class="fa-solid fa-utensils" style="margin-right: 10px"></i
+            >MelbourneRES</a
+          >
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div
+            class="collapse navbar-collapse justify-content-lg-end"
+            id="navbarNav"
+          >
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link text-white" href="#home">Homepage</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="about.html">About us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="services.html"
+                  >Services</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="gallery.html">Gallery</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="job.html">Jobs</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="staff.html">Staff</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="bar.html">Bar</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="menu.html">Menu</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="booking.html"
+                  >Tour Booking</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="contact.html">Contact</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="reference.html"
+                  >Reference</a
+                >
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section
+        id="home"
+        class="d-flex align-items-center position-relative vh-100 cover hero"
+      >
+        <div
+          class="container-fluid container-fluid-max d-md-flex align-content-center"
+          style="height: 80%"
+        >
+          <div class="row align-items-center gap-3 gap-md-0">
+            <div
+              class="col-12 text-white col-md-6 mb-md-5 text-center text-md-start"
+              style="font-family: Playwrite DK Loopet"
+            >
+              <h1
+                style="
+                  font-size: 2.5rem;
+                  margin-bottom: 1.5rem;
+                  font-weight: bold;
+                "
+              >
+                <i class="fa-solid fa-utensils" style="margin-right: 10px"></i
+                >MelbourneRES
+              </h1>
+              <h5>Where you can find your best choice of restaurant</h5>
+            </div>
+            <div class="col-12 col-md-6" style="height: max-content">
+              <div
+                id="carouselExampleInterval"
+                class="carousel slide"
+                data-bs-ride="carousel"
+              >
+                <div class="carousel-inner">
+                  <div class="carousel-item active" data-bs-interval="5000">
+                    <img
+                      src="https://www.hiddencitysecrets.com.au/wp-content/uploads/2023/09/the-aviary-abbotsford-restaurants-melbourne-modern-restaurant-top-best-good-new-fine-dining-27.jpg"
+                      class="d-block"
+                      alt="Aviary Hotel
+                            Best Modern Pubs"
+                    />
+                  </div>
+                  <div class="carousel-item" data-bs-interval="5000">
+                    <img
+                      src="https://www.hiddencitysecrets.com.au/wp-content/uploads/2024/05/Brewmanity-Beer-Co-Restaurants-Melbourne-Restaurant-South-Good-Rooftop-Vegan-Eats-Best-Private-Dining-Outdoor-ToP-Date-Night-16.jpg"
+                      class="d-block"
+                      alt="Brewmanity Beer Co
+                            Rooftop Beer Halls"
+                    />
+                  </div>
+                  <div class="carousel-item" data-bs-interval="5000">
+                    <img
+                      src="https://www.hiddencitysecrets.com.au/wp-content/uploads/2025/02/Pure-south-dining-room-restaurants-melbourne-restaurant-southbank-top-city-view-best-classy-eats-good-catch-up-spots-4-1.jpg"
+                      class="d-block"
+                      alt="Pure South Dining Room
+                            Top City View Dining"
+                    />
+                  </div>
+                  <div class="carousel-item" data-bs-interval="5000">
+                    <img
+                      src="https://www.hiddencitysecrets.com.au/wp-content/uploads/2024/04/death-or-glory-restaurant-restaurants-pub-pubs-diner-eats-food-drinks-prahran-melbourne-15.jpg"
+                      class="d-block"
+                      alt="Death or Glory
+                            Pubs & Restaurants"
+                    />
+                  </div>
+                  <div class="carousel-item" data-bs-interval="5000">
+                    <img
+                      src="https://www.hiddencitysecrets.com.au/wp-content/uploads/2024/03/Lulie-Tavern-Full-Moon-Fever-Rooftop-Restaurants-Melbourne-Restaurant-Abbotsford-Top-Outdoor-Client-Dining-Live-Music-Best-Rooftop-Good-Date-Night-Friends-Family-5.jpg"
+                      class="d-block"
+                      alt="Lulie Tavern
+                            & Full Moon Fever Rooftop"
+                    />
+                  </div>
+                </div>
+                <button
+                  class="carousel-control-prev"
+                  type="button"
+                  data-bs-target="#carouselExampleInterval"
+                  data-bs-slide="prev"
+                >
+                  <span
+                    class="carousel-control-prev-icon"
+                    aria-hidden="true"
+                  ></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button
+                  class="carousel-control-next"
+                  type="button"
+                  data-bs-target="#carouselExampleInterval"
+                  data-bs-slide="next"
+                >
+                  <span
+                    class="carousel-control-next-icon"
+                    aria-hidden="true"
+                  ></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="about-us" class="about-us">
+        <div
+          class="container align-content-center mx-auto py-5"
+          style="min-height: max-content"
+        >
+          <div class="row">
+            <div
+              class="col-12 col-md-6 d-flex align-items-center order-1 order-md-0"
+            >
+              <div class="p-15 text-center">
+                <h3
+                  style="
+                    font-family: Playwrite DK Loopet;
+                    font-size: 2rem;
+                    font-weight: normal;
+                    color: #a96700;
+                  "
+                >
+                  MelbourneRES
+                </h3>
+                <p>
+                  Discover the best dining spots in town with MelbourneRES. From
+                  hidden gems to top-rated favorites, we bring you a curated
+                  list of restaurants across the area. Whether you're craving
+                  fine dining, casual eats, or something unique, you'll find
+                  your next food adventure right here.
+                </p>
+                <a
+                  class="btn"
+                  target="_blank"
+                  href="menu.html"
+                  role="button"
+                  style="color: #a96700; font-size: 1.2rem"
+                  >Read More →</a
+                >
+              </div>
+            </div>
+            <div
+              class="col-12 col-md-6 order-0 order-md-1 align-content-center"
+            >
+              <div class="row">
+                <div class="col-6 text-end">
+                  <img
+                    class="w-75"
+                    src="https://images.squarespace-cdn.com/content/v1/63cfc7692998ce32cea3dc27/b4087c01-4fcf-4359-bc52-f46019bcf10e/Shadow+Play+By+Peppers+-+20th+January_GRIFFIN+SIMM_Finals+89.jpg"
+                    alt="Food Photo"
+                  />
+                </div>
+                <div class="col-6 text-start">
+                  <img
+                    class="w-75 h-100"
+                    style="object-fit: cover"
+                    src="https://images.squarespace-cdn.com/content/v1/64e97f48f23e365f0294b731/1726720904262-4DG0H8AOYIYA8C4Y3VGQ/Ama%252Bebi%252Bprawns%25252C%252Bblack-eyed%252Bbeans%252Bacaraje%25252C%252Bbiquinho%252Bpepper%252B-%252BMorenaMelbourne_AriannaLeggiero-56.jpg?format=500w"
+                    alt="Food Photo"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="events" class="events bg-lightblue">
+        <div
+          class="container align-content-center mx-auto py-5"
+          style="min-height: max-content"
+        >
+          <div class="row">
+            <div
+              class="col-12 col-md-6 d-flex align-items-center order-1 order-md-1"
+            >
+              <div class="p-15 text-center">
+                <h3
+                  style="
+                    font-family: Playwrite DK Loopet;
+                    font-size: 2rem;
+                    font-weight: normal;
+                    color: #a96700;
+                  "
+                >
+                  Events
+                </h3>
+                <p>
+                  MelbourneRES connects you to the city's best dining
+                  experiences and cultural events. From the lively Cachivaches
+                  Latin Market to the flavorful La Dolce Vita Taste of Italy
+                  Tour, there's always something happening. Enjoy elegant nights
+                  like the Three Tenors: Opera Night or get creative at Make and
+                  Sip with Myer Melbourne. Explore, book, and enjoy — all in one
+                  place.
+                </p>
+                <a
+                  class="btn"
+                  target="_blank"
+                  href="events.html"
+                  role="button"
+                  style="color: #a96700; font-size: 1.2rem"
+                  >Read More →</a
+                >
+              </div>
+            </div>
+            <div
+              class="col-12 col-md-6 order-0 order-md-0 align-content-center"
+            >
+              <div class="row">
+                <div class="row row-cols-2 g-4">
+                  <div class="col">
+                    <img
+                      class="w-100"
+                      src="https://whatson.melbourne.vic.gov.au/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsiZGF0YSI6IjhmZmM5ZDRjLWI4N2ItNGMwOS04OTkyLTE5M2FhNGI2Yzc1MyIsInB1ciI6ImJsb2JfaWQifX0=--4fef5a0e0e084185b84c9350ebe2d37506f7c1d0/eyJfcmFpbHMiOnsiZGF0YSI6eyJmb3JtYXQiOiJqcGciLCJncmF2aXR5IjoiQ2VudGVyIiwicmVzaXplX3RvX2ZpbGwiOls4ODAsNTkwXX0sInB1ciI6InZhcmlhdGlvbiJ9fQ==--8ba21a1f014d91c43eb97f346a0dc62d26bd59b2/f18c08ba-8520-49e4-8ad0-17575bc4bcad.jpg"
+                      alt="Three Tenors: Opera Night"
+                    />
+                  </div>
+                  <div class="col">
+                    <img
+                      class="w-100"
+                      src="https://whatson.melbourne.vic.gov.au/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsiZGF0YSI6IjQ5NDk4ODljLTdhY2ItNDY2NS1hMGIzLTFhYTY5ZjdiNjBhZCIsInB1ciI6ImJsb2JfaWQifX0=--2b8c4ea1c86ef62783c7b2a4d34d5d5bb306d007/eyJfcmFpbHMiOnsiZGF0YSI6eyJmb3JtYXQiOiJqcGciLCJncmF2aXR5IjoiQ2VudGVyIiwicmVzaXplX3RvX2ZpbGwiOls4ODAsNTkwXX0sInB1ciI6InZhcmlhdGlvbiJ9fQ==--8ba21a1f014d91c43eb97f346a0dc62d26bd59b2/17b0499a-4c20-44ba-8f50-39c1066f65cb.jpg"
+                      alt="Make and Sip with Myer Melbourne"
+                    />
+                  </div>
+                  <div class="col">
+                    <img
+                      class="w-100"
+                      src="https://whatson.melbourne.vic.gov.au/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsiZGF0YSI6ImUxMzRjMzUxLWZjMjEtNGIyOC1hNjdkLTk4ODUxNmUwNzc0OCIsInB1ciI6ImJsb2JfaWQifX0=--c341a98b7a3e9dd3d2e622b810727397288ab29d/eyJfcmFpbHMiOnsiZGF0YSI6eyJmb3JtYXQiOiJqcGciLCJncmF2aXR5IjoiQ2VudGVyIiwicmVzaXplX3RvX2ZpbGwiOls4ODAsNTkwXX0sInB1ciI6InZhcmlhdGlvbiJ9fQ==--8ba21a1f014d91c43eb97f346a0dc62d26bd59b2/b3351e6a-52a8-4833-a35f-ca4db2e9ef02.jpg"
+                      alt="La Dolce Vita Taste of Italy Tour"
+                    />
+                  </div>
+                  <div class="col">
+                    <img
+                      class="w-100"
+                      src="https://whatson.melbourne.vic.gov.au/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsiZGF0YSI6Ijc5YmNiZjk3LTI0OWYtNDQyMS1iOWI4LTc2NmFhZjc0ODFkNiIsInB1ciI6ImJsb2JfaWQifX0=--9f8ce5a514902f5db564448059e5a37d93b9683f/eyJfcmFpbHMiOnsiZGF0YSI6eyJmb3JtYXQiOiJqcGciLCJncmF2aXR5IjoiQ2VudGVyIiwicmVzaXplX3RvX2ZpbGwiOls4ODAsNTkwXX0sInB1ciI6InZhcmlhdGlvbiJ9fQ==--8ba21a1f014d91c43eb97f346a0dc62d26bd59b2/b9ef8af7-e214-4d53-91ae-ca2a1430fb16.jpg"
+                      alt="Cachivaches Latin Market"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="popular-destinations" class="popular-destinations py-5">
+        <div class="container-fluid container-fluid-max">
+          <div class="row">
+            <div class="col-12">
+              <h2
+                class="pb-3"
+                style="
+                  font-family: Playwrite DK Loopet;
+                  color: #a96700;
+                  text-align: center;
+                "
+              >
+                Popular Restaurants
+              </h2>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4">
+              <a
+                href=""
+                class="text-white"
+                data-bs-toggle="modal"
+                data-bs-target="#Omniarestaurant"
+              >
+                <figure
+                  class="position-relative overflow-hidden w-100"
+                  style="justify-self: center"
+                >
+                  <img
+                    class="img-fluid w-100"
+                    src="https://lh3.googleusercontent.com/p/AF1QipOnHRVGtSd7_8Af8As_YkHsdkdFjAUCcXCFhQI3=s1360-w1360-h1020-rw"
+                    style="object-fit: cover; height: 230px"
+                    alt="Omnia Bistro"
+                  />
+                  <figcaption
+                    class="d-flex align-items-center justify-content-center position-absolute"
+                  >
+                    <h3>OMNIA</h3>
+                  </figcaption>
+                </figure>
+              </a>
+              <div
+                class="modal fade"
+                id="Omniarestaurant"
+                data-bs-backdrop="static"
+                data-bs-keyboard="false"
+                tabindex="-1"
+                aria-labelledby="staticBackdropLabel"
+                aria-hidden="true"
+              >
+                <div class="modal-dialog modal-lg rounded">
+                  <div
+                    class="modal-content border-0"
+                    style="box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1)"
+                  >
+                    <div
+                      class="modal-header bg-dark text-white position-relative"
+                    >
+                      <div>
+                        <h1
+                          class="modal-title fs-4 mb-0"
+                          style="font-weight: 300; letter-spacing: 1px"
+                        >
+                          OMNIA BISTRO
+                        </h1>
+                        <p class="text-gold mb-0 small">
+                          <i class="bi bi-geo-alt-fill"></i>625 Chapel Street
+                          South Yarra 3141
+                        </p>
+                      </div>
+                      <button
+                        type="button"
+                        class="btn-close btn-close-white"
+                        data-bs-dismiss="modal"
+                        aria-label="Close"
+                      ></button>
+                    </div>
+                    <div class="modal-body p-0">
+                      <div class="position-relative">
+                        <img
+                          src="https://lh3.googleusercontent.com/p/AF1QipOnHRVGtSd7_8Af8As_YkHsdkdFjAUCcXCFhQI3=s1360-w1360-h1020-rw"
+                          class="img-fluid w-100 modal-img"
+                          style="height: 200px; object-fit: cover"
+                          alt="Omnia Bistro interior"
+                        />
+                        <div class="position-absolute bottom-0 end-0 m-3">
+                          <span
+                            class="badge bg-dark text-gold px-3 py-2"
+                            style="font-weight: 300"
+                          >
+                            <i class="bi bi-star-fill"></i> Premium Dining
+                          </span>
+                        </div>
+                      </div>
+                      <div class="p-4">
+                        <p
+                          class="lead text-dark mb-4"
+                          style="font-weight: 300; line-height: 1.6"
+                        >
+                          A refined European-Australian dining experience in the
+                          heart of South Yarra.
+                        </p>
+                        <div class="mb-4">
+                          <h3
+                            class="h6 text-uppercase text-gold mb-3"
+                            style="letter-spacing: 1px"
+                          >
+                            Signature Offerings
+                          </h3>
+                          <ul class="list-unstyled">
+                            <li class="mb-2 d-flex">
+                              <span class="text-gold me-2">•</span>
+                              <span
+                                >Honey-roasted duck with seasonal cherries</span
+                              >
+                            </li>
+                            <li class="mb-2 d-flex">
+                              <span class="text-gold me-2">•</span>
+                              <span>Ocean trout cigars with caviar cream</span>
+                            </li>
+                            <li class="d-flex">
+                              <span class="text-gold me-2">•</span>
+                              <span>7-course seasonal degustation</span>
+                            </li>
+                          </ul>
+                        </div>
+                        <div class="d-flex align-items-center mb-3">
+                          <div
+                            style="
+                              width: 40px;
+                              height: 40px;
+                              background-color: #eee;
+                              border-radius: 50%;
+                            "
+                            class="me-3 overflow-hidden"
+                          >
+                            <img
+                              class="w-100 modal-img"
+                              src="https://images.squarespace-cdn.com/content/v1/6523590623c7df2f33417a5d/3584447f-18a0-44be-b754-e43b0afdb3b9/OMNIA-2021-HWANG-173.JPG?format=2500w"
+                            />
+                          </div>
+                          <div>
+                            <p class="small text-muted mb-0">
+                              Culinary Director
+                            </p>
+                            <p class="mb-0">Stephen Nairn</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="modal-footer bg-light justify-content-between">
+                      <a
+                        href="https://omniabistro.com.au/"
+                        class="btn btn-outline-dark btn-sm"
+                        target="_blank"
+                      >
+                        <i class="bi bi-globe"></i> Website
+                      </a>
+                      <div>
+                        <button
+                          type="button"
+                          class="btn btn-outline-dark btn-sm me-2"
+                          data-bs-dismiss="modal"
+                        >
+                          Close
+                        </button>
+                        <a
+                          href="https://omniabistro.com.au/reservations"
+                          class="btn btn-luxury btn-sm"
+                          target="_blank"
+                        >
+                          Reserve <i class="bi bi-arrow-right ms-1"></i>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4">
+              <a
+                href=""
+                class="text-white"
+                data-bs-toggle="modal"
+                data-bs-target="#FarmerDaughterrestaurant"
+              >
+                <figure
+                  class="position-relative overflow-hidden w-100"
+                  style="justify-self: center"
+                >
+                  <img
+                    class="img-fluid w-100"
+                    src="https://lh3.googleusercontent.com/p/AF1QipMlMnapsxcNomvs7Z1d-inn_hISJ87OnIe67Phh=s1360-w1360-h1020-rw"
+                    style="object-fit: cover; height: 230px"
+                    alt="Farmer's Daughter"
+                  />
+                  <figcaption
+                    class="d-flex align-items-center justify-content-center position-absolute"
+                  >
+                    <h3>Farmer's Daughter</h3>
+                  </figcaption>
+                </figure>
+              </a>
+              <div
+                class="modal fade"
+                id="FarmerDaughterrestaurant"
+                data-bs-backdrop="static"
+                data-bs-keyboard="false"
+                tabindex="-1"
+                aria-labelledby="staticBackdropLabel"
+                aria-hidden="true"
+              >
+                <div class="modal-dialog modal-lg">
+                  <div
+                    class="modal-content border-0"
+                    style="box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1)"
+                  >
+                    <!-- Header with green accent (farm-inspired) -->
+                    <div
+                      class="modal-header bg-white position-relative border-bottom"
+                    >
+                      <div>
+                        <h1
+                          class="modal-title fs-4 mb-0"
+                          style="
+                            font-weight: 400;
+                            color: #2a5a2a;
+                            letter-spacing: 0.5px;
+                          "
+                        >
+                          FARMER'S DAUGHTERS
+                        </h1>
+                        <p class="text-muted mb-0 small">
+                          <i
+                            class="bi bi-geo-alt-fill"
+                            style="color: #5a8a5a"
+                          ></i
+                          >95 Exhibition Street, 80 Collins Precinct, Melbourne
+                          VIC 3000
+                        </p>
+                      </div>
+                      <button
+                        type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Close"
+                      ></button>
+                    </div>
+
+                    <div class="modal-body p-0">
+                      <!-- Hero image with farm-fresh badge -->
+                      <div class="position-relative">
+                        <img
+                          src="https://lh3.googleusercontent.com/p/AF1QipMlMnapsxcNomvs7Z1d-inn_hISJ87OnIe67Phh=s1360-w1360-h1020-rw"
+                          class="img-fluid w-100 modal-img"
+                          style="height: 200px; object-fit: cover"
+                          alt="Farmer's Daughters restaurant"
+                        />
+                        <div class="position-absolute bottom-0 end-0 m-3">
+                          <span
+                            class="badge bg-white text-dark px-3 py-2"
+                            style="font-weight: 400; border: 1px solid #e0e0e0"
+                          >
+                            <i
+                              class="bi bi-tree-fill"
+                              style="color: #5a8a5a"
+                            ></i>
+                            Farm-to-Table
+                          </span>
+                        </div>
+                      </div>
+
+                      <!-- Content -->
+                      <div class="p-4">
+                        <p
+                          class="lead mb-4"
+                          style="
+                            font-weight: 350;
+                            line-height: 1.6;
+                            color: #333;
+                          "
+                        >
+                          Celebrating Victoria's finest produce through
+                          seasonal, regional Australian cuisine.
+                        </p>
+
+                        <div class="mb-4">
+                          <h3
+                            class="h6 text-uppercase mb-3"
+                            style="letter-spacing: 1px; color: #2a5a2a"
+                          >
+                            Seasonal Highlights
+                          </h3>
+                          <ul class="list-unstyled">
+                            <li class="mb-2 d-flex">
+                              <span class="me-2" style="color: #5a8a5a">•</span>
+                              <span>Gippsland grass-fed beef ribeye</span>
+                            </li>
+                            <li class="mb-2 d-flex">
+                              <span class="me-2" style="color: #5a8a5a">•</span>
+                              <span>Mornington Peninsula seafood platter</span>
+                            </li>
+                            <li class="d-flex">
+                              <span class="me-2" style="color: #5a8a5a">•</span>
+                              <span>Yarra Valley orchard fruit desserts</span>
+                            </li>
+                          </ul>
+                        </div>
+
+                        <div class="d-flex align-items-center mb-3">
+                          <div
+                            style="
+                              width: 40px;
+                              height: 40px;
+                              background-color: #f0f0f0;
+                              border-radius: 50%;
+                            "
+                            class="me-3 overflow-hidden"
+                          >
+                            <img
+                              class="w-100 modal-img"
+                              src="https://images.squarespace-cdn.com/content/v1/5e3cdc7ca5570830f0970220/1592370997070-LYXUGMFSR04RURGXGGAR/201801-Chefseries-088.jpg?format=750w"
+                            />
+                          </div>
+                          <div>
+                            <p class="small text-muted mb-0">Executive Chef</p>
+                            <p class="mb-0">Alejandro Saravia</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Footer -->
+                    <div
+                      class="modal-footer bg-light justify-content-between border-top-0"
+                    >
+                      <a
+                        href="https://www.farmersdaughters.com.au/"
+                        class="btn btn-outline-dark btn-sm"
+                      >
+                        <i class="bi bi-globe"></i> Website
+                      </a>
+                      <div>
+                        <button
+                          type="button"
+                          class="btn btn-outline-dark btn-sm me-2"
+                          data-bs-dismiss="modal"
+                        >
+                          Close
+                        </button>
+                        <a
+                          href="https://www.sevenrooms.com/reservations/farmersdaughters"
+                          class="btn btn-luxury-green btn-sm"
+                        >
+                          Reserve <i class="bi bi-arrow-right ms-1"></i>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4">
+              <a
+                href=""
+                class="text-white"
+                data-bs-toggle="modal"
+                data-bs-target="#Cumulusinc"
+              >
+                <figure
+                  class="position-relative overflow-hidden w-100"
+                  style="justify-self: center"
+                >
+                  <img
+                    class="img-fluid w-100"
+                    src="https://media.timeout.com/images/105278097/750/422/image.jpg"
+                    style="object-fit: cover; height: 230px"
+                    alt="Cumulus Inc."
+                  />
+                  <figcaption
+                    class="d-flex align-items-center justify-content-center position-absolute"
+                  >
+                    <img
+                      class="modal-img"
+                      style="width: 120px"
+                      src="https://images.squarespace-cdn.com/content/v1/5ea8e1f8abe1676d79f292ab/2bf573ce-8ad4-4aa0-a239-b836a7732008/CumulusInc_Logo.png?format=1500w"
+                    />
+                  </figcaption>
+                </figure>
+              </a>
+              <div
+                class="modal fade"
+                id="Cumulusinc"
+                data-bs-backdrop="static"
+                data-bs-keyboard="false"
+                tabindex="-1"
+                aria-labelledby="staticBackdropLabel"
+                aria-hidden="true"
+              >
+                <div class="modal-dialog modal-lg">
+                  <div
+                    class="modal-content border-0"
+                    style="box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1)"
+                  >
+                    <div
+                      class="modal-header bg-white position-relative border-bottom"
+                    >
+                      <div>
+                        <h1
+                          class="modal-title fs-4 mb-0"
+                          style="
+                            font-weight: 400;
+                            color: #070528;
+                            letter-spacing: 0.5px;
+                          "
+                        >
+                          CUMULUS INC.
+                        </h1>
+                        <p class="text-muted mb-0 small">
+                          <i
+                            class="bi bi-geo-alt-fill"
+                            style="color: #080632"
+                          ></i>
+                          45 Flinders Lane, Melbourne
+                        </p>
+                      </div>
+                      <button
+                        type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Close"
+                      ></button>
+                    </div>
+                    <div class="modal-body p-0">
+                      <div class="position-relative">
+                        <img
+                          src="https://images.squarespace-cdn.com/content/v1/5ea8e1f8abe1676d79f292ab/3854f228-d011-4022-af38-f5eb92b59328/_68A7729_credit_KRISTOFFER_PAULSEN.jpg?format=750w"
+                          class="img-fluid w-100 modal-img"
+                          style="height: 200px; object-fit: cover"
+                          alt="Cumulusinc"
+                        />
+                        <div class="position-absolute bottom-0 end-0 m-3">
+                          <span
+                            class="badge bg-dark text-white px-3 py-2"
+                            style="font-weight: 400"
+                          >
+                            <i class="bi bi-building"></i> Since 2008
+                          </span>
+                        </div>
+                      </div>
+                      <div class="p-4">
+                        <p
+                          class="lead mb-4"
+                          style="
+                            font-weight: 350;
+                            line-height: 1.6;
+                            color: #333;
+                          "
+                        >
+                          A Melbourne institution serving honest, produce-driven
+                          cuisine in a relaxed warehouse setting.
+                        </p>
+                        <div class="mb-4">
+                          <h3
+                            class="h6 text-uppercase mb-3"
+                            style="letter-spacing: 1px; color: #666"
+                          >
+                            Signature Dishes
+                          </h3>
+                          <ul class="list-unstyled">
+                            <li class="mb-2 d-flex">
+                              <span class="me-2" style="color: #999">•</span>
+                              <span>Whole slow-roasted lamb shoulder</span>
+                            </li>
+                            <li class="mb-2 d-flex">
+                              <span class="me-2" style="color: #999">•</span>
+                              <span>Tuna tartare with black rice</span>
+                            </li>
+                            <li class="d-flex">
+                              <span class="me-2" style="color: #999">•</span>
+                              <span>Madeleines with whipped cream</span>
+                            </li>
+                          </ul>
+                        </div>
+
+                        <div class="d-flex align-items-center mb-3">
+                          <div
+                            style="
+                              width: 40px;
+                              height: 40px;
+                              background-color: #f0f0f0;
+                              border-radius: 50%;
+                            "
+                            class="me-3 overflow-hidden"
+                          >
+                            <img
+                              class="w-100 modal-img"
+                              src="https://media1.agfg.com.au/images/chefs/168/hero-300.jpg"
+                            />
+                          </div>
+                          <div>
+                            <p class="small text-muted mb-0">Executive Chef</p>
+                            <p class="mb-0">Andrew McConnell</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="modal-footer bg-light justify-content-between border-top-0"
+                    >
+                      <a
+                        href="https://www.cumulusinc.com.au/"
+                        class="btn btn-outline-dark btn-sm"
+                        target="_blank"
+                      >
+                        <i class="bi bi-globe"></i> Website
+                      </a>
+                      <div>
+                        <button
+                          type="button"
+                          class="btn btn-outline-dark btn-sm me-2"
+                          data-bs-dismiss="modal"
+                        >
+                          Close
+                        </button>
+                        <a
+                          href="https://www.cumulusinc.com.au/reservations"
+                          class="btn btn-luxury-green btn-sm"
+                          target="_blank"
+                        >
+                          Reserve <i class="bi bi-arrow-right ms-1"></i>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6">
+              <a
+                href=""
+                class="text-white"
+                data-bs-toggle="modal"
+                data-bs-target="#RicePaperScissors"
+              >
+                <figure
+                  class="position-relative overflow-hidden w-100"
+                  style="justify-self: center"
+                >
+                  <img
+                    class="img-fluid w-100"
+                    src="https://lh3.googleusercontent.com/gps-cs-s/AC9h4nqldOQrC7bli6rdDNte9XIoPk-vHbVg3D6c3tMLng4bdHBqisBBXRTq0JGWdym_7ruLaRLljrafLxuavfVKBkh286gIL-g273ha2MOrIcryVpzzDNs6C3_rnmsK5r_T521nVGA5sw=s1360-w1360-h1020-rw"
+                    style="object-fit: cover; height: 230px"
+                    alt="Rice Paper Scissors"
+                  />
+                  <figcaption
+                    class="d-flex align-items-center justify-content-center position-absolute"
+                  >
+                    <img
+                      class="modal-img"
+                      style="width: 100px"
+                      src="https://ricepaperscissors.com.au/wp-content/uploads/2024/08/LOGO-rps-white@2x.png"
+                    />
+                  </figcaption>
+                </figure>
+              </a>
+              <div
+                class="modal fade"
+                id="RicePaperScissors"
+                data-bs-backdrop="static"
+                data-bs-keyboard="false"
+                tabindex="-1"
+                aria-labelledby="staticBackdropLabel"
+                aria-hidden="true"
+              >
+                <div class="modal-dialog modal-lg">
+                  <div
+                    class="modal-content border-0"
+                    style="box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1)"
+                  >
+                    <div
+                      class="modal-header bg-white position-relative border-bottom"
+                    >
+                      <div>
+                        <h1
+                          class="modal-title fs-4 mb-0"
+                          style="
+                            font-weight: 400;
+                            color: #1a139d;
+                            letter-spacing: 0.5px;
+                          "
+                        >
+                          Rice Paper Scissors
+                        </h1>
+                        <p class="text-muted mb-0 small">
+                          <i
+                            class="bi bi-geo-alt-fill"
+                            style="color: #080632"
+                          ></i>
+                          15 Hardware Lane, Melbourne
+                        </p>
+                      </div>
+                      <button
+                        type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Close"
+                      ></button>
+                    </div>
+
+                    <div class="modal-body p-0">
+                      <div class="position-relative">
+                        <img
+                          src="https://cdn.broadsheet.com.au/cache/af/66/af669c2af316bb469a7183097a90bb43.jpg"
+                          class="img-fluid w-100 modal-img"
+                          style="height: 200px; object-fit: cover"
+                          alt="Farmer's Daughters restaurant"
+                        />
+                        <div class="position-absolute bottom-0 end-0 m-3">
+                          <span
+                            class="badge bg-white text-dark px-3 py-2"
+                            style="
+                              font-weight: 500;
+                              border: 1px solid #eee;
+                              box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+                            "
+                          >
+                            <i
+                              class="bi bi-chopsticks"
+                              style="color: #d62c1a"
+                            ></i>
+                            Street Food Elevated
+                          </span>
+                        </div>
+                      </div>
+                      <div class="p-4">
+                        <p
+                          class="lead mb-4"
+                          style="
+                            font-weight: 350;
+                            line-height: 1.6;
+                            color: #333;
+                          "
+                        >
+                          Rice Paper Scissors – offers a punchy, share-style
+                          menu influenced by traditional South East Asian
+                          flavours
+                        </p>
+                        <div class="mb-4">
+                          <h3
+                            class="h6 text-uppercase mb-3"
+                            style="letter-spacing: 1px; color: #d62c1a"
+                          >
+                            Must-Try Dishes
+                          </h3>
+                          <ul class="list-unstyled">
+                            <li class="mb-2 d-flex">
+                              <span class="me-2" style="color: #d62c1a">•</span>
+                              <span>Soft shell crab bao with spicy mayo</span>
+                            </li>
+                            <li class="mb-2 d-flex">
+                              <span class="me-2" style="color: #d62c1a">•</span>
+                              <span>Pho-spiced Wagyu beef salad</span>
+                            </li>
+                            <li class="d-flex">
+                              <span class="me-2" style="color: #d62c1a">•</span>
+                              <span>Sticky pork belly with apple slaw</span>
+                            </li>
+                          </ul>
+                        </div>
+                        <div class="d-flex align-items-center mb-3">
+                          <div
+                            style="
+                              width: 40px;
+                              height: 40px;
+                              background-color: #f0f0f0;
+                              border-radius: 50%;
+                            "
+                            class="me-3 overflow-hidden"
+                          >
+                            <img
+                              class="w-100 modal-img"
+                              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRO5g6prWtNRbpC3gRLyTULX5qJGfxqm6jW6w&s"
+                            />
+                          </div>
+                          <div>
+                            <p class="small text-muted mb-0">Executive Chef</p>
+                            <p class="mb-0">Noah Crowcroft</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="modal-footer bg-light justify-content-between border-top-0"
+                    >
+                      <a
+                        href="https://ricepaperscissors.com.au/hardware-lane/"
+                        class="btn btn-outline-dark btn-sm"
+                        target="_blank"
+                      >
+                        <i class="bi bi-globe"></i> Website
+                      </a>
+                      <div>
+                        <button
+                          type="button"
+                          class="btn btn-outline-dark btn-sm me-2"
+                          data-bs-dismiss="modal"
+                        >
+                          Close
+                        </button>
+                        <a
+                          href="https://www.sevenrooms.com/explore/ricepaperscissorscbd/reservations/create/search/"
+                          class="btn btn-luxury-green btn-sm"
+                          target="_blank"
+                        >
+                          Reserve <i class="bi bi-arrow-right ms-1"></i>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6">
+              <a
+                href=""
+                class="text-white"
+                data-bs-toggle="modal"
+                data-bs-target="#NOMAD"
+              >
+                <figure class="position-relative overflow-hidden w-100">
+                  <img
+                    class="img-fluid w-100"
+                    src="https://assets-au-01.kc-usercontent.com/fbb47826-c8ea-0217-55d4-9e4d47596d5a/57e3a61e-a4a1-4e75-9631-8f6713fb2952/Nomad_sydney.webp"
+                    style="object-fit: covert; height: 230px"
+                    alt="NOMAD"
+                  />
+                  <figcaption
+                    class="d-flex align-items-center justify-content-center position-absolute"
+                  >
+                    <h3 style="margin-right: 15px">N O M A</h3>
+                    <h3>D</h3>
+                  </figcaption>
+                </figure>
+              </a>
+              <div
+                class="modal fade"
+                id="NOMAD"
+                data-bs-backdrop="static"
+                data-bs-keyboard="false"
+                tabindex="-1"
+                aria-labelledby="staticBackdropLabel"
+                aria-hidden="true"
+              >
+                <div class="modal-dialog modal-lg">
+                  <div
+                    class="modal-content border-0"
+                    style="box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1)"
+                  >
+                    <div
+                      class="modal-header bg-white position-relative border-bottom"
+                    >
+                      <div>
+                        <h1
+                          class="modal-title fs-4 mb-0"
+                          style="
+                            font-weight: 400;
+                            color: #b56700;
+                            letter-spacing: 0.5px;
+                          "
+                        >
+                          NOMAD
+                        </h1>
+                        <p class="text-muted mb-0 small">
+                          <i
+                            class="bi bi-geo-alt-fill"
+                            style="color: #080632"
+                          ></i>
+                          187 Flinders Ln, Melbourne
+                        </p>
+                      </div>
+                      <button
+                        type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Close"
+                      ></button>
+                    </div>
+
+                    <div class="modal-body p-0">
+                      <div class="position-relative">
+                        <img
+                          src="https://images.squarespace-cdn.com/content/v1/5645cfdfe4b03880a300e6e0/1653269650179-0RW17AD9AWLUUQUWJXE7/DSC08880.jpg?format=1000w"
+                          class="img-fluid w-100 modal-img"
+                          style="height: 200px; object-fit: cover"
+                          alt="NOMAD"
+                        />
+                        <div class="position-absolute bottom-0 end-0 m-3">
+                          <span
+                            class="badge bg-white text-dark px-3 py-2"
+                            style="
+                              font-weight: 300;
+                              letter-spacing: 1px;
+                              border: 1px solid #eee;
+                            "
+                          >
+                            FIRE • FLOUR • FERMENTATION
+                          </span>
+                        </div>
+                      </div>
+                      <div class="p-4">
+                        <p
+                          class="lead mb-4"
+                          style="
+                            font-weight: 350;
+                            line-height: 1.6;
+                            color: #814d06;
+                          "
+                        >
+                          A celebration of Australian produce through wood-fired
+                          cooking and house-made ingredients in a relaxed urban
+                          setting.
+                        </p>
+                        <div class="mb-4">
+                          <h3
+                            class="h6 text-uppercase mb-3"
+                            style="letter-spacing: 2px; color: #888"
+                          >
+                            Signature Offerings
+                          </h3>
+                          <ul class="list-unstyled">
+                            <li class="mb-2 d-flex">
+                              <span class="me-2" style="color: #888">—</span>
+                              <span
+                                >Wood-fired dry-aged duck with native
+                                spices</span
+                              >
+                            </li>
+                            <li class="mb-2 d-flex">
+                              <span class="me-2" style="color: #888">—</span>
+                              <span
+                                >House-made sourdough with cultured butter</span
+                              >
+                            </li>
+                            <li class="d-flex">
+                              <span class="me-2" style="color: #888">—</span>
+                              <span>Whole roasted fish with bush tomato</span>
+                            </li>
+                          </ul>
+                        </div>
+                        <div class="d-flex align-items-center mb-3">
+                          <div
+                            style="
+                              width: 40px;
+                              height: 40px;
+                              background-color: #f0f0f0;
+                              border-radius: 50%;
+                            "
+                            class="me-3 overflow-hidden"
+                          >
+                            <img
+                              class="w-100 modal-img"
+                              src="https://urbanvillage.com.au/wp-content/uploads/2020/03/Screen-Shot-2020-03-31-at-11.55.35-am-e1585616398287.png"
+                            />
+                          </div>
+                          <div>
+                            <p class="small text-muted mb-0">Executive Chef</p>
+                            <p class="mb-0">Jacqui Challinor</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="modal-footer bg-light justify-content-between border-top-0"
+                    >
+                      <a
+                        href="https://nomad.melbourne/"
+                        class="btn btn-outline-dark btn-sm"
+                        target="_blank"
+                      >
+                        <i class="bi bi-globe"></i> Website
+                      </a>
+                      <div>
+                        <button
+                          type="button"
+                          class="btn btn-outline-dark btn-sm me-2"
+                          data-bs-dismiss="modal"
+                        >
+                          Close
+                        </button>
+                        <a
+                          href="https://www.sevenrooms.com/explore/nomadmelbourne/reservations/create/search"
+                          class="btn btn-luxury-green btn-sm"
+                          target="_blank"
+                        >
+                          Reserve <i class="bi bi-arrow-right ms-1"></i>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col text-center">
+              <a
+                class="btn"
+                href=""
+                role="button"
+                style="
+                  font-weight: normal;
+                  color: #a96700;
+                  text-decoration: underline;
+                "
+                >More >></a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="request-quote" class="py-5 request-quote bg-lightblue">
+        <div class="container-fluid container-fluid-max">
+          <div class="row justify-content-center">
+            <div class="col-12 col-md-auto py-3 text-center">
+              <h2 class="mb-0 text-red">Want some suggestions?</h2>
+              <p class="mb-0 h4 text-red font-weight-normal">
+                Get in touch today!
+              </p>
+            </div>
+            <div
+              class="col-12 col-md-auto d-flex justify-content-center align-items-center"
+            >
+              <a
+                class="btn bg-red text-white font-weight-bold"
+                href="contact.html"
+                role="button"
+              >
+                Contact Us
+                <i class="ml-1 fas fa-hand-point-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 mb-4 mb-md-0">
+            <h5><i class="fas fa-utensils me-2"></i>MelbourneRES</h5>
+            <p>Providing heartfelt hospitality in Melbourne since 2023</p>
+          </div>
+          <div class="col-md-4 mb-4 mb-md-0">
+            <h5>Quick Links</h5>
+            <ul class="list-unstyled footer-links">
+              <li><a href="#">Home</a></li>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Services</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </div>
+          <div class="col-md-4">
+            <h5>Connect With Us</h5>
+            <a href="#" class="text-white me-3"
+              ><i class="fab fa-facebook-f fa-lg"></i
+            ></a>
+            <a href="#" class="text-white me-3"
+              ><i class="fab fa-instagram fa-lg"></i
+            ></a>
+            <a href="#" class="text-white me-3"
+              ><i class="fab fa-tripadvisor fa-lg"></i
+            ></a>
+          </div>
+        </div>
+        <hr class="my-4 bg-white" />
+        <p class="mb-0 text-center">
+          &copy; 2025 MelbourneRES. All rights reserved.
+        </p>
+        <p class="text-center mb-0">
+          <a href="#" class="footer-links">Privacy Policy</a> |
+          <a href="#" class="footer-links">FAQ</a>
+        </p>
+      </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <script>
+      const $body = $("body");
+      const $header = $(".page-header");
+      const $navCollapse = $(".navbar-collapse");
+      const scrollClass = "scroll";
+      $(window).on("scroll", () => {
+        if (this.matchMedia("(min-width: 992px)").matches) {
+          const scrollY = $(this).scrollTop();
+          scrollY > 0
+            ? $body.addClass(scrollClass)
+            : $body.removeClass(scrollClass);
+        } else {
+          $body.removeClass(scrollClass);
+        }
+      });
+    </script>
+  </body>
+</html>
