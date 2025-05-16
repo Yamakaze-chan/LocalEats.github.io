@@ -1,0 +1,121 @@
+:root {
+            --primary-color: #a96700;
+            --secondary-color: #ffffff;
+            --highlight-color: #ffd58a;
+            --light-bg: #f8f9fa;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--light-bg);
+        }
+        
+        .navbar {
+            background-color: var(--primary-color);
+            padding: 1rem 0;
+        }
+        
+        .navbar-brand, .nav-link {
+            color: var(--secondary-color) !important;
+        }
+        
+        .navbar-brand {
+            font-family: 'Playwrite DK Loopet', cursive;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+        
+        .btn-outline-primary {
+            color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+        
+        .btn-outline-primary:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .hero-section {
+            background: linear-gradient(rgba(169, 103, 0, 0.8), rgba(169, 103, 0, 0.8)), 
+                        url('https://lh3.googleusercontent.com/p/AF1QipP9pXiyv0ORKTBagUdyUgwLAri5_9OWrWp38IbG=s1360-w1360-h1020-rw');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 0;
+            margin-bottom: 40px;
+        }
+        
+        .about-card {
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            padding: 30px;
+            margin-bottom: 30px;
+            background-color: white;
+        }
+        
+        .section-title {
+            font-family: 'Playwrite DK Loopet', cursive;
+            color: var(--primary-color);
+            margin-bottom: 30px;
+            position: relative;
+        }
+        
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background-color: var(--highlight-color);
+            margin: 15px auto 0;
+        }
+        
+        .about-img {
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            width: 100%;
+        }
+        
+        .about-img:hover {
+            transform: scale(1.03);
+        }
+        
+        .highlight {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+        
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 30px 0;
+            margin-top: 50px;
+        }
+        
+        .footer-links a {
+            color: var(--highlight-color);
+            text-decoration: none;
+        }
+        
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .fade-in {
+            animation: fadeInUp 0.8s ease;
+        }

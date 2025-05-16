@@ -28,173 +28,10 @@
       href="https://fonts.googleapis.com/css2?family=Playwrite+DK+Loopet:wght@100..400&display=swap"
       rel="stylesheet"
     />
-
-    <style>
-      :root {
-        --lightblue: #f6f9fc;
-        --red: #d64041;
-        --primary-color: #a96700;
-        --secondary-color: #ffffff;
-        --highlight-color: #ffd58a;
-        --light-bg: #f8f9fa;
-      }
-
-      a,
-      a:hover {
-        color: inherit;
-      }
-
-      a:hover {
-        text-decoration: none;
-      }
-
-      .bg-lightblue {
-        background: var(--lightblue);
-      }
-
-      .bg-red {
-        background: var(--red);
-      }
-
-      .text-red {
-        color: var(--red);
-      }
-
-      .container-fluid-max {
-        max-width: 1440px;
-      }
-
-      .cover {
-        background: no-repeat center/cover;
-      }
-
-      .p-15 {
-        padding: 15px;
-      }
-
-      .carousel-item img {
-        width: 75%;
-        height: auto;
-        border-radius: 15px;
-        justify-self: center;
-        object-fit: contain;
-      }
-
-      .scroll .page-header {
-        background: #a96700;
-      }
-
-      .scroll .hero {
-        transform: scale(0.98);
-      }
-
-      .navbar-brand {
-        font-family: "Playwrite DK Loopet", cursive;
-        font-optical-sizing: auto;
-        font-weight: normal;
-        font-style: normal;
-      }
-      .page-header {
-        transition: background 0.5s ease-in-out;
-      }
-
-      .page-header .navbar {
-        padding: 1rem 0;
-      }
-
-      .page-header .navbar-toggler {
-        border-color: var(--white);
-      }
-
-      .hero {
-        background-attachment: fixed;
-        transition: transform 0.5s ease-in-out;
-        background-image: url("https://www.melbourne.crowneplaza.com/wp-content/uploads/2024/12/Crowne-Plaza-Blogs-2022-06-29T111848.641.png");
-        background-size: cover;
-      }
-
-      .hero::after {
-        content: "";
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        background: linear-gradient(
-          rgba(0, 0, 0, 0.5) 0,
-          rgba(0, 0, 0, 0.3) 50%,
-          rgba(0, 0, 0, 0.1) 100%
-        );
-      }
-
-      .hero .container-fluid {
-        z-index: 10;
-      }
-
-      .popular-destinations figure {
-        margin-bottom: 30px;
-      }
-
-      .popular-destinations figcaption {
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        background: rgba(0, 0, 0, 0.3);
-      }
-
-      .popular-destinations img {
-        filter: grayscale(100%) blur(3px);
-        transition: transform 0.5s, filter 0.75s;
-      }
-
-      .popular-destinations .modal-img {
-        filter: none;
-      }
-
-      .popular-destinations a:hover img {
-        transform: scale(1.25);
-        filter: none;
-      }
-
-      .popular-destinations a:hover figcaption img,
-      .popular-destinations a:hover figcaption h3 {
-        display: none;
-      }
-
-      .page-footer .footer-links {
-        text-align: right;
-      }
-
-      footer {
-        background-color: var(--primary-color);
-        color: white;
-        padding: 30px 0;
-        margin-top: 50px;
-      }
-
-      .footer-links a {
-        color: var(--highlight-color);
-        text-decoration: none;
-      }
-
-      .footer-links a:hover {
-        text-decoration: underline;
-      }
-
-      @media screen and (max-width: 991px) {
-        .page-header {
-          background: #a96700;
-        }
-      }
-
-      /* SMALL SCREENS */
-      @media screen and (max-width: 767px) {
-        .page-footer .footer-child {
-          text-align: center;
-        }
-      }
-    </style>
+    <link
+    href="css/index.css"
+    rel="stylesheet"
+    />
   </head>
 
   <body
@@ -1494,8 +1331,7 @@
       const randomSong = Math.floor(Math.random() * Songs.length);
       const audio = document.getElementById("player"); // Chọn 1 bài trong danh sách
       audio.addEventListener("ended", function () { //Tự động chọn 1 bài bất kì rồi chạy tiếp
-        audio.src = randomSong;
-        audio.pause();
+        audio.src = Songs[randomSong];
         audio.load();
         audio.play();
       });
