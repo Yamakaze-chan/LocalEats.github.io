@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
     <title>Bars | LocalEats</title>
 
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
       rel="stylesheet"
-    />
+    >
     <link
       href="https://fonts.googleapis.com/css2?family=Playwrite+DK+Loopet:wght@100..400&display=swap"
       rel="stylesheet"
-    />
+    >
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
-    <link href="css/bar.css" rel="stylesheet"/>
+    >
+    <link href="css/bar.css" rel="stylesheet">
   </head>
   <body>
     <header class="fixed-top page-header">
@@ -80,12 +80,8 @@
                   >Reference</a
                 >
               </li>
-              <audio style="display: none" id="player" controls autoplay>
-                <source
-                src=https://www.myinstants.com/media/sounds/gawr-gura-a.mp3
-                type="audio/mpeg" />
-              </audio>
-              <button
+              <li class="nav-item">
+                <button
                 class="nav-link text-white"
                 style="background: none; border: none"
                 onclick="ToggleMusic()"
@@ -93,11 +89,18 @@
               >
                 <i class="fa-solid fa-pause"></i>
               </button>
+              </li>
             </ul>
           </div>
         </nav>
       </div>
     </header>
+
+    <audio style="display: none" id="player" controls autoplay>
+                <source
+                src=https://www.myinstants.com/media/sounds/gawr-gura-a.mp3
+                type="audio/mpeg" >
+              </audio>
 
     <!-- Hero Section -->
     <section class="hero-section" style="margin-top: 72px">
@@ -184,7 +187,7 @@
         <div class="modal-dialog modal-lg">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="modalBarName"></h5>
+              <h5 class="modal-title" id="modalBarName">abcd</h5>
               <button
                 type="button"
                 class="btn-close btn-close-white"
@@ -196,11 +199,11 @@
               <div class="row">
                 <div class="col-md-6">
                   <img
-                    src=""
+                    src="https://www.abcd.com/"
                     class="img-fluid rounded mb-3"
                     id="modalBarImage"
                     alt=""
-                  />
+                  >
                   <div class="d-flex flex-wrap gap-2 mb-3" id="modalBarTags">
                     <!-- Tags will be inserted here -->
                   </div>
@@ -245,9 +248,9 @@
               >
                 Close
               </button>
-              <a type="button" class="btn btn-primary" id="getDirection">
+              <button type="button" class="btn btn-primary" id="getDirection">
                 <i class="fas fa-directions me-2"></i>Get Directions
-              </a>
+              </button>
             </div>
           </div>
         </div>
@@ -565,5 +568,16 @@
         }
       }
     </script>
+    <!-- W3C HTML Validation Icon -->
+    <p>
+      <a href="https://validator.w3.org/check?uri=referer">
+        <img
+          src="https://www.w3.org/Icons/valid-html401"
+          alt="Valid_HTML"
+          height="31"
+          width="88"
+        >
+      </a>
+    </p>
   </body>
 </html>
