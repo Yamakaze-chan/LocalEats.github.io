@@ -1,225 +1,282 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
     <title>Events | LocalEats</title>
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    >
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    >
     <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Playwrite+DK+Loopet:wght@100..400&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playwrite+DK+Loopet:wght@100..400&display=swap"
+      rel="stylesheet"
+    >
     <!-- Custom CSS -->
-    <link href="css/events.css" rel="stylesheet" />
-</head>
-<body>
-    <header class="fixed-top page-header" style="background-color: #a96700;">
-        <div class="container-fluid container-fluid-max">
-          <nav id="navbar" class="navbar navbar-expand-lg navbar-dark">
-            <a class="navbar-brand" href="#"><i class="fa-solid fa-utensils" style="margin-right: 10px;"></i>LocalEats</a>
-            <button
-              class="navbar-toggler"
-              type="button"
-              data-toggle="collapse"
-              data-target="#navbarNav"
-              aria-controls="navbarNav"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
-            >
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div
-              class="collapse navbar-collapse justify-content-lg-end"
-              id="navbarNav"
-            >
-              <ul class="navbar-nav">
-                <li class="nav-item">
-                  <a class="nav-link text-white" href="index.html">Homepage</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link text-white" href="about.html"
-                    >About us</a
-                  >
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link text-white" href="services.html"
-                    >Services</a
-                  >
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link text-white" href="gallery.html">Gallery</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link text-white" href="job.html">Jobs</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link text-white" href="staff.html">Staff</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link text-white" href="bar.html">Bar</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link text-white" href="menu.html">Menu</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link text-white" href="booking.html">Tour Booking</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link text-white" href="contact.html">Contact</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link text-white" href="reference.html">Reference</a>
-                </li>
-                <audio style="display: none" id="player" controls autoplay>
-                <source
-                  src="https://www.myinstants.com/media/sounds/gawr-gura-a.mp3"
-                  type="audio/mpeg"
-                />
-              </audio>
-              <button
-                class="nav-link text-white"
-                style="background: none; border: none"
-                onclick="ToggleMusic()"
-                id="toggleMusic"
-              >
-                <i class="fa-solid fa-pause"></i>
-              </button>
-              </ul>
-            </div>
-          </nav>
-        </div>
-      </header>
+    <link href="css/events.css" rel="stylesheet" >
+  </head>
+  <body>
+    <header class="fixed-top page-header" style="background-color: #a96700">
+      <div class="container-fluid container-fluid-max">
+        <nav id="navbar" class="navbar navbar-expand-lg navbar-dark">
+          <a class="navbar-brand" href="#"
+            ><i class="fa-solid fa-utensils" style="margin-right: 10px"></i
+            >LocalEats</a
+          >
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div
+            class="collapse navbar-collapse justify-content-lg-end"
+            id="navbarNav"
+          >
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link text-white" href="index.html">Homepage</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="about.html">About us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="services.html">Services</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="gallery.html">Gallery</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="job.html">Jobs</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="staff.html">Staff</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="bar.html">Bar</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="menu.html">Menu</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="booking.html"
+                  >Tour Booking</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="contact.html">Contact</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="reference.html"
+                  >Reference</a
+                >
+              </li>
+              <li class="nav-item">
+                <button
+                  class="nav-link text-white"
+                  style="background: none; border: none"
+                  onclick="ToggleMusic()"
+                  id="toggleMusic"
+                >
+                  <i class="fa-solid fa-pause"></i>
+                </button>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <audio style="display: none" id="player" controls autoplay>
+      <source
+        src="https://www.myinstants.com/media/sounds/gawr-gura-a.mp3"
+        type="audio/mpeg"
+      >
+    </audio>
 
     <!-- Hero Section -->
     <section class="hero-section" style="margin-top: 72px">
-        <div class="container">
-            <h1 class="display-5 fw-bold mb-3">Events</h1>
-            <p class="lead mb-4">Creating memorable experiences for every occasion</p>
-        </div>
+      <div class="container">
+        <h1 class="display-5 fw-bold mb-3">Events</h1>
+        <p class="lead mb-4">
+          Creating memorable experiences for every occasion
+        </p>
+      </div>
     </section>
 
     <!-- Events Section -->
     <div class="container mb-5">
-        <div class="event-feature">
-            <h2 class="section-title">Upcoming Events</h2>
-            <p class="text-center mb-5">From corporate gatherings to intimate celebrations, we create memorable experiences with our exceptional event services.</p>
-            <!-- Add events place -->
-            <div class="row row-cols-1 row-cols-md-3 g-4" id="upcoming_events">
+      <div class="event-feature">
+        <h2 class="section-title">Upcoming Events</h2>
+        <p class="text-center mb-5">
+          From corporate gatherings to intimate celebrations, we create
+          memorable experiences with our exceptional event services.
+        </p>
+        <!-- Add events place -->
+        <div
+          class="row row-cols-1 row-cols-md-3 g-4"
+          id="upcoming_events"
+        ></div>
+      </div>
 
+      <div class="row gap-4">
+        <div class="col-lg-6">
+          <div class="event-feature h-100">
+            <h2 class="section-title">Private Events</h2>
+            <div class="timeline">
+              <div class="timeline-item">
+                <h4>Weddings</h4>
+                <p>
+                  Celebrate your special day with our customizable wedding
+                  packages and dedicated event coordinators.
+                </p>
+              </div>
+              <div class="timeline-item">
+                <h4>Birthdays</h4>
+                <p>
+                  From milestone celebrations to intimate gatherings, we'll make
+                  your birthday unforgettable.
+                </p>
+              </div>
+              <div class="timeline-item">
+                <h4>Anniversaries</h4>
+                <p>
+                  Romantic settings and customized menus to celebrate your love
+                  story.
+                </p>
+              </div>
             </div>
+            <a href="contact.html" class="btn btn-primary mt-3"
+              >To Contact Page <i class="fa-solid fa-arrow-right"></i
+            ></a>
+          </div>
         </div>
-        
-        <div class="row gap-4">
-            <div class="col-lg-6">
-                <div class="event-feature h-100">
-                    <h2 class="section-title">Private Events</h2>
-                    <div class="timeline">
-                        <div class="timeline-item">
-                            <h4>Weddings</h4>
-                            <p>Celebrate your special day with our customizable wedding packages and dedicated event coordinators.</p>
-                        </div>
-                        <div class="timeline-item">
-                            <h4>Birthdays</h4>
-                            <p>From milestone celebrations to intimate gatherings, we'll make your birthday unforgettable.</p>
-                        </div>
-                        <div class="timeline-item">
-                            <h4>Anniversaries</h4>
-                            <p>Romantic settings and customized menus to celebrate your love story.</p>
-                        </div>
-                    </div>
-                    <a href="contact.html" class="btn btn-primary mt-3">To Contact Page <i class="fa-solid fa-arrow-right"></i></a>
-                </div>
-            </div>
-            
-            <div class="col-lg-6">
-                <div class="event-feature h-100">
-                    <h2 class="section-title">Corporate Events</h2>
-                    <ul class="list-unstyled">
-                        <li class="mb-3">
-                            <h5><i class="fas fa-chart-line" style="color:#a96700"></i> Business Meetings</h5>
-                            <p>Professional settings with AV equipment and catering services.</p>
-                        </li>
-                        <li class="mb-3">
-                            <h5><i class="fas fa-users" style="color:#a96700"></i> Team Building</h5>
-                            <p>Customized activities and menus to foster team connection.</p>
-                        </li>
-                        <li class="mb-3">
-                            <h5><i class="fas fa-glass-cheers" style="color:#a96700"></i> Product Launches</h5>
-                            <p>Make a splash with our event production services.</p>
-                        </li>
-                    </ul>
-                    <a href="services.html" class="btn mt-3" style="color:#a96700">
-                        <i class="fas fa-arrow-left me-2"></i> Back to All Services
-                    </a>
-                </div>
-            </div>
+
+        <div class="col-lg-6">
+          <div class="event-feature h-100">
+            <h2 class="section-title">Corporate Events</h2>
+            <ul class="list-unstyled">
+              <li class="mb-3">
+                <h5>
+                  <i class="fas fa-chart-line" style="color: #a96700"></i>
+                  Business Meetings
+                </h5>
+                <p>
+                  Professional settings with AV equipment and catering services.
+                </p>
+              </li>
+              <li class="mb-3">
+                <h5>
+                  <i class="fas fa-users" style="color: #a96700"></i> Team
+                  Building
+                </h5>
+                <p>
+                  Customized activities and menus to foster team connection.
+                </p>
+              </li>
+              <li class="mb-3">
+                <h5>
+                  <i class="fas fa-glass-cheers" style="color: #a96700"></i>
+                  Product Launches
+                </h5>
+                <p>Make a splash with our event production services.</p>
+              </li>
+            </ul>
+            <a href="services.html" class="btn mt-3" style="color: #a96700">
+              <i class="fas fa-arrow-left me-2"></i> Back to All Services
+            </a>
+          </div>
         </div>
+      </div>
     </div>
 
     <!-- Footer -->
     <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4 mb-4 mb-md-0">
-                    <h5><i class="fas fa-utensils me-2"></i>LocalEats</h5>
-                    <p>Creating unforgettable events since 2010</p>
-                </div>
-                <div class="col-md-4 mb-4 mb-md-0">
-                    <h5>Quick Links</h5>
-                    <ul class="list-unstyled footer-links">
-                        <li><a href="services.html">Services</a></li>
-                        <li><a href="#">Event Calendar</a></li>
-                        <li><a href="#">Testimonials</a></li>
-                        <li><a href="#">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-4">
-                    <h5>Connect With Us</h5>
-                    <a href="#" class="text-white me-3"><i class="fab fa-facebook-f fa-lg"></i></a>
-                    <a href="#" class="text-white me-3"><i class="fab fa-instagram fa-lg"></i></a>
-                    <a href="#" class="text-white me-3"><i class="fab fa-linkedin fa-lg"></i></a>
-                </div>
-            </div>
-            <hr class="my-4 bg-white">
-            <p class="mb-0 text-center">&copy; 2025 LocalEats. All rights reserved.</p>
-            <p class="text-center mb-0">
-                <a href="#" class="footer-links">Privacy Policy</a> | <a href="#" class="footer-links">FAQ</a>
-            </p>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 mb-4 mb-md-0">
+            <h5><i class="fas fa-utensils me-2"></i>LocalEats</h5>
+            <p>Creating unforgettable events since 2010</p>
+          </div>
+          <div class="col-md-4 mb-4 mb-md-0">
+            <h5>Quick Links</h5>
+            <ul class="list-unstyled footer-links">
+              <li><a href="services.html">Services</a></li>
+              <li><a href="#">Event Calendar</a></li>
+              <li><a href="#">Testimonials</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </div>
+          <div class="col-md-4">
+            <h5>Connect With Us</h5>
+            <a href="#" class="text-white me-3"
+              ><i class="fab fa-facebook-f fa-lg"></i
+            ></a>
+            <a href="#" class="text-white me-3"
+              ><i class="fab fa-instagram fa-lg"></i
+            ></a>
+            <a href="#" class="text-white me-3"
+              ><i class="fab fa-linkedin fa-lg"></i
+            ></a>
+          </div>
         </div>
+        <hr class="my-4 bg-white" >
+        <p class="mb-0 text-center">
+          &copy; 2025 LocalEats. All rights reserved.
+        </p>
+        <p class="text-center mb-0">
+          <a href="#" class="footer-links">Privacy Policy</a> |
+          <a href="#" class="footer-links">FAQ</a>
+        </p>
+      </div>
     </footer>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        const upcomingEventsData = [
-            {
-                name: "Winter Night Market",
-                description: "Wrap up warm and embrace the winter chill as the Market’s sheds and laneways come alive with the inviting aromas of delicious food; the sounds of live, local musicians; and the vivid spectacle of quirky roving performers, promising a fun and not-to-be-missed night for all.",
-                date: "4 Jun - 27 Aug, 2025",
-                link: "https://whatson.melbourne.vic.gov.au/things-to-do/winter-night-market",
-                img: "https://whatson.melbourne.vic.gov.au/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsiZGF0YSI6IjE3NjZlNzU5LTIzMjYtNGNkZi1hYzVhLWViMDQ0ZmExYjc3NSIsInB1ciI6ImJsb2JfaWQifX0=--5cb6e0a3eb7cd8c9e89cbf8ee61fa65f797fc33f/eyJfcmFpbHMiOnsiZGF0YSI6eyJmb3JtYXQiOiJqcGciLCJncmF2aXR5IjoiQ2VudGVyIiwicmVzaXplX3RvX2ZpbGwiOls4ODAsNTkwXX0sInB1ciI6InZhcmlhdGlvbiJ9fQ==--8ba21a1f014d91c43eb97f346a0dc62d26bd59b2/08f90fa2-3bbc-45e9-a7f7-ac0d399cfeca.jpg",
-                icon: "fa-calendar-day me-2"
-            },
-            {
-                name: "Art, History, Food and Wine Walking Tour",
-                description: "Weave through a labyrinth of art-filled laneways in Melbourne’s heart, and hear curious tales from the city's fascinating history.You’ll have the opportunity to capture the quirk, creativity and beauty of this grand city, and discover wine bars you can return to.",
-                date: "Until 7 Jul, 2025",
-                link: "https://whatson.melbourne.vic.gov.au/things-to-do/art-history-food-and-wine-walking-tour",
-                img: "https://whatson.melbourne.vic.gov.au/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsiZGF0YSI6IjgxY2Y0YTJkLTc1ZTktNGQxZi05Nzc5LWUzZDQwZWIwOTNhNCIsInB1ciI6ImJsb2JfaWQifX0=--7601ef582626acb252bfbf1d3ac55c8130fc1824/eyJfcmFpbHMiOnsiZGF0YSI6eyJmb3JtYXQiOiJqcGciLCJncmF2aXR5IjoiQ2VudGVyIiwicmVzaXplX3RvX2ZpbGwiOls4ODAsNTkwXX0sInB1ciI6InZhcmlhdGlvbiJ9fQ==--8ba21a1f014d91c43eb97f346a0dc62d26bd59b2/08fc7d31-f7c3-4e43-acd2-25626c0ff9ae.jpg",
-                icon: "fa-wine-glass-alt"
-            },
-            {
-                name: "Asian Comedy Showcase",
-                description: "A funny, fearless and proudly Asian comedy lineup show featuring a rotating lineup of comedy festival favourites and rising stars.Expect big laughs, bold perspectives, and fresh jokes – this is a celebration of cultural comedy, clever storytelling, and laugh-out-loud punchlines.",
-                date: "23 May - 14 Jun, 2025",
-                link: "https://whatson.melbourne.vic.gov.au/things-to-do/asian-comedy-showcase-2025",
-                img: "https://whatson.melbourne.vic.gov.au/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsiZGF0YSI6IjViMDUwMGQ4LWFiMDMtNGExNy1iN2FjLWNjMWYzNzkwNzNiOSIsInB1ciI6ImJsb2JfaWQifX0=--9acfa9cb0b35c0d90f241a631e57dbd0ea257b9c/eyJfcmFpbHMiOnsiZGF0YSI6eyJmb3JtYXQiOiJqcGciLCJncmF2aXR5IjoiQ2VudGVyIiwicmVzaXplX3RvX2ZpbGwiOls4ODAsNTkwXX0sInB1ciI6InZhcmlhdGlvbiJ9fQ==--8ba21a1f014d91c43eb97f346a0dc62d26bd59b2/361db623-6661-4dea-8a1a-9c3548f61ee5.jpg",
-                icon: "fa-calendar-day me-2"
-            }
-        ]
-        upcomingEventsData.forEach((data) => {
-            document.getElementById("upcoming_events").innerHTML += (`
+      const upcomingEventsData = [
+        {
+          name: "Winter Night Market",
+          description:
+            "Wrap up warm and embrace the winter chill as the Market’s sheds and laneways come alive with the inviting aromas of delicious food; the sounds of live, local musicians; and the vivid spectacle of quirky roving performers, promising a fun and not-to-be-missed night for all.",
+          date: "4 Jun - 27 Aug, 2025",
+          link: "https://whatson.melbourne.vic.gov.au/things-to-do/winter-night-market",
+          img: "https://whatson.melbourne.vic.gov.au/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsiZGF0YSI6IjE3NjZlNzU5LTIzMjYtNGNkZi1hYzVhLWViMDQ0ZmExYjc3NSIsInB1ciI6ImJsb2JfaWQifX0=--5cb6e0a3eb7cd8c9e89cbf8ee61fa65f797fc33f/eyJfcmFpbHMiOnsiZGF0YSI6eyJmb3JtYXQiOiJqcGciLCJncmF2aXR5IjoiQ2VudGVyIiwicmVzaXplX3RvX2ZpbGwiOls4ODAsNTkwXX0sInB1ciI6InZhcmlhdGlvbiJ9fQ==--8ba21a1f014d91c43eb97f346a0dc62d26bd59b2/08f90fa2-3bbc-45e9-a7f7-ac0d399cfeca.jpg",
+          icon: "fa-calendar-day me-2",
+        },
+        {
+          name: "Art, History, Food and Wine Walking Tour",
+          description:
+            "Weave through a labyrinth of art-filled laneways in Melbourne’s heart, and hear curious tales from the city's fascinating history.You’ll have the opportunity to capture the quirk, creativity and beauty of this grand city, and discover wine bars you can return to.",
+          date: "Until 7 Jul, 2025",
+          link: "https://whatson.melbourne.vic.gov.au/things-to-do/art-history-food-and-wine-walking-tour",
+          img: "https://whatson.melbourne.vic.gov.au/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsiZGF0YSI6IjgxY2Y0YTJkLTc1ZTktNGQxZi05Nzc5LWUzZDQwZWIwOTNhNCIsInB1ciI6ImJsb2JfaWQifX0=--7601ef582626acb252bfbf1d3ac55c8130fc1824/eyJfcmFpbHMiOnsiZGF0YSI6eyJmb3JtYXQiOiJqcGciLCJncmF2aXR5IjoiQ2VudGVyIiwicmVzaXplX3RvX2ZpbGwiOls4ODAsNTkwXX0sInB1ciI6InZhcmlhdGlvbiJ9fQ==--8ba21a1f014d91c43eb97f346a0dc62d26bd59b2/08fc7d31-f7c3-4e43-acd2-25626c0ff9ae.jpg",
+          icon: "fa-wine-glass-alt",
+        },
+        {
+          name: "Asian Comedy Showcase",
+          description:
+            "A funny, fearless and proudly Asian comedy lineup show featuring a rotating lineup of comedy festival favourites and rising stars.Expect big laughs, bold perspectives, and fresh jokes – this is a celebration of cultural comedy, clever storytelling, and laugh-out-loud punchlines.",
+          date: "23 May - 14 Jun, 2025",
+          link: "https://whatson.melbourne.vic.gov.au/things-to-do/asian-comedy-showcase-2025",
+          img: "https://whatson.melbourne.vic.gov.au/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsiZGF0YSI6IjViMDUwMGQ4LWFiMDMtNGExNy1iN2FjLWNjMWYzNzkwNzNiOSIsInB1ciI6ImJsb2JfaWQifX0=--9acfa9cb0b35c0d90f241a631e57dbd0ea257b9c/eyJfcmFpbHMiOnsiZGF0YSI6eyJmb3JtYXQiOiJqcGciLCJncmF2aXR5IjoiQ2VudGVyIiwicmVzaXplX3RvX2ZpbGwiOls4ODAsNTkwXX0sInB1ciI6InZhcmlhdGlvbiJ9fQ==--8ba21a1f014d91c43eb97f346a0dc62d26bd59b2/361db623-6661-4dea-8a1a-9c3548f61ee5.jpg",
+          icon: "fa-calendar-day me-2",
+        },
+      ];
+      upcomingEventsData.forEach((data) => {
+        document.getElementById("upcoming_events").innerHTML += `
             <div class="col">
                 <div class="event-card card h-100">
                     <div class="position-relative">
@@ -238,40 +295,51 @@
                         </div>
                 </div>
             </div>
-            `)
-        })
+            `;
+      });
 
-        // Run audio while in website
-    const Songs = [
-      "https://cdn.pixabay.com/audio/2025/05/14/audio_e9f2bbcb59.mp3",
-      "https://cdn.pixabay.com/audio/2025/05/07/audio_a1597a48f8.mp3",
-      "https://cdn.pixabay.com/audio/2023/08/31/audio_d2149da47a.mp3",
-      "https://cdn.pixabay.com/audio/2025/05/07/audio_9f373f6a85.mp3",
-      "https://cdn.pixabay.com/audio/2025/04/29/audio_9315580407.mp3",
-      "https://cdn.pixabay.com/audio/2025/04/30/audio_da480a66c8.mp3",
-      "https://cdn.pixabay.com/audio/2025/04/25/audio_b5d007e8d9.mp3",
-    ];
+      // Run audio while in website
+      const Songs = [
+        "https://cdn.pixabay.com/audio/2025/05/14/audio_e9f2bbcb59.mp3",
+        "https://cdn.pixabay.com/audio/2025/05/07/audio_a1597a48f8.mp3",
+        "https://cdn.pixabay.com/audio/2023/08/31/audio_d2149da47a.mp3",
+        "https://cdn.pixabay.com/audio/2025/05/07/audio_9f373f6a85.mp3",
+        "https://cdn.pixabay.com/audio/2025/04/29/audio_9315580407.mp3",
+        "https://cdn.pixabay.com/audio/2025/04/30/audio_da480a66c8.mp3",
+        "https://cdn.pixabay.com/audio/2025/04/25/audio_b5d007e8d9.mp3",
+      ];
 
-    const randomSong = Math.floor(Math.random() * Songs.length);
-    const audio = document.getElementById("player"); // Get audio element
-    audio.addEventListener("ended", function () {
-      //Pick 1 random song then keep running
-      audio.src = Songs[randomSong];
-      audio.load();
-      audio.play();
-    });
-    function ToggleMusic() {
-      //If the music is open, it will turn off and vice versa
-      if (audio.duration > 0 && !audio.paused) {
-        audio.pause();
-        document.getElementById("toggleMusic").innerHTML =
-          '<i class="fa-solid fa-play"></i>';
-      } else {
+      const randomSong = Math.floor(Math.random() * Songs.length);
+      const audio = document.getElementById("player"); // Get audio element
+      audio.addEventListener("ended", function () {
+        //Pick 1 random song then keep running
+        audio.src = Songs[randomSong];
+        audio.load();
         audio.play();
-        document.getElementById("toggleMusic").innerHTML =
-          '<i class="fa-solid fa-pause"></i>';
+      });
+      function ToggleMusic() {
+        //If the music is open, it will turn off and vice versa
+        if (audio.duration > 0 && !audio.paused) {
+          audio.pause();
+          document.getElementById("toggleMusic").innerHTML =
+            '<i class="fa-solid fa-play"></i>';
+        } else {
+          audio.play();
+          document.getElementById("toggleMusic").innerHTML =
+            '<i class="fa-solid fa-pause"></i>';
+        }
       }
-    }
     </script>
-</body>
+    <!-- W3C HTML Validation Icon -->
+    <p>
+      <a href="https://validator.w3.org/check?uri=referer">
+        <img
+          src="https://www.w3.org/Icons/valid-html401"
+          alt="Valid_HTML"
+          height="31"
+          width="88"
+        >
+      </a>
+    </p>
+  </body>
 </html>
