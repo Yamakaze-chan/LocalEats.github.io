@@ -1,37 +1,37 @@
+<!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8" >
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1, minimum-scale=1"
-    />
+    >
     <title>LocalEats</title>
-    <link rel="icon" type="image/x-icon" href="" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
       crossorigin="anonymous"
-    />
+    >
     <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
-    />
+    >
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
       integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
-    />
+    >
     <link
       href="https://fonts.googleapis.com/css2?family=Playwrite+DK+Loopet:wght@100..400&display=swap"
       rel="stylesheet"
-    />
+    >
     <link
     href="css/index.css"
     rel="stylesheet"
-    />
+    >
   </head>
 
   <body
@@ -103,13 +103,8 @@
                   >Reference</a
                 >
               </li>
-              <audio style="display: none" id="player" controls autoplay>
-                <source
-                  src="https://cdn.pixabay.com/audio/2025/05/07/audio_9f373f6a85.mp3"
-                  type="audio/mpeg"
-                />
-              </audio>
-              <button
+              <li class="nav-item">
+                <button
                 class="nav-link text-white"
                 style="background: none; border: none"
                 onclick="ToggleMusic()"
@@ -117,12 +112,18 @@
               >
                 <i class="fa-solid fa-pause"></i>
               </button>
+              </li>
             </ul>
           </div>
         </nav>
       </div>
     </header>
-
+<audio style="display: none" id="player" controls autoplay>
+                <source
+                  src="https://cdn.pixabay.com/audio/2025/05/07/audio_9f373f6a85.mp3"
+                  type="audio/mpeg"
+                >
+              </audio>
     <main>
       <!-- Hero Section -->
       <section
@@ -162,10 +163,10 @@
                 height="315"
                 src="https://www.youtube-nocookie.com/embed/OQIoZjYLvek?si=TQnZyR8V4vRl-CVS"
                 title="YouTube video player"
-                frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 referrerpolicy="strict-origin-when-cross-origin"
                 allowfullscreen
+                style="max-width: 100%; border:none"
               ></iframe>
             </div>
           </div>
@@ -218,7 +219,7 @@
                     class="w-75"
                     src="https://images.squarespace-cdn.com/content/v1/63cfc7692998ce32cea3dc27/b4087c01-4fcf-4359-bc52-f46019bcf10e/Shadow+Play+By+Peppers+-+20th+January_GRIFFIN+SIMM_Finals+89.jpg"
                     alt="Food Photo"
-                  />
+                  >
                 </div>
                 <div class="col-6 text-start">
                   <img
@@ -226,7 +227,7 @@
                     style="object-fit: cover"
                     src="https://images.squarespace-cdn.com/content/v1/64e97f48f23e365f0294b731/1726720904262-4DG0H8AOYIYA8C4Y3VGQ/Ama%252Bebi%252Bprawns%25252C%252Bblack-eyed%252Bbeans%252Bacaraje%25252C%252Bbiquinho%252Bpepper%252B-%252BMorenaMelbourne_AriannaLeggiero-56.jpg?format=500w"
                     alt="Food Photo"
-                  />
+                  >
                 </div>
               </div>
             </div>
@@ -282,28 +283,28 @@
                       class="w-100"
                       src="https://whatson.melbourne.vic.gov.au/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsiZGF0YSI6IjhmZmM5ZDRjLWI4N2ItNGMwOS04OTkyLTE5M2FhNGI2Yzc1MyIsInB1ciI6ImJsb2JfaWQifX0=--4fef5a0e0e084185b84c9350ebe2d37506f7c1d0/eyJfcmFpbHMiOnsiZGF0YSI6eyJmb3JtYXQiOiJqcGciLCJncmF2aXR5IjoiQ2VudGVyIiwicmVzaXplX3RvX2ZpbGwiOls4ODAsNTkwXX0sInB1ciI6InZhcmlhdGlvbiJ9fQ==--8ba21a1f014d91c43eb97f346a0dc62d26bd59b2/f18c08ba-8520-49e4-8ad0-17575bc4bcad.jpg"
                       alt="Three Tenors: Opera Night"
-                    />
+                    >
                   </div>
                   <div class="col">
                     <img
                       class="w-100"
                       src="https://whatson.melbourne.vic.gov.au/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsiZGF0YSI6IjQ5NDk4ODljLTdhY2ItNDY2NS1hMGIzLTFhYTY5ZjdiNjBhZCIsInB1ciI6ImJsb2JfaWQifX0=--2b8c4ea1c86ef62783c7b2a4d34d5d5bb306d007/eyJfcmFpbHMiOnsiZGF0YSI6eyJmb3JtYXQiOiJqcGciLCJncmF2aXR5IjoiQ2VudGVyIiwicmVzaXplX3RvX2ZpbGwiOls4ODAsNTkwXX0sInB1ciI6InZhcmlhdGlvbiJ9fQ==--8ba21a1f014d91c43eb97f346a0dc62d26bd59b2/17b0499a-4c20-44ba-8f50-39c1066f65cb.jpg"
                       alt="Make and Sip with Myer Melbourne"
-                    />
+                    >
                   </div>
                   <div class="col">
                     <img
                       class="w-100"
                       src="https://whatson.melbourne.vic.gov.au/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsiZGF0YSI6ImUxMzRjMzUxLWZjMjEtNGIyOC1hNjdkLTk4ODUxNmUwNzc0OCIsInB1ciI6ImJsb2JfaWQifX0=--c341a98b7a3e9dd3d2e622b810727397288ab29d/eyJfcmFpbHMiOnsiZGF0YSI6eyJmb3JtYXQiOiJqcGciLCJncmF2aXR5IjoiQ2VudGVyIiwicmVzaXplX3RvX2ZpbGwiOls4ODAsNTkwXX0sInB1ciI6InZhcmlhdGlvbiJ9fQ==--8ba21a1f014d91c43eb97f346a0dc62d26bd59b2/b3351e6a-52a8-4833-a35f-ca4db2e9ef02.jpg"
                       alt="La Dolce Vita Taste of Italy Tour"
-                    />
+                    >
                   </div>
                   <div class="col">
                     <img
                       class="w-100"
                       src="https://whatson.melbourne.vic.gov.au/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsiZGF0YSI6Ijc5YmNiZjk3LTI0OWYtNDQyMS1iOWI4LTc2NmFhZjc0ODFkNiIsInB1ciI6ImJsb2JfaWQifX0=--9f8ce5a514902f5db564448059e5a37d93b9683f/eyJfcmFpbHMiOnsiZGF0YSI6eyJmb3JtYXQiOiJqcGciLCJncmF2aXR5IjoiQ2VudGVyIiwicmVzaXplX3RvX2ZpbGwiOls4ODAsNTkwXX0sInB1ciI6InZhcmlhdGlvbiJ9fQ==--8ba21a1f014d91c43eb97f346a0dc62d26bd59b2/b9ef8af7-e214-4d53-91ae-ca2a1430fb16.jpg"
                       alt="Cachivaches Latin Market"
-                    />
+                    >
                   </div>
                 </div>
               </div>
@@ -343,7 +344,7 @@
                     src="https://lh3.googleusercontent.com/p/AF1QipOnHRVGtSd7_8Af8As_YkHsdkdFjAUCcXCFhQI3=s1360-w1360-h1020-rw"
                     style="object-fit: cover; height: 230px"
                     alt="Omnia Bistro"
-                  />
+                  >
                   <figcaption
                     class="d-flex align-items-center justify-content-center position-absolute"
                   >
@@ -357,7 +358,6 @@
                 data-bs-backdrop="static"
                 data-bs-keyboard="false"
                 tabindex="-1"
-                aria-labelledby="staticBackdropLabel"
                 aria-hidden="true"
               >
                 <div class="modal-dialog modal-lg rounded">
@@ -394,7 +394,7 @@
                           class="img-fluid w-100 modal-img"
                           style="height: 200px; object-fit: cover"
                           alt="Omnia Bistro interior"
-                        />
+                        >
                         <div class="position-absolute bottom-0 end-0 m-3">
                           <span
                             class="badge bg-dark text-gold px-3 py-2"
@@ -449,7 +449,8 @@
                             <img
                               class="w-100 modal-img"
                               src="https://images.squarespace-cdn.com/content/v1/6523590623c7df2f33417a5d/3584447f-18a0-44be-b754-e43b0afdb3b9/OMNIA-2021-HWANG-173.JPG?format=2500w"
-                            />
+                              alt="OMNIA restaurant"
+                            >
                           </div>
                           <div>
                             <p class="small text-muted mb-0">
@@ -505,7 +506,7 @@
                     src="https://lh3.googleusercontent.com/p/AF1QipMlMnapsxcNomvs7Z1d-inn_hISJ87OnIe67Phh=s1360-w1360-h1020-rw"
                     style="object-fit: cover; height: 230px"
                     alt="Farmer's Daughter"
-                  />
+                  >
                   <figcaption
                     class="d-flex align-items-center justify-content-center position-absolute"
                   >
@@ -519,7 +520,6 @@
                 data-bs-backdrop="static"
                 data-bs-keyboard="false"
                 tabindex="-1"
-                aria-labelledby="staticBackdropLabel"
                 aria-hidden="true"
               >
                 <div class="modal-dialog modal-lg">
@@ -567,7 +567,7 @@
                           class="img-fluid w-100 modal-img"
                           style="height: 200px; object-fit: cover"
                           alt="Farmer's Daughters restaurant"
-                        />
+                        >
                         <div class="position-absolute bottom-0 end-0 m-3">
                           <span
                             class="badge bg-white text-dark px-3 py-2"
@@ -632,7 +632,8 @@
                             <img
                               class="w-100 modal-img"
                               src="https://images.squarespace-cdn.com/content/v1/5e3cdc7ca5570830f0970220/1592370997070-LYXUGMFSR04RURGXGGAR/201801-Chefseries-088.jpg?format=750w"
-                            />
+                              alt="Alejandro Saravia"
+                            >
                           </div>
                           <div>
                             <p class="small text-muted mb-0">Executive Chef</p>
@@ -688,7 +689,7 @@
                     src="https://media.timeout.com/images/105278097/750/422/image.jpg"
                     style="object-fit: cover; height: 230px"
                     alt="Cumulus Inc."
-                  />
+                  >
                   <figcaption
                     class="d-flex align-items-center justify-content-center position-absolute"
                   >
@@ -696,7 +697,8 @@
                       class="modal-img"
                       style="width: 120px"
                       src="https://images.squarespace-cdn.com/content/v1/5ea8e1f8abe1676d79f292ab/2bf573ce-8ad4-4aa0-a239-b836a7732008/CumulusInc_Logo.png?format=1500w"
-                    />
+                      alt="CumulusInc_Logo"
+                    >
                   </figcaption>
                 </figure>
               </a>
@@ -706,7 +708,6 @@
                 data-bs-backdrop="static"
                 data-bs-keyboard="false"
                 tabindex="-1"
-                aria-labelledby="staticBackdropLabel"
                 aria-hidden="true"
               >
                 <div class="modal-dialog modal-lg">
@@ -750,7 +751,7 @@
                           class="img-fluid w-100 modal-img"
                           style="height: 200px; object-fit: cover"
                           alt="Cumulusinc"
-                        />
+                        >
                         <div class="position-absolute bottom-0 end-0 m-3">
                           <span
                             class="badge bg-dark text-white px-3 py-2"
@@ -808,7 +809,8 @@
                             <img
                               class="w-100 modal-img"
                               src="https://media1.agfg.com.au/images/chefs/168/hero-300.jpg"
-                            />
+                              alt="Andrew McConnell"
+                            >
                           </div>
                           <div>
                             <p class="small text-muted mb-0">Executive Chef</p>
@@ -864,7 +866,7 @@
                     src="https://lh3.googleusercontent.com/gps-cs-s/AC9h4nqldOQrC7bli6rdDNte9XIoPk-vHbVg3D6c3tMLng4bdHBqisBBXRTq0JGWdym_7ruLaRLljrafLxuavfVKBkh286gIL-g273ha2MOrIcryVpzzDNs6C3_rnmsK5r_T521nVGA5sw=s1360-w1360-h1020-rw"
                     style="object-fit: cover; height: 230px"
                     alt="Rice Paper Scissors"
-                  />
+                  >
                   <figcaption
                     class="d-flex align-items-center justify-content-center position-absolute"
                   >
@@ -872,7 +874,8 @@
                       class="modal-img"
                       style="width: 100px"
                       src="https://ricepaperscissors.com.au/wp-content/uploads/2024/08/LOGO-rps-white@2x.png"
-                    />
+                      alt="Rice Paper Scissors"
+                    >
                   </figcaption>
                 </figure>
               </a>
@@ -882,7 +885,6 @@
                 data-bs-backdrop="static"
                 data-bs-keyboard="false"
                 tabindex="-1"
-                aria-labelledby="staticBackdropLabel"
                 aria-hidden="true"
               >
                 <div class="modal-dialog modal-lg">
@@ -927,7 +929,7 @@
                           class="img-fluid w-100 modal-img"
                           style="height: 200px; object-fit: cover"
                           alt="Farmer's Daughters restaurant"
-                        />
+                        >
                         <div class="position-absolute bottom-0 end-0 m-3">
                           <span
                             class="badge bg-white text-dark px-3 py-2"
@@ -993,7 +995,8 @@
                             <img
                               class="w-100 modal-img"
                               src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRO5g6prWtNRbpC3gRLyTULX5qJGfxqm6jW6w&s"
-                            />
+                              alt="Noah Crowcroft"
+                            >
                           </div>
                           <div>
                             <p class="small text-muted mb-0">Executive Chef</p>
@@ -1044,9 +1047,9 @@
                   <img
                     class="img-fluid w-100"
                     src="https://assets-au-01.kc-usercontent.com/fbb47826-c8ea-0217-55d4-9e4d47596d5a/57e3a61e-a4a1-4e75-9631-8f6713fb2952/Nomad_sydney.webp"
-                    style="object-fit: covert; height: 230px"
+                    style="object-fit: cover; height: 230px"
                     alt="NOMAD"
-                  />
+                  >
                   <figcaption
                     class="d-flex align-items-center justify-content-center position-absolute"
                   >
@@ -1061,7 +1064,6 @@
                 data-bs-backdrop="static"
                 data-bs-keyboard="false"
                 tabindex="-1"
-                aria-labelledby="staticBackdropLabel"
                 aria-hidden="true"
               >
                 <div class="modal-dialog modal-lg">
@@ -1106,7 +1108,7 @@
                           class="img-fluid w-100 modal-img"
                           style="height: 200px; object-fit: cover"
                           alt="NOMAD"
-                        />
+                        >
                         <div class="position-absolute bottom-0 end-0 m-3">
                           <span
                             class="badge bg-white text-dark px-3 py-2"
@@ -1173,7 +1175,8 @@
                             <img
                               class="w-100 modal-img"
                               src="https://urbanvillage.com.au/wp-content/uploads/2020/03/Screen-Shot-2020-03-31-at-11.55.35-am-e1585616398287.png"
-                            />
+                              alt="Jacqui Challinor"
+                            >
                           </div>
                           <div>
                             <p class="small text-muted mb-0">Executive Chef</p>
@@ -1288,7 +1291,7 @@
             ></a>
           </div>
         </div>
-        <hr class="my-4 bg-white" />
+        <hr class="my-4 bg-white" >
         <p class="mb-0 text-center">
           &copy; 2025 LocalEats. All rights reserved.
         </p>
@@ -1347,5 +1350,16 @@
         }
       }
     </script>
+    <!-- W3C HTML Validation Icon -->
+    <p>
+      <a href="https://validator.w3.org/check?uri=referer">
+        <img
+          src="https://www.w3.org/Icons/valid-html401"
+          alt="Valid_HTML"
+          height="31"
+          width="88"
+        >
+      </a>
+    </p>
   </body>
 </html>
