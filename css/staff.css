@@ -1,8 +1,9 @@
 :root {
-        --main-color: #a96700;
-        --light-bg: #f8f9fa;
-        --highlight: #ffd58a;
-      }
+            --primary-color: #a96700;
+            --secondary-color: #ffffff;
+            --highlight-color: #ffd58a;
+            --light-bg: #f8f9fa;
+        }
 
       body {
         font-family: "Segoe UI", sans-serif;
@@ -75,21 +76,6 @@
         animation: fadeInUp 0.8s ease;
       }
 
-      .footer {
-        background-color: #333;
-        color: #fff;
-        padding: 2rem 0;
-      }
-
-      .footer a {
-        color: #ffd58a;
-        text-decoration: none;
-      }
-
-      .footer a:hover {
-        text-decoration: underline;
-      }
-
       @keyframes fadeInUp {
         from {
           opacity: 0;
@@ -154,3 +140,19 @@
       .custom-shape-divider-bottom-1634717805 .shape-fill {
         fill: #ffffff;
       }
+
+      footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 30px 0;
+            margin-top: 50px;
+        }
+        
+        .footer-links a {
+            color: var(--highlight-color);
+            text-decoration: none;
+        }
+        
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
