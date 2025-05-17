@@ -324,7 +324,7 @@
           });
         });
 
-        // Chạy nhạc khi trong trang web
+        // Run audio while in website
       const Songs = [
         "https://cdn.pixabay.com/audio/2025/05/14/audio_e9f2bbcb59.mp3",
         "https://cdn.pixabay.com/audio/2025/05/07/audio_a1597a48f8.mp3",
@@ -336,13 +336,13 @@
       ];
 
       const randomSong = Math.floor(Math.random() * Songs.length);
-      const audio = document.getElementById("player"); // Chọn 1 bài trong danh sách
-      audio.addEventListener("ended", function () { //Tự động chọn 1 bài bất kì rồi chạy tiếp
+      const audio = document.getElementById("player"); // Get audio element
+      audio.addEventListener("ended", function () { //Pick 1 random song then keep running
         audio.src = Songs[randomSong];
         audio.load();
         audio.play();
       });
-      function ToggleMusic() { //Nếu nhạc đang mở thì sẽ tắt và ngược lại
+      function ToggleMusic() { //If the music is open, it will turn off and vice versa
         if (audio.duration > 0 && !audio.paused) {
           audio.pause();
           document.getElementById("toggleMusic").innerHTML =
