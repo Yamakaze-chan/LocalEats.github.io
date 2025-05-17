@@ -1,22 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
     <title>Gallery | LocalEats</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
       rel="stylesheet"
-    />
+    >
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
+    >
     <link
       href="https://fonts.googleapis.com/css2?family=Playwrite+DK+Loopet:wght@100..400&display=swap"
       rel="stylesheet"
-    />
-    <link href="css/gallery.css" rel="stylesheet"/>
+    >
+    <link href="css/gallery.css" rel="stylesheet" >
   </head>
   <body>
     <header class="fixed-top page-header" style="background-color: #a96700">
@@ -81,25 +81,28 @@
                   >Reference</a
                 >
               </li>
-              <audio style="display: none" id="player" controls autoplay>
-                <source
-                  src="https://cdn.pixabay.com/audio/2025/05/07/audio_9f373f6a85.mp3"
-                  type="audio/mpeg"
-                />
-              </audio>
-              <button
-                class="nav-link text-white"
-                style="background: none; border: none"
-                onclick="ToggleMusic()"
-                id="toggleMusic"
-              >
-                <i class="fa-solid fa-pause"></i>
-              </button>
+
+              <li>
+                <button
+                  class="nav-link text-white"
+                  style="background: none; border: none"
+                  onclick="ToggleMusic()"
+                  id="toggleMusic"
+                >
+                  <i class="fa-solid fa-pause"></i>
+                </button>
+              </li>
             </ul>
           </div>
         </nav>
       </div>
     </header>
+    <audio style="display: none" id="player" controls autoplay>
+      <source
+        src="https://cdn.pixabay.com/audio/2025/05/07/audio_9f373f6a85.mp3"
+        type="audio/mpeg"
+      >
+    </audio>
 
     <!-- Hero Section -->
     <section class="hero-section text-center">
@@ -115,9 +118,10 @@
     <div class="container mb-5 fade-in">
       <h2 class="section-title">Photo Gallery</h2>
 
-      <div id="gallery_list" class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-
-      </div>
+      <div
+        id="gallery_list"
+        class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4"
+      ></div>
     </div>
 
     <!-- Lightbox Modal -->
@@ -141,9 +145,7 @@
               class="carousel slide"
               data-ride="carousel"
             >
-              <div class="carousel-inner">
-
-              </div>
+              <div class="carousel-inner"></div>
               <button
                 class="carousel-control-prev"
                 type="button"
@@ -204,7 +206,7 @@
             ></a>
           </div>
         </div>
-        <hr class="my-4 bg-white" />
+        <hr class="my-4 bg-white" >
         <p class="mb-0 text-center">
           &copy; 2025 LocalEats. All rights reserved.
         </p>
@@ -218,55 +220,57 @@
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
-          const imageData = [
-            {
-              img: "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nqm5GFi5Iu1QtF7gGtc8yWAE9zD9tnrWpqs3kIj1JHNpbZDM1UhLTssqg6cQm9KGde8xcWuVdxGxJ9Kad5QKaNlE4O_IPKcqEpiDtbOkxcGTc9jOYjW3o5bgJyh16thleBvnZOchQ=s1360-w1360-h1020-rw",
-              name: "Hochi Mama"
-            },
-            {
-                img: "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nqtVu4hJTAX7qsa86FudDp4IdvXkjLcuCK7aS367NqUszRJjXkzPSHqjXiTEoMabH6kMhEMhnuGzSBH86zJSQwpwOPuTHHaVT7LRl1Phe8eVZIBqwTAAYOXqVCM8mca89kAtTUPog=s1360-w1360-h1020-rw",
-                name: "NOMAD Melbourne"
-            },
-            {
-                img: "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nqg53XqGjOOpyuB6vRvbF07gZnQKhT2mJwZ2eqE1gluYQxFaWDbY1NMKGC2D2H_2ULIEQtpNrfpMGnAHdeJKXeRkLjfkaSJI5Wj16Lbv3vUHqZBAYQckVzjT_4v1qK36pgIgZTvkA=s1360-w1360-h1020-rw",
-                name: "NOMAD Melbourne"
-            },
-            {
-                img: "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nqCx5Q80a7ZFNVsnQPoZubUaUuXgjGzGbRA_UIZJ9HQ72_92OtGT1awd--6dV7ATOWZyvHQhdpRc17i7OlW5RDv4HC0k15FPc0Ij9TJ6CBHhQAC7XvvOj9ZoUom9Y5JrZimU7aj=s1360-w1360-h1020-rw",
-                name: "NOMAD Melbourne"
-            },
-            {
-                img: "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nrwYsduWpZCtorxXvoJ6FqczVf1DP3BC39dmOaT2_mOWZre9k3ZktKgt4al1LBX0WPjOAStyffd-gGnYqbgVi355DzlAucROXf5cHyw2_a2UaGs1FnZ7mXSPJrObU8EVv3Qks7chg=s1360-w1360-h1020-rw",
-                name: "NOMAD Melbourne"
-            },
-            {
-                img: "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nrThz7nH450TvFs9scoOkDFBs5Dc_07nkJfnwUblvcW8UnJS_9BB0HmfkytB9rso_ZGgXZ9ty6x_Y9GIRD-j_w9z6WpkEnmaLbN2rOy8aOsnaQGvAoa7JoU0sRsybX3KBLbv7d4=s1360-w1360-h1020-rw",
-                name: "NOMAD Melbourne"
-            },
-            {
-                img: "https://lh3.googleusercontent.com/gps-cs-s/AC9h4np4nB_4aueEA2xquyDGPX5HQgQTgMhWNF1ADreBhxcoQmPYSLqkOFdWUkkklIt_c6xibLB8HMTxnxRylSZpTmykanYzm0twjg5D2LOvn__kNrfTKRs8ueoJxbDcVl7dqCwombEb=s1360-w1360-h1020-rw",
-                name: "NOMAD Melbourne"
-            },
-            {
-                img: "https://lh3.googleusercontent.com/p/AF1QipPX2WM-qZz5iodoMq8OK8gjjaizBUKwasYv0yAp=s1360-w1360-h1020-rw",
-                name: "Hochi Mama"
-            },
-            {
-                img: "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nrq7mo-qsH2LfoMYg7dw6CM1PG9PZAi9WDuNpQWImq102QmpUXhi_3k11-vX830qNcVI_n7K2lmKK9qg2Z6N8EbXsRsWKhFkeRjMKFjCet_JjxHhlaqrQqs3GzHASZMrbknU5C3=s1360-w1360-h1020-rw",
-                name: "Hochi Mama"
-            },
-            {
-                img: "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nrKdG137WBlKE4ycYmXImm2YNOR-1VhQSpsc61vIO3OTcFEn25bvY6BtIxZ-QsJenWU-14TGknp8Whv6_W991o4OOC1ZH2EUCRP6alCSUlT56pln7CJeSqCl_t5htktdgKqWVmWBQ=s1360-w1360-h1020-rw",
-                name: "Hochi Mama"
-            }
-          ];
-        
-          const galleryList = document.getElementById("gallery_list");
-          const carouselInner = document.querySelector(".carousel-inner");
-            // Thêm ảnh
-          imageData.forEach((data, index) => {
-            galleryList.insertAdjacentHTML('beforeend', `
+      document.addEventListener("DOMContentLoaded", function () {
+        const imageData = [
+          {
+            img: "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nqm5GFi5Iu1QtF7gGtc8yWAE9zD9tnrWpqs3kIj1JHNpbZDM1UhLTssqg6cQm9KGde8xcWuVdxGxJ9Kad5QKaNlE4O_IPKcqEpiDtbOkxcGTc9jOYjW3o5bgJyh16thleBvnZOchQ=s1360-w1360-h1020-rw",
+            name: "Hochi Mama",
+          },
+          {
+            img: "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nqtVu4hJTAX7qsa86FudDp4IdvXkjLcuCK7aS367NqUszRJjXkzPSHqjXiTEoMabH6kMhEMhnuGzSBH86zJSQwpwOPuTHHaVT7LRl1Phe8eVZIBqwTAAYOXqVCM8mca89kAtTUPog=s1360-w1360-h1020-rw",
+            name: "NOMAD Melbourne",
+          },
+          {
+            img: "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nqg53XqGjOOpyuB6vRvbF07gZnQKhT2mJwZ2eqE1gluYQxFaWDbY1NMKGC2D2H_2ULIEQtpNrfpMGnAHdeJKXeRkLjfkaSJI5Wj16Lbv3vUHqZBAYQckVzjT_4v1qK36pgIgZTvkA=s1360-w1360-h1020-rw",
+            name: "NOMAD Melbourne",
+          },
+          {
+            img: "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nqCx5Q80a7ZFNVsnQPoZubUaUuXgjGzGbRA_UIZJ9HQ72_92OtGT1awd--6dV7ATOWZyvHQhdpRc17i7OlW5RDv4HC0k15FPc0Ij9TJ6CBHhQAC7XvvOj9ZoUom9Y5JrZimU7aj=s1360-w1360-h1020-rw",
+            name: "NOMAD Melbourne",
+          },
+          {
+            img: "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nrwYsduWpZCtorxXvoJ6FqczVf1DP3BC39dmOaT2_mOWZre9k3ZktKgt4al1LBX0WPjOAStyffd-gGnYqbgVi355DzlAucROXf5cHyw2_a2UaGs1FnZ7mXSPJrObU8EVv3Qks7chg=s1360-w1360-h1020-rw",
+            name: "NOMAD Melbourne",
+          },
+          {
+            img: "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nrThz7nH450TvFs9scoOkDFBs5Dc_07nkJfnwUblvcW8UnJS_9BB0HmfkytB9rso_ZGgXZ9ty6x_Y9GIRD-j_w9z6WpkEnmaLbN2rOy8aOsnaQGvAoa7JoU0sRsybX3KBLbv7d4=s1360-w1360-h1020-rw",
+            name: "NOMAD Melbourne",
+          },
+          {
+            img: "https://lh3.googleusercontent.com/gps-cs-s/AC9h4np4nB_4aueEA2xquyDGPX5HQgQTgMhWNF1ADreBhxcoQmPYSLqkOFdWUkkklIt_c6xibLB8HMTxnxRylSZpTmykanYzm0twjg5D2LOvn__kNrfTKRs8ueoJxbDcVl7dqCwombEb=s1360-w1360-h1020-rw",
+            name: "NOMAD Melbourne",
+          },
+          {
+            img: "https://lh3.googleusercontent.com/p/AF1QipPX2WM-qZz5iodoMq8OK8gjjaizBUKwasYv0yAp=s1360-w1360-h1020-rw",
+            name: "Hochi Mama",
+          },
+          {
+            img: "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nrq7mo-qsH2LfoMYg7dw6CM1PG9PZAi9WDuNpQWImq102QmpUXhi_3k11-vX830qNcVI_n7K2lmKK9qg2Z6N8EbXsRsWKhFkeRjMKFjCet_JjxHhlaqrQqs3GzHASZMrbknU5C3=s1360-w1360-h1020-rw",
+            name: "Hochi Mama",
+          },
+          {
+            img: "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nrKdG137WBlKE4ycYmXImm2YNOR-1VhQSpsc61vIO3OTcFEn25bvY6BtIxZ-QsJenWU-14TGknp8Whv6_W991o4OOC1ZH2EUCRP6alCSUlT56pln7CJeSqCl_t5htktdgKqWVmWBQ=s1360-w1360-h1020-rw",
+            name: "Hochi Mama",
+          },
+        ];
+
+        const galleryList = document.getElementById("gallery_list");
+        const carouselInner = document.querySelector(".carousel-inner");
+        // Thêm ảnh
+        imageData.forEach((data, index) => {
+          galleryList.insertAdjacentHTML(
+            "beforeend",
+            `
               <div class="col">
                 <a
                   href="${data.img}"
@@ -279,52 +283,56 @@
                     src="${data.img}"
                     alt="${data.name}"
                     class="img-fluid"
-                  />
+                  >
                 </a>
               </div>
-            `);
+            `
+          );
 
-            carouselInner.insertAdjacentHTML('beforeend', `
+          carouselInner.insertAdjacentHTML(
+            "beforeend",
+            `
               <div class="carousel-item ${index === 0 ? "active" : ""}">
                 <img
                   src="${data.img}"
                   class="d-block w-100 object-fit-contain"
                   alt="${data.name}"
-                />
+                >
                 <div class="carousel-caption d-block">
                   <h5>${data.name}</h5>
                 </div>
               </div>
-            `);
-          });
-        
-          const lightboxModal = document.getElementById("lightboxModal");
-          const carousel = document.querySelector("#lightboxCarousel");
-          const bsCarousel = new bootstrap.Carousel(carousel);
-          const bsModal = new bootstrap.Modal(lightboxModal);
-        
-          // Thêm click events
-          document.querySelectorAll(".gallery-item").forEach((item, index) => {
-            item.addEventListener("click", function (e) {
-              e.preventDefault();
-              bsCarousel.to(index);
-              bsModal.show();
-            });
-          });
-        
-          // Thêm nút nhấn
-          lightboxModal.addEventListener("keydown", function (e) {
-            if (e.key === "ArrowLeft") {
-              bsCarousel.prev();
-            } else if (e.key === "ArrowRight") {
-              bsCarousel.next();
-            } else if (e.key === "Escape") {
-              bsModal.hide();
-            }
+            `
+          );
+        });
+
+        const lightboxModal = document.getElementById("lightboxModal");
+        const carousel = document.querySelector("#lightboxCarousel");
+        const bsCarousel = new bootstrap.Carousel(carousel);
+        const bsModal = new bootstrap.Modal(lightboxModal);
+
+        // Thêm click events
+        document.querySelectorAll(".gallery-item").forEach((item, index) => {
+          item.addEventListener("click", function (e) {
+            e.preventDefault();
+            bsCarousel.to(index);
+            bsModal.show();
           });
         });
 
-        // Run audio while in website
+        // Thêm nút nhấn
+        lightboxModal.addEventListener("keydown", function (e) {
+          if (e.key === "ArrowLeft") {
+            bsCarousel.prev();
+          } else if (e.key === "ArrowRight") {
+            bsCarousel.next();
+          } else if (e.key === "Escape") {
+            bsModal.hide();
+          }
+        });
+      });
+
+      // Run audio while in website
       const Songs = [
         "https://cdn.pixabay.com/audio/2025/05/14/audio_e9f2bbcb59.mp3",
         "https://cdn.pixabay.com/audio/2025/05/07/audio_a1597a48f8.mp3",
@@ -337,12 +345,14 @@
 
       const randomSong = Math.floor(Math.random() * Songs.length);
       const audio = document.getElementById("player"); // Get audio element
-      audio.addEventListener("ended", function () { //Pick 1 random song then keep running
+      audio.addEventListener("ended", function () {
+        //Pick 1 random song then keep running
         audio.src = Songs[randomSong];
         audio.load();
         audio.play();
       });
-      function ToggleMusic() { //If the music is open, it will turn off and vice versa
+      function ToggleMusic() {
+        //If the music is open, it will turn off and vice versa
         if (audio.duration > 0 && !audio.paused) {
           audio.pause();
           document.getElementById("toggleMusic").innerHTML =
@@ -353,7 +363,6 @@
             '<i class="fa-solid fa-pause"></i>';
         }
       }
-        </script>
-        
+    </script>
   </body>
 </html>
