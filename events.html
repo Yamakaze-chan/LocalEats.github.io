@@ -11,155 +11,7 @@
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Playwrite+DK+Loopet:wght@100..400&display=swap" rel="stylesheet">
     <!-- Custom CSS -->
-    <style>
-        :root {
-            --primary-color: #a96700;
-            --secondary-color: #ffffff;
-            --highlight-color: #ffd58a;
-            --light-bg: #f8f9fa;
-        }
-        
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: var(--light-bg);
-        }
-        
-        .navbar {
-            background-color: var(--primary-color);
-            padding: 1rem 0;
-        }
-        
-        .navbar-brand, .nav-link {
-            color: var(--secondary-color) !important;
-        }
-        
-        .navbar-brand {
-            font-family: 'Playwrite DK Loopet', cursive;
-        }
-        
-        .btn-primary {
-            background-color: var(--primary-color);
-            border-color: var(--primary-color);
-        }
-        
-        .hero-section {
-            background: linear-gradient(rgba(169, 103, 0, 0.8), rgba(169, 103, 0, 0.8)), 
-                        url('https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
-            background-size: cover;
-            background-position: center;
-            color: white;
-            padding: 100px 0;
-            margin-bottom: 40px;
-        }
-        
-        .event-card {
-            border: none;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-            overflow: hidden;
-            height: 100%;
-        }
-        
-        .event-card:hover {
-            transform: translateY(-5px);
-        }
-        
-        .event-img {
-            height: 200px;
-            object-fit: cover;
-        }
-        
-        .event-icon {
-            font-size: 2rem;
-            color: var(--primary-color);
-            margin-bottom: 15px;
-        }
-        
-        .section-title {
-            font-family: 'Playwrite DK Loopet', cursive;
-            color: var(--primary-color);
-            margin-bottom: 30px;
-            position: relative;
-            text-align: center;
-        }
-        
-        .section-title:after {
-            content: '';
-            display: block;
-            width: 80px;
-            height: 4px;
-            background-color: var(--highlight-color);
-            margin: 15px auto 0;
-        }
-        
-        .event-feature {
-            background-color: white;
-            border-radius: 10px;
-            padding: 30px;
-            margin-bottom: 30px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-        
-        .event-badge {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            background-color: var(--primary-color);
-            color: white;
-            padding: 5px 10px;
-            border-radius: 5px;
-            font-size: 0.8rem;
-        }
-        
-        footer {
-            background-color: var(--primary-color);
-            color: white;
-            padding: 30px 0;
-            margin-top: 50px;
-        }
-        
-        .footer-links a {
-            color: var(--highlight-color);
-            text-decoration: none;
-        }
-        
-        .footer-links a:hover {
-            text-decoration: underline;
-        }
-        
-        .timeline {
-            position: relative;
-            padding-left: 45px;
-        }
-        
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 15px;
-            top: 0;
-            bottom: 0;
-            width: 2px;
-            background-color: var(--primary-color);
-        }
-        
-        .timeline-item {
-            position: relative;
-            margin-bottom: 30px;
-        }
-        
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: -35px;
-            top: 5px;
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            background-color: var(--primary-color);
-            border: 3px solid var(--highlight-color);
-        }
-    </style>
+    <link href="css/events.css" ref="stylesheet"/>
 </head>
 <body>
     <header class="fixed-top page-header" style="background-color: #a96700;">
@@ -219,6 +71,20 @@
                 <li class="nav-item">
                   <a class="nav-link text-white" href="reference.html">Reference</a>
                 </li>
+                <audio style="display: none" id="player" controls autoplay>
+                <source
+                  src="https://www.myinstants.com/media/sounds/gawr-gura-a.mp3"
+                  type="audio/mpeg"
+                />
+              </audio>
+              <button
+                class="nav-link text-white"
+                style="background: none; border: none"
+                onclick="ToggleMusic()"
+                id="toggleMusic"
+              >
+                <i class="fa-solid fa-pause"></i>
+              </button>
               </ul>
             </div>
           </nav>
@@ -238,64 +104,9 @@
         <div class="event-feature">
             <h2 class="section-title">Upcoming Events</h2>
             <p class="text-center mb-5">From corporate gatherings to intimate celebrations, we create memorable experiences with our exceptional event services.</p>
-            
+            <!-- Add events place -->
             <div class="row row-cols-1 row-cols-md-3 g-4" id="upcoming_events">
-                <div class="col">
-                    <div class="event-card h-100">
-                        <div class="position-relative">
-                            <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" class="event-img" alt="Concert">
-                            <div class="event-badge">Featured</div>
-                        </div>
-                        <div class="card-body text-center">
-                            <div class="event-icon">
-                                <i class="fas fa-music"></i>
-                            </div>
-                            <h3 class="h4 mb-3">Live Music Nights</h3>
-                            <p class="mb-4">Every Friday night featuring local bands and artists with drink specials and share plates.</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <span class="text-muted"><i class="fas fa-calendar-day me-2"></i>Jun 15, 2023</span>
-                                <a href="#" class="btn btn-sm btn-primary">Details</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col">
-                    <div class="event-card h-100">
-                        <div class="position-relative">
-                            <img src="https://images.unsplash.com/photo-1527525443983-6e60c75fff46?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" class="event-img" alt="Wine Tasting">
-                            <div class="event-badge">New</div>
-                        </div>
-                        <div class="card-body text-center">
-                            <div class="event-icon">
-                                <i class="fas fa-wine-glass-alt"></i>
-                            </div>
-                            <h3 class="h4 mb-3">Wine Tasting Evening</h3>
-                            <p class="mb-4">Experience premium local wines paired with artisan cheeses and small plates.</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <span class="text-muted"><i class="fas fa-calendar-day me-2"></i>Jun 22, 2023</span>
-                                <a href="#" class="btn btn-sm btn-primary">Details</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col">
-                    <div class="event-card h-100">
-                        <img src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" class="event-img" alt="Corporate Event">
-                        <div class="card-body text-center">
-                            <div class="event-icon">
-                                <i class="fas fa-briefcase"></i>
-                            </div>
-                            <h3 class="h4 mb-3">Corporate Mixer</h3>
-                            <p class="mb-4">Networking event with premium catering options and dedicated service staff.</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <span class="text-muted"><i class="fas fa-calendar-day me-2"></i>Jun 29, 2023</span>
-                                <a href="#" class="btn btn-sm btn-primary">Details</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+
             </div>
         </div>
         
@@ -317,7 +128,7 @@
                             <p>Romantic settings and customized menus to celebrate your love story.</p>
                         </div>
                     </div>
-                    <a href="#" class="btn btn-primary mt-3">Request Information</a>
+                    <a href="contact.html" class="btn btn-primary mt-3">To Contact Page <i class="fa-solid fa-arrow-right"></i></a>
                 </div>
             </div>
             
@@ -326,19 +137,19 @@
                     <h2 class="section-title">Corporate Events</h2>
                     <ul class="list-unstyled">
                         <li class="mb-3">
-                            <h5><i class="fas fa-chart-line text-primary me-2"></i> Business Meetings</h5>
+                            <h5><i class="fas fa-chart-line" style="color:#a96700"></i> Business Meetings</h5>
                             <p>Professional settings with AV equipment and catering services.</p>
                         </li>
                         <li class="mb-3">
-                            <h5><i class="fas fa-users text-primary me-2"></i> Team Building</h5>
+                            <h5><i class="fas fa-users" style="color:#a96700"></i> Team Building</h5>
                             <p>Customized activities and menus to foster team connection.</p>
                         </li>
                         <li class="mb-3">
-                            <h5><i class="fas fa-glass-cheers text-primary me-2"></i> Product Launches</h5>
+                            <h5><i class="fas fa-glass-cheers" style="color:#a96700"></i> Product Launches</h5>
                             <p>Make a splash with our event production services.</p>
                         </li>
                     </ul>
-                    <a href="services.html" class="btn btn-outline-primary mt-3">
+                    <a href="services.html" class="btn mt-3" style="color:#a96700">
                         <i class="fas fa-arrow-left me-2"></i> Back to All Services
                     </a>
                 </div>
@@ -380,21 +191,37 @@
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <Script>
+    <script>
         const upcomingEventsData = [
             {
-                name: "abcd",
-                description: "abcdjakldcjnakclaiwjiclncmwoahfcoikn",
-                date: "abcde",
-                link: "#",
-                img: "",
-                icon: "fa-music"
+                name: "Winter Night Market",
+                description: "Wrap up warm and embrace the winter chill as the Market’s sheds and laneways come alive with the inviting aromas of delicious food; the sounds of live, local musicians; and the vivid spectacle of quirky roving performers, promising a fun and not-to-be-missed night for all.",
+                date: "4 Jun - 27 Aug, 2025",
+                link: "https://whatson.melbourne.vic.gov.au/things-to-do/winter-night-market",
+                img: "https://whatson.melbourne.vic.gov.au/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsiZGF0YSI6IjE3NjZlNzU5LTIzMjYtNGNkZi1hYzVhLWViMDQ0ZmExYjc3NSIsInB1ciI6ImJsb2JfaWQifX0=--5cb6e0a3eb7cd8c9e89cbf8ee61fa65f797fc33f/eyJfcmFpbHMiOnsiZGF0YSI6eyJmb3JtYXQiOiJqcGciLCJncmF2aXR5IjoiQ2VudGVyIiwicmVzaXplX3RvX2ZpbGwiOls4ODAsNTkwXX0sInB1ciI6InZhcmlhdGlvbiJ9fQ==--8ba21a1f014d91c43eb97f346a0dc62d26bd59b2/08f90fa2-3bbc-45e9-a7f7-ac0d399cfeca.jpg",
+                icon: "fa-calendar-day me-2"
+            },
+            {
+                name: "Art, History, Food and Wine Walking Tour",
+                description: "Weave through a labyrinth of art-filled laneways in Melbourne’s heart, and hear curious tales from the city's fascinating history.You’ll have the opportunity to capture the quirk, creativity and beauty of this grand city, and discover wine bars you can return to.",
+                date: "Until 7 Jul, 2025",
+                link: "https://whatson.melbourne.vic.gov.au/things-to-do/art-history-food-and-wine-walking-tour",
+                img: "https://whatson.melbourne.vic.gov.au/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsiZGF0YSI6IjgxY2Y0YTJkLTc1ZTktNGQxZi05Nzc5LWUzZDQwZWIwOTNhNCIsInB1ciI6ImJsb2JfaWQifX0=--7601ef582626acb252bfbf1d3ac55c8130fc1824/eyJfcmFpbHMiOnsiZGF0YSI6eyJmb3JtYXQiOiJqcGciLCJncmF2aXR5IjoiQ2VudGVyIiwicmVzaXplX3RvX2ZpbGwiOls4ODAsNTkwXX0sInB1ciI6InZhcmlhdGlvbiJ9fQ==--8ba21a1f014d91c43eb97f346a0dc62d26bd59b2/08fc7d31-f7c3-4e43-acd2-25626c0ff9ae.jpg",
+                icon: "fa-wine-glass-alt"
+            },
+            {
+                name: "Asian Comedy Showcase",
+                description: "A funny, fearless and proudly Asian comedy lineup show featuring a rotating lineup of comedy festival favourites and rising stars.Expect big laughs, bold perspectives, and fresh jokes – this is a celebration of cultural comedy, clever storytelling, and laugh-out-loud punchlines.",
+                date: "23 May - 14 Jun, 2025",
+                link: "https://whatson.melbourne.vic.gov.au/things-to-do/asian-comedy-showcase-2025",
+                img: "https://whatson.melbourne.vic.gov.au/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsiZGF0YSI6IjViMDUwMGQ4LWFiMDMtNGExNy1iN2FjLWNjMWYzNzkwNzNiOSIsInB1ciI6ImJsb2JfaWQifX0=--9acfa9cb0b35c0d90f241a631e57dbd0ea257b9c/eyJfcmFpbHMiOnsiZGF0YSI6eyJmb3JtYXQiOiJqcGciLCJncmF2aXR5IjoiQ2VudGVyIiwicmVzaXplX3RvX2ZpbGwiOls4ODAsNTkwXX0sInB1ciI6InZhcmlhdGlvbiJ9fQ==--8ba21a1f014d91c43eb97f346a0dc62d26bd59b2/361db623-6661-4dea-8a1a-9c3548f61ee5.jpg",
+                icon: "fa-calendar-day me-2"
             }
         ]
         upcomingEventsData.forEach((data) => {
             document.getElementById("upcoming_events").innerHTML += (`
             <div class="col">
-                <div class="event-card h-100">
+                <div class="event-card card h-100">
                     <div class="position-relative">
                         <img src=${data.img} class="event-img" alt=${data.name}>
                     </div>
@@ -404,15 +231,47 @@
                         </div>
                         <h3 class="h4 mb-3">${data.name}</h3>
                         <p class="mb-4">${data.description}</p>
-                        <div class="d-flex justify-content-between align-items-center">
+                    </div>
+                    <div class="card-footer d-flex justify-content-between align-items-center">
                             <span class="text-muted"><i class="fas fa-calendar-day me-2"></i>${data.date}</span>
                             <a href=${data.link} class="btn btn-sm btn-primary">Details</a>
                         </div>
-                    </div>
                 </div>
             </div>
             `)
         })
-    </Script>
+
+        // Run audio while in website
+    const Songs = [
+      "https://cdn.pixabay.com/audio/2025/05/14/audio_e9f2bbcb59.mp3",
+      "https://cdn.pixabay.com/audio/2025/05/07/audio_a1597a48f8.mp3",
+      "https://cdn.pixabay.com/audio/2023/08/31/audio_d2149da47a.mp3",
+      "https://cdn.pixabay.com/audio/2025/05/07/audio_9f373f6a85.mp3",
+      "https://cdn.pixabay.com/audio/2025/04/29/audio_9315580407.mp3",
+      "https://cdn.pixabay.com/audio/2025/04/30/audio_da480a66c8.mp3",
+      "https://cdn.pixabay.com/audio/2025/04/25/audio_b5d007e8d9.mp3",
+    ];
+
+    const randomSong = Math.floor(Math.random() * Songs.length);
+    const audio = document.getElementById("player"); // Get audio element
+    audio.addEventListener("ended", function () {
+      //Pick 1 random song then keep running
+      audio.src = Songs[randomSong];
+      audio.load();
+      audio.play();
+    });
+    function ToggleMusic() {
+      //If the music is open, it will turn off and vice versa
+      if (audio.duration > 0 && !audio.paused) {
+        audio.pause();
+        document.getElementById("toggleMusic").innerHTML =
+          '<i class="fa-solid fa-play"></i>';
+      } else {
+        audio.play();
+        document.getElementById("toggleMusic").innerHTML =
+          '<i class="fa-solid fa-pause"></i>';
+      }
+    }
+    </script>
 </body>
 </html>
