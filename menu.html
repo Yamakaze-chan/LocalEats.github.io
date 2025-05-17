@@ -1,396 +1,306 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Menus - LocalEats</title>
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playwrite+DK+Loopet:wght@100..400&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --primary-color: #a96700;
-            --secondary-color: #ffffff;
-        }
-        
-        body {
-            background-color: #f8f9fa;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        
-        .navbar {
-            background-color: var(--primary-color);
-        }
-        
-        .navbar-brand, .nav-link {
-            color: var(--secondary-color) !important;
-        }
-        
-        .btn-primary {
-            background-color: var(--primary-color);
-            border-color: var(--primary-color);
-        }
-        
-        .btn-outline-primary {
-            color: var(--primary-color);
-            border-color: var(--primary-color);
-        }
-        
-        .btn-outline-primary:hover {
-            background-color: var(--primary-color);
-            color: white;
-        }
-        
-        .restaurant-card {
-            border-left: 4px solid var(--primary-color);
-            transition: transform 0.3s;
-            margin-bottom: 25px;
-        }
-        
-        .restaurant-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-        }
-        
-        .restaurant-header {
-            background-color: white;
-            padding: 15px;
-            border-bottom: 1px solid #eee;
-            position: relative;
-        }
-        
-        .restaurant-name {
-            color: var(--primary-color);
-            font-weight: 600;
-            margin-bottom: 5px;
-            font-size: 3rem;
-        }
-        
-        .restaurant-cuisine {
-            color: #6c757d;
-            font-size: 0.9rem;
-        }
-        
-        .restaurant-rating {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            background-color: var(--primary-color);
-            color: white;
-            padding: 3px 8px;
-            border-radius: 4px;
-            font-size: 0.85rem;
-        }
-        
-        .menu-category {
-            margin-top: 20px;
-            padding-bottom: 10px;
-            border-bottom: 2px dashed var(--primary-color);
-        }
-        
-        .menu-item {
-            display: flex;
-            justify-content: space-between;
-            padding: 8px 0;
-            border-bottom: 1px solid #eee;
-        }
-        
-        .menu-item:last-child {
-            border-bottom: none;
-        }
-        
-        .item-name {
-            font-weight: 500;
-            margin-bottom: 5px;
-            margin-right: 10px;
-        }
-        
-        .item-description {
-            color: #6c757d;
-            font-size: 0.9rem;
-            margin-bottom: 8px;
-        }
-        
-        .item-price {
-            font-weight: 600;
-            color: var(--primary-color);
-        }
-        
-        .veg-icon {
-            color: #28a745;
-            margin-right: 5px;
-        }
-        
-        .spicy-icon {
-            color: #dc3545;
-            margin-right: 5px;
-        }
-        
-        .filter-btn.active {
-            background-color: var(--primary-color);
-            border-color: var(--primary-color);
-            color: white;
-        }
-
-        .page-header {
-            background-color: #a96700;
-        }
-
-        .navbar {
-            background-color: var(--main-color);
-            padding: 1rem 0;
-        }
-
-        .navbar-brand {
-            font-family: 'Playwrite DK Loopet', cursive;
-        }
-
-        .section-title {
-            font-size: 2.2rem;
-            font-weight: bold;
-            color: var(--main-color);
-            margin-bottom: 1rem;
-            text-align: center;
-            font-family: "Playwrite DK Loopet", cursive;
-            font-optical-sizing: auto;
-            font-weight: bold;
-            font-style: normal;
-        }
-        
-        .hero-section {
-            background: linear-gradient(rgba(169, 103, 0, 0.8), rgba(169, 103, 0, 0.8)), 
-                        url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
-            background-size: cover;
-            background-position: center;
-            color: white;
-            padding: 100px 0;
-            margin-bottom: 40px;
-        }
-        
-        footer {
-            background-color: var(--primary-color);
-            color: white;
-            padding: 30px 0;
-            margin-top: 50px;
-        }
-        
-        /* Responsive adjustments */
-        @media (max-width: 767.98px) {
-            .restaurant-rating {
-                position: static;
-                display: inline-block;
-                margin-top: 5px;
-            }
-            
-            .hero-section {
-                padding: 60px 0;
-            }
-        }
-    </style>
-</head>
-<body>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playwrite+DK+Loopet:wght@100..400&display=swap"
+      rel="stylesheet"
+    />
+    <link href="css/menu.css" rel="stylesheet"/>
+  </head>
+  <body>
     <header class="fixed-top page-header">
-        <div class="container-fluid container-fluid-max">
-          <nav id="navbar" class="navbar navbar-expand-lg navbar-dark">
-            <a class="navbar-brand" href="#"
-              ><i class="fa-solid fa-utensils" style="margin-right: 10px"></i
-              >LocalEats</a
-            >
-            <button
-              class="navbar-toggler"
-              type="button"
-              data-toggle="collapse"
-              data-target="#navbarNav"
-              aria-controls="navbarNav"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
-            >
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div
-              class="collapse navbar-collapse justify-content-lg-end"
-              id="navbarNav"
-            >
-              <ul class="navbar-nav">
-                <li class="nav-item">
-                  <a class="nav-link text-white" href="index.html">Homepage</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link text-white" href="about.html">About us</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link text-white" href="services.html"
-                    >Services</a
-                  >
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link text-white" href="gallery.html">Gallery</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link text-white" href="job.html">Jobs</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link text-white" href="staff.html">Staff</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link text-white" href="bar.html">Bar</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link text-white" href="#">Menu</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link text-white" href="booking.html"
-                    >Tour Booking</a
-                  >
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link text-white" href="contact.html">Contact</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link text-white" href="reference.html"
-                    >Reference</a
-                  >
-                </li>
-              </ul>
-            </div>
-          </nav>
-        </div>
-      </header>
+      <div class="container-fluid container-fluid-max">
+        <nav id="navbar" class="navbar navbar-expand-lg navbar-dark">
+          <a class="navbar-brand" href="#"
+            ><i class="fa-solid fa-utensils" style="margin-right: 10px"></i
+            >LocalEats</a
+          >
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div
+            class="collapse navbar-collapse justify-content-lg-end"
+            id="navbarNav"
+          >
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link text-white" href="index.html">Homepage</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="about.html">About us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="services.html">Services</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="gallery.html">Gallery</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="job.html">Jobs</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="staff.html">Staff</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="bar.html">Bar</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="#">Menu</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="booking.html"
+                  >Tour Booking</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="contact.html">Contact</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="reference.html"
+                  >Reference</a
+                >
+              </li>
+              <audio style="display: none" id="player" controls autoplay>
+                <source
+                  src="https://www.myinstants.com/media/sounds/gawr-gura-a.mp3"
+                  type="audio/mpeg"
+                />
+              </audio>
+              <button
+                class="nav-link text-white"
+                style="background: none; border: none"
+                onclick="ToggleMusic()"
+                id="toggleMusic"
+              >
+                <i class="fa-solid fa-pause"></i>
+              </button>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </header>
 
     <section class="hero-section" style="margin-top: 72px">
-        <div class="container text-center">
-            <h1 class="display-5 fw-bold mb-3">Discover menus of retaurants in Melbourne</h1>
-            <p class="lead mb-4">Find your perfect meal with our curated list of top restaurants</p>
-        </div>
+      <div class="container text-center">
+        <h1 class="display-5 fw-bold mb-3">
+          Discover menus of retaurants in Melbourne
+        </h1>
+        <p class="lead mb-4">
+          Find your perfect meal with our curated list of top restaurants
+        </p>
+      </div>
     </section>
 
     <div class="container">
-        <div class="row mb-4">
-            <div class="col-12">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title"><i class="fas fa-filter me-2"></i>Filter Options</h5>
-                        <div class="d-flex flex-wrap gap-2">
-                            <button class="btn btn-outline-primary filter-btn active" data-cuisine="all">All</button>
-                            <button class="btn btn-outline-primary filter-btn" data-cuisine="european"><i class="fa-solid fa-euro-sign"></i> European</button>
-                            <button class="btn btn-outline-primary filter-btn" data-cuisine="asia"><i class="fa-solid fa-bowl-food"></i> Asian</button>
-                            <button class="btn btn-outline-primary filter-btn" data-cuisine="middle east"><i class="fa-solid fa-bowl-food"></i> Middle East</button>
-                        </div>
-                    </div>
-                </div>
+      <div class="row mb-4">
+        <div class="col-12">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">
+                <i class="fas fa-filter me-2"></i>Filter Options
+              </h5>
+              <div class="d-flex flex-wrap gap-2">
+                <button
+                  class="btn btn-outline-primary filter-btn active"
+                  data-cuisine="all"
+                >
+                  All
+                </button>
+                <button
+                  class="btn btn-outline-primary filter-btn"
+                  data-cuisine="european"
+                >
+                  <i class="fa-solid fa-euro-sign"></i> European
+                </button>
+                <button
+                  class="btn btn-outline-primary filter-btn"
+                  data-cuisine="asia"
+                >
+                  <i class="fa-solid fa-bowl-food"></i> Asian
+                </button>
+                <button
+                  class="btn btn-outline-primary filter-btn"
+                  data-cuisine="middle east"
+                >
+                  <i class="fa-solid fa-bowl-food"></i> Middle East
+                </button>
+              </div>
             </div>
+          </div>
         </div>
-
-        <div class="container" id="menu_list">
-            
-        </div>
+      </div>
+      <!-- All the menu will be add here -->
+      <div class="container" id="menu_list"></div>
     </div>
 
     <footer class="text-center">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4 mb-4 mb-md-0">
-                    <h5><i class="fas fa-utensils me-2"></i>MenuFinder</h5>
-                    <p>Discover the best restaurant menus in your area</p>
-                </div>
-                <div class="col-md-4 mb-4 mb-md-0">
-                    <h5>Quick Links</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="#" class="text-white">Home</a></li>
-                        <li><a href="#" class="text-white">Restaurants</a></li>
-                        <li><a href="#" class="text-white">About Us</a></li>
-                        <li><a href="#" class="text-white">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-4">
-                    <h5>Connect With Us</h5>
-                    <a href="#" class="text-white me-3"><i class="fab fa-facebook-f fa-lg"></i></a>
-                    <a href="#" class="text-white me-3"><i class="fab fa-instagram fa-lg"></i></a>
-                    <a href="#" class="text-white me-3"><i class="fab fa-twitter fa-lg"></i></a>
-                </div>
-            </div>
-            <hr class="my-4 bg-white">
-            <p class="mb-0">&copy; 2023 MenuFinder. All rights reserved.</p>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 mb-4 mb-md-0">
+            <h5><i class="fas fa-utensils me-2"></i>MenuFinder</h5>
+            <p>Discover the best restaurant menus in your area</p>
+          </div>
+          <div class="col-md-4 mb-4 mb-md-0">
+            <h5>Quick Links</h5>
+            <ul class="list-unstyled">
+              <li><a href="#" class="text-white">Home</a></li>
+              <li><a href="#" class="text-white">Restaurants</a></li>
+              <li><a href="#" class="text-white">About Us</a></li>
+              <li><a href="#" class="text-white">Contact</a></li>
+            </ul>
+          </div>
+          <div class="col-md-4">
+            <h5>Connect With Us</h5>
+            <a href="#" class="text-white me-3"
+              ><i class="fab fa-facebook-f fa-lg"></i
+            ></a>
+            <a href="#" class="text-white me-3"
+              ><i class="fab fa-instagram fa-lg"></i
+            ></a>
+            <a href="#" class="text-white me-3"
+              ><i class="fab fa-twitter fa-lg"></i
+            ></a>
+          </div>
         </div>
+        <hr class="my-4 bg-white" />
+        <p class="mb-0">&copy; 2023 MenuFinder. All rights reserved.</p>
+      </div>
     </footer>
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
     <script>
-        const menuData = [
+      // Menu data
+      const menuData = [
+        {
+          name: "OMNIA Bistro",
+          cuisine: "European restaurant",
+          rating: 4.9,
+          main: [
             {
-                name: "OMNIA Bistro",
-                cuisine: "European restaurant",
-                rating: 4.9,
-                main: [
-                    {dish: "Murray cod, cauliflower puree, golden raisin, caper leaves", price: "60"},
-                    {dish: "Goats curd agnolotti, broccoli puree, pistachio & dates", price: "42"},
-                    {dish: "Pork rack, persimmon, Musquee De Provence pumpkin puree", price: "62"},
-                    {dish: "Lamb rump, pomme dauphine, green olives & anchovy", price: "52"},
-                    {dish: "Dry aged honey roasted duck for two", price: "140"}
-                ],
-                dessert: [
-                    {dish: "Pavlova with yuzu curd, grapefruit & blood orange sorbet", price: "19"},
-                    {dish: "Liquid centre cheesecake with mandarin sorbet", price: "19"},
-                    {dish: "Valrhona dark chocolate tart with raspberry sorbet", price: "19"},
-                    {dish: "Tiramisu for two", price: "32"}
-                ],
-                link:"https://static1.squarespace.com/static/6523590623c7df2f33417a5d/t/67fca6b552a23b08e0edd0f2/1746054322492/Omnia+dinner+menu.pdf"
+              dish: "Murray cod, cauliflower puree, golden raisin, caper leaves",
+              price: "60",
             },
             {
-                name: "The George on Collins",
-                cuisine: "Asian restaurant",
-                rating: 4.7,
-                main: [
-                    {dish: "Kingfish Ceviche", price: "28"},
-                    {dish: "Salt & Vinegar Calamari", price: "26"},
-                    {dish: "Roasted Cauliflower", price: "24"},
-                    {dish: "Seafood Fried Rice", price: "28"},
-                    {dish: "Vegetarian Pad Thai", price: "33"},
-                    {dish: "Claypot Baked Noodles", price: "36"},
-                    {dish: "Pork Belly", price: "34"},
-                ],
-                dessert: [
-                {dish: "We have no information about this", price: "???"},
-                ],
-                link:"https://www.thegeorgeoncollins.com.au/wp-content/uploads/TGC-Menu.pdf"
+              dish: "Goats curd agnolotti, broccoli puree, pistachio & dates",
+              price: "42",
             },
             {
-                name: "Maha Restaurant",
-                cuisine: "Middle East restaurant",
-                rating: 4.5,
-                main: [
-                    {dish: "Alfonsino fillet, tahini, chestnut, baharat & thyme", price: "33"},
-                    {dish: "Smoked Mizayaki wagyu shish, date & orange, burnt alliums, wild mushrooms", price: "36"},
-                    {dish: "Spiced & roasted duck breast, grilled quince moghrabieh, cumin & duck fat jus", price: "30"},
-                ],
-                dessert: [
-                    {dish: "Turkish delight filled doughnuts, rosewater maple, toasted walnuts", price: "18"},
-                    {dish: "\"Baklava ice cream sandwich\” coconut & strawberry parfait,semolina sponge, kataifi & dark chocolate", price: "18"},
-                ],
-                link:"https://static1.squarespace.com/static/5f7282cdbb753e79eb98e679/t/681ab3486858020947d5fda8/1746580298152/DINNER_Maha_Menus_070525.pdf"
-            }
-        ]
-
-        menuData.forEach((data)=>{
-            let mainDish="";
-            for(let food of data.main) {
-                mainDish += `<div class="menu-item">
+              dish: "Pork rack, persimmon, Musquee De Provence pumpkin puree",
+              price: "62",
+            },
+            {
+              dish: "Lamb rump, pomme dauphine, green olives & anchovy",
+              price: "52",
+            },
+            { dish: "Dry aged honey roasted duck for two", price: "140" },
+          ],
+          dessert: [
+            {
+              dish: "Pavlova with yuzu curd, grapefruit & blood orange sorbet",
+              price: "19",
+            },
+            {
+              dish: "Liquid centre cheesecake with mandarin sorbet",
+              price: "19",
+            },
+            {
+              dish: "Valrhona dark chocolate tart with raspberry sorbet",
+              price: "19",
+            },
+            { dish: "Tiramisu for two", price: "32" },
+          ],
+          link: "https://static1.squarespace.com/static/6523590623c7df2f33417a5d/t/67fca6b552a23b08e0edd0f2/1746054322492/Omnia+dinner+menu.pdf",
+        },
+        {
+          name: "The George on Collins",
+          cuisine: "Asian restaurant",
+          rating: 4.7,
+          main: [
+            { dish: "Kingfish Ceviche", price: "28" },
+            { dish: "Salt & Vinegar Calamari", price: "26" },
+            { dish: "Roasted Cauliflower", price: "24" },
+            { dish: "Seafood Fried Rice", price: "28" },
+            { dish: "Vegetarian Pad Thai", price: "33" },
+            { dish: "Claypot Baked Noodles", price: "36" },
+            { dish: "Pork Belly", price: "34" },
+          ],
+          dessert: [
+            { dish: "We have no information about this", price: "???" },
+          ],
+          link: "https://www.thegeorgeoncollins.com.au/wp-content/uploads/TGC-Menu.pdf",
+        },
+        {
+          name: "Maha Restaurant",
+          cuisine: "Middle East restaurant",
+          rating: 4.5,
+          main: [
+            {
+              dish: "Alfonsino fillet, tahini, chestnut, baharat & thyme",
+              price: "33",
+            },
+            {
+              dish: "Smoked Mizayaki wagyu shish, date & orange, burnt alliums, wild mushrooms",
+              price: "36",
+            },
+            {
+              dish: "Spiced & roasted duck breast, grilled quince moghrabieh, cumin & duck fat jus",
+              price: "30",
+            },
+          ],
+          dessert: [
+            {
+              dish: "Turkish delight filled doughnuts, rosewater maple, toasted walnuts",
+              price: "18",
+            },
+            {
+              dish: '"Baklava ice cream sandwich\” coconut & strawberry parfait,semolina sponge, kataifi & dark chocolate',
+              price: "18",
+            },
+          ],
+          link: "https://static1.squarespace.com/static/5f7282cdbb753e79eb98e679/t/681ab3486858020947d5fda8/1746580298152/DINNER_Maha_Menus_070525.pdf",
+        },
+      ];
+      // Add menu to website
+      menuData.forEach((data) => {
+        let mainDish = "";
+        for (let food of data.main) {
+          mainDish += `<div class="menu-item">
                             <div class="item-name">${food.dish}</div>
                             <div class="item-price">${food.price} <i class="fa-solid fa-euro-sign"></i></div>
-                        </div>`
-            }
-            let dessertDish="";
-            for(let food of data.dessert) {
-                dessertDish += `<div class="menu-item">
+                        </div>`;
+        }
+        let dessertDish = "";
+        for (let food of data.dessert) {
+          dessertDish += `<div class="menu-item">
                             <div class="item-name">${food.dish}</div>
                             <div class="item-price">${food.price} <i class="fa-solid fa-euro-sign"></i></div>
-                        </div>`
-            }
-            document.getElementById("menu_list").innerHTML += (`
+                        </div>`;
+        }
+        document.getElementById("menu_list").innerHTML +=
+          `
             <div class="row">
                 <div class="card restaurant-card">
                     <div class="restaurant-header">
@@ -400,58 +310,79 @@
                     </div>
                     <div class="card-body">
                         <h5 class="menu-category">MAIN</h5>
-                        `+mainDish+`
+                        ` +
+          mainDish +
+          `
                         <h5 class="menu-category">DESSERT</h5>
-                        `+dessertDish+`
+                        ` +
+          dessertDish +
+          `
                     </div>
                     <div class="card-footer bg-white text-end">
                         <a href="${data.link}" target="_blank" class="btn btn-sm btn-primary">View More <i class="fa-solid fa-arrow-right"></i></a>
                     </div>
                 </div>
             </div>
-            `)
-        })
-
-        document.querySelectorAll('.filter-btn').forEach(button => {
-            button.addEventListener('click', function() {
-                document.querySelectorAll('.filter-btn').forEach(btn => {
-                    btn.classList.remove('active');
-                });
-                this.classList.add('active');
-                const cuisine = this.dataset.cuisine;
-                if (cuisine === 'all') {
-                    document.querySelectorAll('.restaurant-card').forEach(card => {
-                        card.style.display = 'block';
-                    });
-                } else {
-                    document.querySelectorAll('.restaurant-card').forEach(card => {
-                        const cardCuisine = card.querySelector('.restaurant-cuisine').textContent.toLowerCase();
-                        if (cardCuisine.includes(cuisine)) {
-                            card.style.display = 'block';
-                        } else {
-                            card.style.display = 'none';
-                        }
-                    });
-                }
+            `;
+      });
+      // Add filter event
+      document.querySelectorAll(".filter-btn").forEach((button) => {
+        button.addEventListener("click", function () {
+          document.querySelectorAll(".filter-btn").forEach((btn) => {
+            btn.classList.remove("active");
+          });
+          this.classList.add("active");
+          const cuisine = this.dataset.cuisine;
+          if (cuisine === "all") {
+            document.querySelectorAll(".restaurant-card").forEach((card) => {
+              card.style.display = "block";
             });
+          } else {
+            document.querySelectorAll(".restaurant-card").forEach((card) => {
+              const cardCuisine = card
+                .querySelector(".restaurant-cuisine")
+                .textContent.toLowerCase();
+              if (cardCuisine.includes(cuisine)) {
+                card.style.display = "block";
+              } else {
+                card.style.display = "none";
+              }
+            });
+          }
         });
+      });
 
-        document.querySelector('input[type="text"]').addEventListener('keyup', function(e) {
-                const searchTerm = this.value.toLowerCase();
-                document.querySelectorAll('.restaurant-card').forEach(card => {
-                    const restaurantName = card.querySelector('.restaurant-name').textContent.toLowerCase();
-                    const menuItems = card.querySelectorAll('.item-name');
-                    let hasMatch = restaurantName.includes(searchTerm);
-                    if (!hasMatch) {
-                        menuItems.forEach(item => {
-                            if (item.textContent.toLowerCase().includes(searchTerm)) {
-                                hasMatch = true;
-                            }
-                        });
-                    }
-                    card.style.display = hasMatch ? 'block' : 'none';
-                });
-            });
+      // Run audio while in website
+    const Songs = [
+      "https://cdn.pixabay.com/audio/2025/05/14/audio_e9f2bbcb59.mp3",
+      "https://cdn.pixabay.com/audio/2025/05/07/audio_a1597a48f8.mp3",
+      "https://cdn.pixabay.com/audio/2023/08/31/audio_d2149da47a.mp3",
+      "https://cdn.pixabay.com/audio/2025/05/07/audio_9f373f6a85.mp3",
+      "https://cdn.pixabay.com/audio/2025/04/29/audio_9315580407.mp3",
+      "https://cdn.pixabay.com/audio/2025/04/30/audio_da480a66c8.mp3",
+      "https://cdn.pixabay.com/audio/2025/04/25/audio_b5d007e8d9.mp3",
+    ];
+
+    const randomSong = Math.floor(Math.random() * Songs.length);
+    const audio = document.getElementById("player"); // Get audio element
+    audio.addEventListener("ended", function () {
+      //Pick 1 random song then keep running
+      audio.src = Songs[randomSong];
+      audio.load();
+      audio.play();
+    });
+    function ToggleMusic() {
+      //If the music is open, it will turn off and vice versa
+      if (audio.duration > 0 && !audio.paused) {
+        audio.pause();
+        document.getElementById("toggleMusic").innerHTML =
+          '<i class="fa-solid fa-play"></i>';
+      } else {
+        audio.play();
+        document.getElementById("toggleMusic").innerHTML =
+          '<i class="fa-solid fa-pause"></i>';
+      }
+    }
     </script>
-</body>
+  </body>
 </html>
