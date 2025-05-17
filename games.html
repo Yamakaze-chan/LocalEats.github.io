@@ -1,163 +1,184 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Games | LocalEats</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
-  <link href="https://fonts.googleapis.com/css2?family=Playwrite+DK+Loopet:wght@100..400&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="css/games.css">
-</head>
-<body>
-<header class="fixed-top page-header" style="background-color: #a96700;">
-        <div class="container-fluid container-fluid-max">
-          <nav id="navbar" class="navbar navbar-expand-lg navbar-dark">
-            <a class="navbar-brand" href="#"><i class="fa-solid fa-utensils" style="margin-right: 10px;"></i>LocalEats</a>
-            <button
-              class="navbar-toggler"
-              type="button"
-              data-toggle="collapse"
-              data-target="#navbarNav"
-              aria-controls="navbarNav"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
-            >
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div
-              class="collapse navbar-collapse justify-content-lg-end"
-              id="navbarNav"
-            >
-              <ul class="navbar-nav">
-                <li class="nav-item">
-                  <a class="nav-link text-white" href="index.html">Homepage</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link text-white" href="about.html"
-                    >About us</a
-                  >
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link text-white" href="services.html"
-                    >Services</a
-                  >
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link text-white" href="gallery.html">Gallery</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link text-white" href="job.html">Jobs</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link text-white" href="staff.html">Staff</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link text-white" href="bar.html">Bar</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link text-white" href="menu.html">Menu</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link text-white" href="booking.html">Tour Booking</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link text-white" href="contact.html">Contact</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link text-white" href="reference.html">Reference</a>
-                </li>
-                <audio style="display: none" id="player" controls autoplay>
-                <source
-                  src="https://www.myinstants.com/media/sounds/gawr-gura-a.mp3"
-                  type="audio/mpeg"
-                />
-              </audio>
-              <button
-                class="nav-link text-white"
-                style="background: none; border: none"
-                onclick="ToggleMusic()"
-                id="toggleMusic"
-              >
-                <i class="fa-solid fa-pause"></i>
-              </button>
-              </ul>
-            </div>
-          </nav>
-        </div>
-      </header>
+  <head>
+    <meta charset="UTF-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+    <title>Games | LocalEats</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    >
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    >
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playwrite+DK+Loopet:wght@100..400&display=swap"
+      rel="stylesheet"
+    >
+    <link rel="stylesheet" href="css/games.css" >
+  </head>
+  <body>
+    <header class="fixed-top page-header" style="background-color: #a96700">
+      <div class="container-fluid container-fluid-max">
+        <nav id="navbar" class="navbar navbar-expand-lg navbar-dark">
+          <a class="navbar-brand" href="#"
+            ><i class="fa-solid fa-utensils" style="margin-right: 10px"></i
+            >LocalEats</a
+          >
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div
+            class="collapse navbar-collapse justify-content-lg-end"
+            id="navbarNav"
+          >
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link text-white" href="index.html">Homepage</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="about.html">About us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="services.html">Services</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="gallery.html">Gallery</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="job.html">Jobs</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="staff.html">Staff</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="bar.html">Bar</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="menu.html">Menu</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="booking.html"
+                  >Tour Booking</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="contact.html">Contact</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="reference.html"
+                  >Reference</a
+                >
+              </li>
 
-  <!-- Hero -->
-  <section class="hero-section" style="margin-top: 72px">
-    <div class="container text-center">
-      <h1 class="display-5 fw-bold">Game Experiences</h1>
-      <p class="lead">Where great food meets great fun</p>
+              <li class="nav-item">
+                <button
+                  class="nav-link text-white"
+                  style="background: none; border: none"
+                  onclick="ToggleMusic()"
+                  id="toggleMusic"
+                >
+                  <i class="fa-solid fa-pause"></i>
+                </button>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <audio style="display: none" id="player" controls autoplay>
+      <source
+        src="https://www.myinstants.com/media/sounds/gawr-gura-a.mp3"
+        type="audio/mpeg"
+      >
+    </audio>
+    <!-- Hero -->
+    <section class="hero-section" style="margin-top: 72px">
+      <div class="container text-center">
+        <h1 class="display-5 fw-bold">Game Experiences</h1>
+        <p class="lead">Where great food meets great fun</p>
+      </div>
+    </section>
+
+    <!-- Game Sections -->
+    <div class="container mb-5">
+      <h2 class="section-title">Play & Dine With Us</h2>
+      <div class="row row-cols-1 row-cols-md-3 g-4" id="games"></div>
     </div>
-  </section>
 
-  <!-- Game Sections -->
-  <div class="container mb-5">
-    <h2 class="section-title">Play & Dine With Us</h2>
-    <div class="row row-cols-1 row-cols-md-3 g-4" id="games">
-      
-    </div>
-  </div>
-
-  <!-- Footer -->
-  <footer>
-    <div class="container">
-      <div class="row">
-        <div class="col-md-4 mb-4 mb-md-0">
-          <h5><i class="fas fa-utensils me-2"></i>LocalEats</h5>
-          <p>Delicious dining, delightful games—come play with us!</p>
-        </div>
-        <div class="col-md-4 mb-4 mb-md-0">
-          <h5>Quick Links</h5>
-          <ul class="list-unstyled footer-links">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Games</a></li>
-            <li><a href="#">Events</a></li>
-            <li><a href="#">Contact</a></li>
-          </ul>
-        </div>
-        <div class="col-md-4">
-          <h5>Stay Connected</h5>
-          <a href="#" class="text-white me-3"><i class="fab fa-facebook-f fa-lg"></i></a>
-          <a href="#" class="text-white me-3"><i class="fab fa-instagram fa-lg"></i></a>
-          <a href="#" class="text-white"><i class="fab fa-twitter fa-lg"></i></a>
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 mb-4 mb-md-0">
+            <h5><i class="fas fa-utensils me-2"></i>LocalEats</h5>
+            <p>Delicious dining, delightful games—come play with us!</p>
+          </div>
+          <div class="col-md-4 mb-4 mb-md-0">
+            <h5>Quick Links</h5>
+            <ul class="list-unstyled footer-links">
+              <li><a href="#">Home</a></li>
+              <li><a href="#">Services</a></li>
+              <li><a href="#">Games</a></li>
+              <li><a href="#">Events</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </div>
+          <div class="col-md-4">
+            <h5>Stay Connected</h5>
+            <a href="#" class="text-white me-3"
+              ><i class="fab fa-facebook-f fa-lg"></i
+            ></a>
+            <a href="#" class="text-white me-3"
+              ><i class="fab fa-instagram fa-lg"></i
+            ></a>
+            <a href="#" class="text-white"
+              ><i class="fab fa-twitter fa-lg"></i
+            ></a>
+          </div>
         </div>
       </div>
-    </div>
-  </footer>
+    </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  <script>
-        const gamesData = [
-            {
-                name: "Multi-Game Pass",
-                description: "Looking to up your game? The Multi-Game Pass is for you! Available on select days, this pass gives you unlimited access to our Ping Pong, Club Darts, Shuffleboard Table & Shuffle Court.* So whether you're a seasoned pro or just looking to try something a little bit of everything, the Multi-Game Pass is your ticket to fun. Come on down and show us what you've got!",
-                link: "https://www.ballersclubhouse.com.au/venues/melbourne-cbd/games/all-games-pass",
-                img: "https://ballersclubhouse-staging.s3.amazonaws.com/uploads/game/full_screen_image/7/large_157A0228.jpg",
-                icon: "fa-face-smile"
-            },
-            {
-                name: "Arcade Games",
-                description: "Weave through a labyrinth of art-filled laneways in Melbourne’s heart, and hear curious tales from the city's fascinating history.You’ll have the opportunity to capture the quirk, creativity and beauty of this grand city, and discover wine bars you can return to.",
-                link: "https://luckyandsons.com.au/activities/arcade-games",
-                img: "https://www.datocms-assets.com/88015/1686182095-blucky_owned_arcades_game-play.jpg",
-                icon: "fa-trophy"
-            },
-            {
-                name: "CONSOLE GAMING",
-                description: "Choose from a hand-picked library of social multiplayer titles perfect for all ages and all types of players. From party favourites and nostalgic split screen gems to modern co op adventures, everything is curated for maximum fun with friends, family, or coworkers.",
-                link: "https://fortress.games/heroes-booth",
-                img: "https://framerusercontent.com/images/sRhEtUo2IfeGaXxZxfZvnHFnKhs.webp",
-                icon: "fa-gamepad"
-            }
-        ]
-        gamesData.forEach((data) => {
-            document.getElementById("games").innerHTML += (`
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      const gamesData = [
+        {
+          name: "Multi-Game Pass",
+          description:
+            "Looking to up your game? The Multi-Game Pass is for you! Available on select days, this pass gives you unlimited access to our Ping Pong, Club Darts, Shuffleboard Table & Shuffle Court.* So whether you're a seasoned pro or just looking to try something a little bit of everything, the Multi-Game Pass is your ticket to fun. Come on down and show us what you've got!",
+          link: "https://www.ballersclubhouse.com.au/venues/melbourne-cbd/games/all-games-pass",
+          img: "https://ballersclubhouse-staging.s3.amazonaws.com/uploads/game/full_screen_image/7/large_157A0228.jpg",
+          icon: "fa-face-smile",
+        },
+        {
+          name: "Arcade Games",
+          description:
+            "Weave through a labyrinth of art-filled laneways in Melbourne’s heart, and hear curious tales from the city's fascinating history.You’ll have the opportunity to capture the quirk, creativity and beauty of this grand city, and discover wine bars you can return to.",
+          link: "https://luckyandsons.com.au/activities/arcade-games",
+          img: "https://www.datocms-assets.com/88015/1686182095-blucky_owned_arcades_game-play.jpg",
+          icon: "fa-trophy",
+        },
+        {
+          name: "CONSOLE GAMING",
+          description:
+            "Choose from a hand-picked library of social multiplayer titles perfect for all ages and all types of players. From party favourites and nostalgic split screen gems to modern co op adventures, everything is curated for maximum fun with friends, family, or coworkers.",
+          link: "https://fortress.games/heroes-booth",
+          img: "https://framerusercontent.com/images/sRhEtUo2IfeGaXxZxfZvnHFnKhs.webp",
+          icon: "fa-gamepad",
+        },
+      ];
+      gamesData.forEach((data) => {
+        document.getElementById("games").innerHTML += `
             <div class="col">
                 <div class="game-card card h-100">
                     <div class="position-relative">
@@ -175,40 +196,40 @@
                         </div>
                 </div>
             </div>
-            `)
-        })
+            `;
+      });
 
-        // Run audio while in website
-    const Songs = [
-      "https://cdn.pixabay.com/audio/2025/05/14/audio_e9f2bbcb59.mp3",
-      "https://cdn.pixabay.com/audio/2025/05/07/audio_a1597a48f8.mp3",
-      "https://cdn.pixabay.com/audio/2023/08/31/audio_d2149da47a.mp3",
-      "https://cdn.pixabay.com/audio/2025/05/07/audio_9f373f6a85.mp3",
-      "https://cdn.pixabay.com/audio/2025/04/29/audio_9315580407.mp3",
-      "https://cdn.pixabay.com/audio/2025/04/30/audio_da480a66c8.mp3",
-      "https://cdn.pixabay.com/audio/2025/04/25/audio_b5d007e8d9.mp3",
-    ];
+      // Run audio while in website
+      const Songs = [
+        "https://cdn.pixabay.com/audio/2025/05/14/audio_e9f2bbcb59.mp3",
+        "https://cdn.pixabay.com/audio/2025/05/07/audio_a1597a48f8.mp3",
+        "https://cdn.pixabay.com/audio/2023/08/31/audio_d2149da47a.mp3",
+        "https://cdn.pixabay.com/audio/2025/05/07/audio_9f373f6a85.mp3",
+        "https://cdn.pixabay.com/audio/2025/04/29/audio_9315580407.mp3",
+        "https://cdn.pixabay.com/audio/2025/04/30/audio_da480a66c8.mp3",
+        "https://cdn.pixabay.com/audio/2025/04/25/audio_b5d007e8d9.mp3",
+      ];
 
-    const randomSong = Math.floor(Math.random() * Songs.length);
-    const audio = document.getElementById("player"); // Get audio element
-    audio.addEventListener("ended", function () {
-      //Pick 1 random song then keep running
-      audio.src = Songs[randomSong];
-      audio.load();
-      audio.play();
-    });
-    function ToggleMusic() {
-      //If the music is open, it will turn off and vice versa
-      if (audio.duration > 0 && !audio.paused) {
-        audio.pause();
-        document.getElementById("toggleMusic").innerHTML =
-          '<i class="fa-solid fa-play"></i>';
-      } else {
+      const randomSong = Math.floor(Math.random() * Songs.length);
+      const audio = document.getElementById("player"); // Get audio element
+      audio.addEventListener("ended", function () {
+        //Pick 1 random song then keep running
+        audio.src = Songs[randomSong];
+        audio.load();
         audio.play();
-        document.getElementById("toggleMusic").innerHTML =
-          '<i class="fa-solid fa-pause"></i>';
+      });
+      function ToggleMusic() {
+        //If the music is open, it will turn off and vice versa
+        if (audio.duration > 0 && !audio.paused) {
+          audio.pause();
+          document.getElementById("toggleMusic").innerHTML =
+            '<i class="fa-solid fa-play"></i>';
+        } else {
+          audio.play();
+          document.getElementById("toggleMusic").innerHTML =
+            '<i class="fa-solid fa-pause"></i>';
+        }
       }
-    }
     </script>
-</body>
+  </body>
 </html>
