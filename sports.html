@@ -11,162 +11,88 @@
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Playwrite+DK+Loopet:wght@100..400&display=swap" rel="stylesheet">
     <!-- Custom CSS -->
-    <style>
-        :root {
-            --primary-color: #a96700;
-            --secondary-color: #ffffff;
-            --highlight-color: #ffd58a;
-            --light-bg: #f8f9fa;
-        }
-        
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: var(--light-bg);
-        }
-        
-        .navbar {
-            background-color: var(--primary-color);
-        }
-        
-        .navbar-brand, .nav-link {
-            color: var(--secondary-color) !important;
-        }
-        
-        .navbar-brand {
-            font-family: 'Playwrite DK Loopet', cursive;
-        }
-        
-        .btn-primary {
-            background-color: var(--primary-color);
-            border-color: var(--primary-color);
-        }
-        
-        .hero-section {
-            background: linear-gradient(rgba(169, 103, 0, 0.8), rgba(169, 103, 0, 0.8)), 
-                        url('https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
-            background-size: cover;
-            background-position: center;
-            color: white;
-            padding: 100px 0;
-            margin-bottom: 40px;
-        }
-        
-        .sport-card {
-            border: none;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-            overflow: hidden;
-            height: 100%;
-        }
-        
-        .sport-card:hover {
-            transform: translateY(-5px);
-        }
-        
-        .sport-img {
-            height: 200px;
-            object-fit: cover;
-        }
-        
-        .sport-icon {
-            font-size: 2rem;
-            color: var(--primary-color);
-            margin-bottom: 15px;
-        }
-        
-        .section-title {
-            font-family: 'Playwrite DK Loopet', cursive;
-            color: var(--primary-color);
-            margin-bottom: 30px;
-            position: relative;
-            text-align: center;
-        }
-        
-        .section-title:after {
-            content: '';
-            display: block;
-            width: 80px;
-            height: 4px;
-            background-color: var(--highlight-color);
-            margin: 15px auto 0;
-        }
-        
-        .sport-feature {
-            background-color: white;
-            border-radius: 10px;
-            padding: 30px;
-            margin-bottom: 30px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-        
-        footer {
-            background-color: var(--primary-color);
-            color: white;
-            padding: 30px 0;
-            margin-top: 50px;
-        }
-        
-        .footer-links a {
-            color: var(--highlight-color);
-            text-decoration: none;
-        }
-        
-        .footer-links a:hover {
-            text-decoration: underline;
-        }
-    </style>
+    <link rel="stylesheet" href="css/sports.css" />
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
-        <div class="container">
-            <a class="navbar-brand fw-bold" href="#"><i class="fas fa-utensils me-2"></i>LocalEats</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
+    <header class="fixed-top page-header" style="background-color: #a96700;">
+        <div class="container-fluid container-fluid-max">
+          <nav id="navbar" class="navbar navbar-expand-lg navbar-dark">
+            <a class="navbar-brand" href="#"><i class="fa-solid fa-utensils" style="margin-right: 10px;"></i>LocalEats</a>
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-toggle="collapse"
+              data-target="#navbarNav"
+              aria-controls="navbarNav"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#"><i class="fas fa-home me-1"></i> Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#"><i class="fas fa-info-circle me-1"></i> About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="services.html"><i class="fas fa-concierge-bell me-1"></i> Services</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#"><i class="fas fa-images me-1"></i> Gallery</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="#"><i class="fas fa-running me-1"></i> Sports</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#"><i class="fas fa-users me-1"></i> Staff</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#"><i class="fas fa-glass-cheers me-1"></i> Bar</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#"><i class="fas fa-utensils me-1"></i> Menu</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#"><i class="fas fa-calendar-alt me-1"></i> Tours</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#"><i class="fas fa-envelope me-1"></i> Contact</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#"><i class="fas fa-book me-1"></i> Reference</a>
-                    </li>
-                </ul>
+            <div
+              class="collapse navbar-collapse justify-content-lg-end"
+              id="navbarNav"
+            >
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link text-white" href="index.html">Homepage</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-white" href="about.html"
+                    >About us</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-white" href="services.html"
+                    >Services</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-white" href="gallery.html">Gallery</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-white" href="job.html">Jobs</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-white" href="staff.html">Staff</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-white" href="bar.html">Bar</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-white" href="menu.html">Menu</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-white" href="booking.html">Tour Booking</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-white" href="contact.html">Contact</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-white" href="reference.html">Reference</a>
+                </li>
+                <audio style="display: none" id="player" controls autoplay>
+                <source
+                  src="https://www.myinstants.com/media/sounds/gawr-gura-a.mp3"
+                  type="audio/mpeg"
+                />
+              </audio>
+              <button
+                class="nav-link text-white"
+                style="background: none; border: none"
+                onclick="ToggleMusic()"
+                id="toggleMusic"
+              >
+                <i class="fa-solid fa-pause"></i>
+              </button>
+              </ul>
             </div>
+          </nav>
         </div>
-    </nav>
+      </header>
 
     <!-- Hero Section -->
-    <section class="hero-section" style="margin-top: 72px">
+    <section class="hero-section">
         <div class="container">
             <h1 class="display-5 fw-bold mb-3">Sports Experience</h1>
             <p class="lead mb-4">Premium viewing with game-day specials</p>
@@ -179,48 +105,8 @@
             <h2 class="section-title">Our Sports Packages</h2>
             <p class="text-center mb-5">Enjoy the big game with our premium sports viewing experience, featuring state-of-the-art screens, game-day specials, and an electric atmosphere.</p>
             
-            <div class="row row-cols-1 row-cols-md-3 g-4">
-                <div class="col">
-                    <div class="sport-card h-100">
-                        <img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" class="sport-img" alt="Football">
-                        <div class="card-body text-center">
-                            <div class="sport-icon">
-                                <i class="fas fa-football-ball"></i>
-                            </div>
-                            <h3 class="h4 mb-3">Football Nights</h3>
-                            <p class="mb-4">Catch all the live action with our football package, featuring multiple screens and game-day food specials.</p>
-                            <a href="#" class="btn btn-primary">Book Now</a>
-                        </div>
-                    </div>
-                </div>
+            <div class="row row-cols-1 row-cols-md-3 g-4" id="sport">
                 
-                <div class="col">
-                    <div class="sport-card h-100">
-                        <img src="https://images.unsplash.com/photo-1543357480-c60d400e7ef6?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" class="sport-img" alt="Basketball">
-                        <div class="card-body text-center">
-                            <div class="sport-icon">
-                                <i class="fas fa-basketball-ball"></i>
-                            </div>
-                            <h3 class="h4 mb-3">Basketball Viewing</h3>
-                            <p class="mb-4">Experience basketball like never before with our courtside-style viewing and themed cocktails.</p>
-                            <a href="#" class="btn btn-primary">Book Now</a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col">
-                    <div class="sport-card h-100">
-                        <img src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" class="sport-img" alt="Tennis">
-                        <div class="card-body text-center">
-                            <div class="sport-icon">
-                                <i class="fas fa-table-tennis"></i>
-                            </div>
-                            <h3 class="h4 mb-3">Tennis Events</h3>
-                            <p class="mb-4">Grand slam viewing parties with premium seating and exclusive tennis-themed menu items.</p>
-                            <a href="#" class="btn btn-primary">Book Now</a>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
         
@@ -233,12 +119,12 @@
                 <div class="col-md-6">
                     <h3 class="mb-4">Exclusive Offers During Games</h3>
                     <ul class="list-unstyled">
-                        <li class="mb-3"><i class="fas fa-beer text-primary me-2"></i> <strong>Happy Hour:</strong> Half-price drinks during pre-game</li>
-                        <li class="mb-3"><i class="fas fa-utensils text-primary me-2"></i> <strong>Team Platters:</strong> Shareable game-day platters for groups</li>
-                        <li class="mb-3"><i class="fas fa-trophy text-primary me-2"></i> <strong>Victory Shots:</strong> Special shots when your team wins</li>
-                        <li class="mb-3"><i class="fas fa-ticket-alt text-primary me-2"></i> <strong>Early Bird:</strong> Discounts for reservations before 5pm</li>
+                        <li class="mb-3"><i class="fas fa-beer" style="color: #a96700;"></i> <strong>Happy Hour:</strong> Half-price drinks during pre-game</li>
+                        <li class="mb-3"><i class="fas fa-utensils" style="color: #a96700;"></i> <strong>Team Platters:</strong> Shareable game-day platters for groups</li>
+                        <li class="mb-3"><i class="fas fa-trophy" style="color: #a96700;"></i> <strong>Victory Shots:</strong> Special shots when your team wins</li>
+                        <li class="mb-3"><i class="fas fa-ticket-alt" style="color: #a96700;"></i> <strong>Early Bird:</strong> Discounts for reservations before 5pm</li>
                     </ul>
-                    <a href="services.html" class="btn btn-outline-primary mt-3">
+                    <a href="services.html" class="btn mt-3" style="color: #a96700;">
                         <i class="fas fa-arrow-left me-2"></i> Back to All Services
                     </a>
                 </div>
@@ -280,5 +166,83 @@
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const sportsData = [
+            {
+                name: "Turf Sports Bar",
+                description: "In the heart of the CBD, Turf Sports Bar is a traditional Australian venue with large screens private booths, a large bar and restaurant. The premise itself has wealth of history",
+                link: "https://www.fanzo.com/en-au/bar/113500/turf-sports-bar",
+                img: "https://matchpint-cdn.matchpint.cloud/shared/img/pub/113500/1621580323-1666755112_original.jpeg",
+                icon: "fa-baseball-bat-ball"
+            },
+            {
+                name: "CQ Bar",
+                description: "CBD sports bar with surround TVs and great central location, open late night",
+                link: "https://www.fanzo.com/en-au/bar/158480/cq-bar",
+                img: "https://matchpint-cdn.matchpint.cloud/shared/img/pub/158480/124227019-1708562937_original.jpeg",
+                icon: "fa-basketball"
+            },
+            {
+                name: "The Wharf Hotel",
+                description: "We love our sports here at The Wharf Hotel. With 8 HD big screens showing Fox Sports, ESPN, Stan Sport and free to air, you can catch all the latest sporting action live throughout the venue.",
+                link: "https://wharfhotel.com.au/live-sport/",
+                img: "https://wharfhotel.com.au/wp-content/uploads/2019/07/Wharf-garden-117-web-e1675208662282-1290x650.jpg",
+                icon: "fa-horse"
+            }
+        ]
+        sportsData.forEach((data) => {
+            document.getElementById("sport").innerHTML += (`
+            <div class="col">
+                <div class="sport-card card h-100">
+                    <div class="position-relative">
+                        <img src=${data.img} class="sport-img" alt=${data.name}>
+                    </div>
+                    <div class="card-body text-center p-4">
+                        <div class="sport-icon">
+                            <i class="fas ${data.icon}"></i>
+                        </div>
+                        <h3 class="h4 mb-3">${data.name}</h3>
+                        <p class="mb-4">${data.description}</p>
+                    </div>
+                    <div class="card-footer d-flex justify-content-end align-items-center">
+                            <a href=${data.link} class="btn btn-sm btn-primary">Details</a>
+                        </div>
+                </div>
+            </div>
+            `)
+        })
+
+        // Run audio while in website
+    const Songs = [
+      "https://cdn.pixabay.com/audio/2025/05/14/audio_e9f2bbcb59.mp3",
+      "https://cdn.pixabay.com/audio/2025/05/07/audio_a1597a48f8.mp3",
+      "https://cdn.pixabay.com/audio/2023/08/31/audio_d2149da47a.mp3",
+      "https://cdn.pixabay.com/audio/2025/05/07/audio_9f373f6a85.mp3",
+      "https://cdn.pixabay.com/audio/2025/04/29/audio_9315580407.mp3",
+      "https://cdn.pixabay.com/audio/2025/04/30/audio_da480a66c8.mp3",
+      "https://cdn.pixabay.com/audio/2025/04/25/audio_b5d007e8d9.mp3",
+    ];
+
+    const randomSong = Math.floor(Math.random() * Songs.length);
+    const audio = document.getElementById("player"); // Get audio element
+    audio.addEventListener("ended", function () {
+      //Pick 1 random song then keep running
+      audio.src = Songs[randomSong];
+      audio.load();
+      audio.play();
+    });
+    function ToggleMusic() {
+      //If the music is open, it will turn off and vice versa
+      if (audio.duration > 0 && !audio.paused) {
+        audio.pause();
+        document.getElementById("toggleMusic").innerHTML =
+          '<i class="fa-solid fa-play"></i>';
+      } else {
+        audio.play();
+        document.getElementById("toggleMusic").innerHTML =
+          '<i class="fa-solid fa-pause"></i>';
+      }
+    }
+    </script>
 </body>
 </html>
