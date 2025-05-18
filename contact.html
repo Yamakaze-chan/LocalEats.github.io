@@ -86,7 +86,7 @@
 
       <audio style="display: none" id="player" controls autoplay>
                 <source
-                  src="https://www.myinstants.com/media/sounds/gawr-gura-a.mp3"
+                  src="media/music/song1.mp3"
                   type="audio/mpeg"
                 >
               </audio>
@@ -241,18 +241,23 @@
                 <div class="col-md-4 mb-4 mb-md-0">
                     <h5>Quick Links</h5>
                     <ul class="list-unstyled">
-                        <li><a href="#" class="text-white">Home</a></li>
-                        <li><a href="#" class="text-white">About Us</a></li>
-                        <li><a href="#" class="text-white">Services</a></li>
-                        <li><a href="#" class="text-white">Contact</a></li>
+                        <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="services.html">Services</a></li>
+              <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>
                 <div class="col-md-4">
                     <h5>Connect With Us</h5>
-                    <a href="#" class="text-white me-3"><i class="fab fa-facebook-f fa-lg"></i></a>
-                    <a href="#" class="text-white me-3"><i class="fab fa-twitter fa-lg"></i></a>
-                    <a href="#" class="text-white me-3"><i class="fab fa-instagram fa-lg"></i></a>
-                    <a href="#" class="text-white me-3"><i class="fab fa-linkedin fa-lg"></i></a>
+                    <a href="https://www.facebook.com/" class="text-white me-3"
+              ><i class="fab fa-facebook-f fa-lg"></i
+            ></a>
+            <a href="https://www.instagram.com/" class="text-white me-3"
+              ><i class="fab fa-instagram fa-lg"></i
+            ></a>
+            <a href="https://x.com/" class="text-white me-3"
+              ><i class="fab fa-twitter fa-lg"></i
+            ></a>
                 </div>
             </div>
             <hr class="my-4 bg-white">
@@ -266,15 +271,7 @@
     <script>
         document.getElementById('contactForm').addEventListener('submit', function(e) {
         e.preventDefault();
-        
-        
-        
-        // Show modal
-        const successModal = new bootstrap.Modal(document.getElementById('successModal'));
-        const errorModal = new bootstrap.Modal(document.getElementById('errorModal'));
-        // it will show random success or error modal
-        if (Math.random()%2) successModal.show();
-        else errorModal.show();
+        alert("Your information has been sent")
         
         // Reset the form
         this.reset();

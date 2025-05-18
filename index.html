@@ -123,7 +123,7 @@
     </header>
 <audio style="display: none" id="player" controls autoplay>
                 <source
-                  src="https://cdn.pixabay.com/audio/2025/05/07/audio_9f373f6a85.mp3"
+                  src="media/music/song1.mp3"
                   type="audio/mpeg"
                 >
               </audio>
@@ -161,16 +161,10 @@
               class="col-12 col-md-6 text-center"
               style="height: max-content"
             >
-              <iframe
-                width="560"
-                height="315"
-                src="https://www.youtube-nocookie.com/embed/OQIoZjYLvek?si=TQnZyR8V4vRl-CVS"
-                title="YouTube video player"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerpolicy="strict-origin-when-cross-origin"
-                allowfullscreen
-                style="max-width: 100%; border:none"
-              ></iframe>
+              <video style="max-width: 100%;" controls>
+  <source src="media/introduce.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video>
             </div>
           </div>
         </div>
@@ -1275,22 +1269,22 @@
           <div class="col-md-4 mb-4 mb-md-0">
             <h5>Quick Links</h5>
             <ul class="list-unstyled footer-links">
-              <li><a href="#">Home</a></li>
-              <li><a href="#">About Us</a></li>
-              <li><a href="#">Services</a></li>
-              <li><a href="#">Contact</a></li>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="services.html">Services</a></li>
+              <li><a href="contact.html">Contact</a></li>
             </ul>
           </div>
           <div class="col-md-4">
             <h5>Connect With Us</h5>
-            <a href="#" class="text-white me-3"
+            <a href="https://www.facebook.com/" class="text-white me-3"
               ><i class="fab fa-facebook-f fa-lg"></i
             ></a>
-            <a href="#" class="text-white me-3"
+            <a href="https://www.instagram.com/" class="text-white me-3"
               ><i class="fab fa-instagram fa-lg"></i
             ></a>
-            <a href="#" class="text-white me-3"
-              ><i class="fab fa-tripadvisor fa-lg"></i
+            <a href="https://x.com/" class="text-white me-3"
+              ><i class="fab fa-twitter fa-lg"></i
             ></a>
           </div>
         </div>
@@ -1323,15 +1317,18 @@
         }
       });
 
+      setTimeout(function e(){
+        
+        if (confirm("Congratulations to you the 1000th person to visit our website, click OK to receive incentives") == true) {
+  alert("Contact us to receive discount coupon");
+} else {
+  text = "Please enjoy while visting our website";
+}
+      },2000)
+
       // Run audio while in website
-      const Songs = [
-        "https://cdn.pixabay.com/audio/2025/05/14/audio_e9f2bbcb59.mp3",
-        "https://cdn.pixabay.com/audio/2025/05/07/audio_a1597a48f8.mp3",
-        "https://cdn.pixabay.com/audio/2023/08/31/audio_d2149da47a.mp3",
-        "https://cdn.pixabay.com/audio/2025/05/07/audio_9f373f6a85.mp3",
-        "https://cdn.pixabay.com/audio/2025/04/29/audio_9315580407.mp3",
-        "https://cdn.pixabay.com/audio/2025/04/30/audio_da480a66c8.mp3",
-        "https://cdn.pixabay.com/audio/2025/04/25/audio_b5d007e8d9.mp3",
+      const Songs = ["media/music/song1.mp3","media/music/song2.mp3",
+"media/music/song3.mp3",
       ];
 
       const randomSong = Math.floor(Math.random() * Songs.length);
