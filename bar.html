@@ -23,7 +23,7 @@
     <header class="fixed-top page-header">
       <div class="container-fluid container-fluid-max">
         <nav id="navbar" class="navbar navbar-expand-lg navbar-dark">
-          <a class="navbar-brand" href="#"
+          <a class="navbar-brand" href="index.html"
             ><i class="fa-solid fa-utensils" style="margin-right: 10px"></i
             >LocalEats</a
           >
@@ -251,9 +251,9 @@
               >
                 Close
               </button>
-              <button type="button" class="btn btn-primary" id="getDirection">
+              <a type="button" class="btn btn-primary" target="_blank" id="getDirection">
                 <i class="fas fa-directions me-2"></i>Get Directions
-              </button>
+              </a>
             </div>
           </div>
         </div>
@@ -301,128 +301,105 @@
     <script>
       // Bar data
       const bars = [
-        {
-          id: 1,
-          name: "The Golden Tap",
-          type: "cocktail",
-          image:
-            "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
-          rating: 4.8,
-          description:
-            "Upscale cocktail bar with artisan drinks and a cozy atmosphere. Our mixologists create innovative cocktails using locally-sourced ingredients.",
-          features: [
-            "Craft Cocktails",
-            "Live Music",
-            "Happy Hour",
-            "Knowledgeable Staff",
-          ],
-          address: "123 Main Street, Your City",
-          hours: "Mon-Thu: 4pm-12am | Fri-Sat: 4pm-2am | Sun: 5pm-11pm",
-          price: "$$$",
-          tags: ["trending", "popular"],
-          link: "",
-        },
-        {
-          id: 2,
-          name: "Hops & Barley",
-          type: "beer",
-          image:
-            "https://images.unsplash.com/photo-1514933651103-005eec06c04b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
-          rating: 4.5,
-          description:
-            "Local craft beer haven with 30+ rotating taps and delicious pub food. We feature rare brews from local microbreweries.",
-          features: [
-            "Craft Beer",
-            "Outdoor Seating",
-            "Trivia Night",
-            "Food Available",
-          ],
-          address: "456 Oak Avenue, Your City",
-          hours: "Mon-Sun: 11am-2am",
-          price: "$$",
-          tags: ["local favorite"],
-          link: "",
-        },
-        {
-          id: 3,
-          name: "The Sports Den",
-          type: "sports",
-          image:
-            "https://images.unsplash.com/photo-1572116469696-31de0f17cc34?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
-          rating: 4.3,
-          description:
-            "The ultimate sports viewing experience with 20+ HD screens. Perfect spot to catch the game with friends.",
-          features: [
-            "Game Day Specials",
-            "Wings",
-            "Pool Tables",
-            "Large Screens",
-          ],
-          address: "789 Elm Road, Your City",
-          hours: "Mon-Fri: 11am-2am | Sat-Sun: 10am-2am",
-          price: "$$",
-          tags: [],
-          link: "",
-        },
-        {
-          id: 4,
-          name: "Velvet Lounge",
-          type: "lounge",
-          image:
-            "https://images.unsplash.com/photo-1436076863939-06870fe779c2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
-          rating: 4.7,
-          description:
-            "Sophisticated lounge with craft cocktails and DJ nights. Our VIP service offers exclusive bottle selections.",
-          features: [
-            "VIP Bottle Service",
-            "DJ Nights",
-            "Late Night",
-            "Dress Code",
-          ],
-          address: "321 Pine Boulevard, Your City",
-          hours: "Wed-Sat: 8pm-4am",
-          price: "$$$",
-          tags: ["upscale"],
-          link: "",
-        },
-        {
-          id: 5,
-          name: "The Whiskey Barrel",
-          type: "cocktail",
-          image:
-            "https://images.unsplash.com/photo-1538481199705-c710c4e965fc?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
-          rating: 4.6,
-          description:
-            "Over 200 whiskeys from around the world in a rustic setting. Weekly whiskey tasting events.",
-          features: [
-            "Whiskey Tastings",
-            "Cigar Patio",
-            "Knowledgeable Staff",
-            "Reservations",
-          ],
-          address: "654 Maple Lane, Your City",
-          hours: "Tue-Sun: 5pm-1am",
-          price: "$$$",
-          tags: ["expert staff"],
-          link: "",
-        },
-        {
-          id: 6,
-          name: "The Dive",
-          type: "dive",
-          image:
-            "https://images.unsplash.com/photo-1566633806327-68e152aaf26d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
-          rating: 4.2,
-          description:
-            "No frills, just cheap drinks and good times. Cash only establishment with a loyal local following.",
-          features: ["Cheap Drinks", "Karaoke", "Cash Only", "Late Night"],
-          address: "987 Cedar Street, Your City",
-          hours: "Mon-Sun: 12pm-4am",
-          price: "$",
-          tags: ["cash only"],
-          link: "",
-        },
-      ];
+  {
+    "id": 1,
+    "name": "Caretaker's Cottage",
+    "type": "Lounge",
+    "image": "media/img/82.jpg",
+    "rating": 4.9,
+    "description": "A cozy 25-seater bar nestled next to a Gothic church, renowned for its exceptional cocktails and warm hospitality.",
+    "features": ["World's 50 Best Bars 2024", "Intimate Setting", "Vinyl Music"],
+    "address": "139-141 Little Lonsdale Street, Melbourne VIC 3000",
+    "hours": "Tue-Sat: 4pm-1am | Sun-Mon: Closed",
+    "price": "$$$",
+    "tags": ["award-winning", "intimate"],
+    "link": "https://www.caretakerscottage.bar/"
+  },
+  {
+    "id": 2,
+    "name": "Byrdi",
+    "type": "Cocktail",
+    "image": "media/img/83.jpg",
+    "rating": 4.8,
+    "description": "An innovative bar offering cocktails crafted with hyperlocal ingredients and gastronomic techniques.",
+    "features": ["Fermented Ingredients", "Seasonal Menu", "Minimalist Design"],
+    "address": "Tenancy GD075, 211 La Trobe Street, Melbourne VIC 3000",
+    "hours": "Mon-Sun: 4pm-12am",
+    "price": "$$$",
+    "tags": ["Cocktail", "Lounge"],
+    "link": "https://www.byrdi.com.au/"
+  },
+  {
+    "id": 3,
+    "name": "Nick & Nora's",
+    "type": "Cocktail",
+    "image": "media/img/84.jpg",
+    "rating": 4.7,
+    "description": "A glamorous bar reminiscent of the 1930s, offering an extensive selection of champagne and theatrical cocktails.",
+    "features": ["Champagne Selection", "Art Deco Interior", "Cheese & Charcuterie"],
+    "address": "80 Collins Street via 11 Benson Walk, Melbourne VIC 3000",
+    "hours": "Mon-Thu: 4pm-12am | Fri-Sat: 4pm-2am | Sun: 4pm-11pm",
+    "price": "$$$$",
+    "tags": ["Cocktail", "Lounge"],
+    "link": "https://nickandnoras.com.au/melbourne/"
+  },
+  {
+    "id": 4,
+    "name": "1806",
+    "type": "Cocktail",
+    "image": "media/img/85.jpg",
+    "rating": 4.7,
+    "description": "A bar that takes patrons through the history of cocktails, offering a menu categorized by era.",
+    "features": ["Historical Cocktails", "Burlesque Shows", "Whisky Selection"],
+    "address": "169-171 Exhibition Street, Melbourne VIC 3000",
+    "hours": "Wed-Thu: 5pm-12am | Fri-Sat: 4pm-1am | Sun-Tue: Closed",
+    "price": "$$$",
+    "tags": ["Cocktail", "Lounge"],
+    "link": "https://www.1806.com.au/"
+  },
+  {
+    "id": 5,
+    "name": "Whisky & Alement",
+    "type": "Lounge",
+    "image": "media/img/86.jpg",
+    "rating": 4.8,
+    "description": "A haven for whisky enthusiasts, offering a rotating selection of over 1,000 whiskies from around the world.",
+    "features": ["Whisky Tastings", "Educational Sessions", "Rare Bottles"],
+    "address": "270 Russell Street, Melbourne VIC 3000",
+    "hours": "Mon-Sun: 4pm-1am",
+    "price": "$$$",
+    "tags": ["Cocktail", "Lounge"],
+    "link": "https://whiskyandale.com.au/"
+  },
+  {
+    "id": 6,
+    "name": "Bouvardia",
+    "type": "Cocktail",
+    "image": "media/img/87.jpg",
+    "rating": 4.7,
+    "description": "An experimental cocktail bar and exhibition space, known for its unique drinks and artistic ambiance.",
+    "features": ["Experimental Cocktails", "Art Exhibitions", "Seasonal Ingredients"],
+    "address": "Level 2/169 Bourke Street, Melbourne VIC 3000",
+    "hours": "Wed-Sun: 5pm-12am | Mon-Tue: Closed",
+    "price": "$$$",
+    "tags": ["Cocktail", "Lounge"],
+    "link": "https://sitchu.azurewebsites.net/melbourne/bars/best-cocktail-bars-melbourne"
+  },
+  {
+    "id": 7,
+    "name": "Madame Brussels",
+    "type": "Lounge",
+    "image": "media/img/88.jpg",
+    "rating": 4.3,
+    "description": "A whimsical rooftop bar with a garden party theme, offering seasonal drinks and a relaxed atmosphere.",
+    "features": ["Rooftop Garden", "Seasonal Cocktails", "Quirky Decor"],
+    "address": "Level 3, 59 Bourke Street, Melbourne VIC 3000",
+    "hours": "Mon-Sun: 12pm-1am",
+    "price": "$$",
+    "tags": ["Cocktail", "Lounge"],
+    "link": "https://melbourne10.com/cocktail-bars-cbd/"
+  }
+]
 
       const barsContainer = document.getElementById("barsContainer");
       const filterButtons = document.querySelectorAll(".filter-btn");
@@ -452,7 +429,7 @@
         if (currentFilter === "all") {
           return [...bars];
         }
-        return bars.filter((bar) => bar.type === currentFilter);
+        return bars.filter((bar) => bar.type.toLowerCase() === currentFilter.toLowerCase());
       }
       //   add each bar to website
       function renderBars() {

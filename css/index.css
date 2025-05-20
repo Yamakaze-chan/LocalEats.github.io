@@ -77,7 +77,7 @@ border-color: var(--white);
 .hero {
 background-attachment: fixed;
 transition: transform 0.5s ease-in-out;
-background-image: url("https://www.melbourne.crowneplaza.com/wp-content/uploads/2024/12/Crowne-Plaza-Blogs-2022-06-29T111848.641.png");
+background-image: url("../media/img/77.jpg");
 background-size: cover;
 }
 

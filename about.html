@@ -148,7 +148,7 @@
         <div class="col-lg-6 mb-4 fade-in">
           <div class="about-card">
             <img
-              src="https://lh3.googleusercontent.com/p/AF1QipP9pXiyv0ORKTBagUdyUgwLAri5_9OWrWp38IbG=s1360-w1360-h1020-rw"
+              src="media/img/1.jpg"
               alt="LocalEats Interior"
               class="about-img"
             >
@@ -265,12 +265,10 @@
       const Songs = ["media/music/song1.mp3","media/music/song2.mp3",
 "media/music/song3.mp3",
       ];
-
-      const randomSong = Math.floor(Math.random() * Songs.length);
       const audio = document.getElementById("player"); // Get audio element
       audio.addEventListener("ended", function () {
         //Pick 1 random song then keep running
-        audio.src = Songs[randomSong];
+        audio.src = Songs[Math.floor(Math.random() * Songs.length)];
         audio.load();
         audio.play();
       });

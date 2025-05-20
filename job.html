@@ -23,7 +23,7 @@
     <header class="fixed-top page-header" style="background-color: #a96700;">
     <div class="container-fluid container-fluid-max">
       <nav id="navbar" class="navbar navbar-expand-lg navbar-dark">
-        <a class="navbar-brand" href="#"><i class="fa-solid fa-utensils" style="margin-right: 10px;"></i>LocalEats</a>
+        <a class="navbar-brand" href="index.html"><i class="fa-solid fa-utensils" style="margin-right: 10px;"></i>LocalEats</a>
         <button
           class="navbar-toggler"
           type="button"
@@ -155,7 +155,7 @@
         const jobData = [ // Add data to this to add data to website
             {
                 link: "https://www.seek.com.au/job/84053024",
-                logo: "https://image-service-cdn.seek.com.au/343b632e4bdcef603ce29413b85194fd3f3be914/f3c5292cec0e05e4272d9bf9146f390d366481d0",
+                logo: "media/img/39.jpg",
                 name: "Section Waiter / Wine Team",
                 location: "Fitzroy North, Melbourne VIC",
                 position: "Waiting Staff (Hospitality & Tourism)",
@@ -164,7 +164,7 @@
             },
             {
                 link: "https://www.seek.com.au/job/84198366",
-                logo: "https://image-service-cdn.seek.com.au/9dcaaca6d0562f3492d57d0050087604f5fe57e6/f3c5292cec0e05e4272d9bf9146f390d366481d0",
+                logo: "media/img/40.jpg",
                 name: "Casual Chefs",
                 location: "Melbourne CBD, VIC",
                 position: "Chefs/Cooks (Hospitality & Tourism)",
@@ -173,7 +173,7 @@
             },
             {
                 link: "https://www.seek.com.au/job/84292704",
-                logo: "https://image-service-cdn.seek.com.au/950e44cbc10d5f20806d7ba6992b8aa35ce16bb6/f3c5292cec0e05e4272d9bf9146f390d366481d0",
+                logo: "media/img/41.jpg",
                 name: "Head Waitstaff/Server",
                 location: "Melbourne VIC",
                 position: "Waiting Staff (Hospitality & Tourism)",
@@ -228,10 +228,9 @@
 "media/music/song3.mp3",
       ];
 
-      const randomSong = Math.floor(Math.random() * Songs.length);
       const audio = document.getElementById("player"); // Get audio element
       audio.addEventListener("ended", function () { //Pick 1 random song then keep running
-        audio.src = Songs[randomSong];
+        audio.src = Songs[Math.floor(Math.random() * Songs.length)];
         audio.load();
         audio.play();
       });

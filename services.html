@@ -33,7 +33,7 @@
     <header class="fixed-top page-header" style="background-color: #a96700">
       <div class="container-fluid container-fluid-max">
         <nav id="navbar" class="navbar navbar-expand-lg navbar-dark">
-          <a class="navbar-brand" href="#"
+          <a class="navbar-brand" href="index.html"
             ><i class="fa-solid fa-utensils" style="margin-right: 10px"></i
             >LocalEats</a
           >
@@ -125,7 +125,7 @@
         <div class="col">
           <div class="service-card card h-100">
             <img
-              src="https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+              src="media/img/63.jpg"
               class="service-img"
               alt="Events"
             >
@@ -148,7 +148,7 @@
         <div class="col">
           <div class="service-card card h-100">
             <img
-              src="https://images.unsplash.com/photo-1542751371-adc38448a05e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+              src="media/img/64.jpg"
               class="service-img"
               alt="Games"
             >
@@ -171,7 +171,7 @@
         <div class="col">
           <div class="service-card card h-100">
             <img
-              src="https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+              src="media/img/65.jpg"
               class="service-img"
               alt="Sports"
             >
@@ -244,11 +244,10 @@
 "media/music/song3.mp3",
       ];
 
-      const randomSong = Math.floor(Math.random() * Songs.length);
       const audio = document.getElementById("player"); // Get audio element
       audio.addEventListener("ended", function () {
         //Pick 1 random song then keep running
-        audio.src = Songs[randomSong];
+        audio.src = Songs[Math.floor(Math.random() * Songs.length)];
         audio.load();
         audio.play();
       });

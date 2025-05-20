@@ -13,7 +13,7 @@
     <header class="fixed-top page-header" style="background-color: #a96700;">
         <div class="container-fluid container-fluid-max">
           <nav id="navbar" class="navbar navbar-expand-lg navbar-dark">
-            <a class="navbar-brand" href="#"><i class="fa-solid fa-utensils" style="margin-right: 10px;"></i>LocalEats</a>
+            <a class="navbar-brand" href="index.html"><i class="fa-solid fa-utensils" style="margin-right: 10px;"></i>LocalEats</a>
             <button
               class="navbar-toggler"
               type="button"
@@ -186,7 +186,7 @@
             
             <div class="col-lg-6 mb-4">
                 <div class="map-container">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12608.376822069547!2d144.96315095!3d-37.81126235!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642caf37771c5%3A0x834e664d24dced61!2zVHJ1bmcgdMOibSBUaMOgbmggcGjhu5EgTWVsYm91cm5lLCBNZWxib3VybmUgVmljdG9yaWEgMzAwMCwgw5pj!5e0!3m2!1svi!2s!4v1746756123724!5m2!1svi!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d25216.765836161634!2d144.9425513481146!3d-37.811226651431234!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642caf37771c5%3A0x834e664d24dced61!2sCBD%2C%20Melbourne%20VIC%203000%2C%20Australia!5e0!3m2!1sen!2s!4v1747669976284!5m2!1sen!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
         </div>
@@ -279,20 +279,14 @@
 
         // Run audio while in website
     const Songs = [
-      "https://cdn.pixabay.com/audio/2025/05/14/audio_e9f2bbcb59.mp3",
-      "https://cdn.pixabay.com/audio/2025/05/07/audio_a1597a48f8.mp3",
-      "https://cdn.pixabay.com/audio/2023/08/31/audio_d2149da47a.mp3",
-      "https://cdn.pixabay.com/audio/2025/05/07/audio_9f373f6a85.mp3",
-      "https://cdn.pixabay.com/audio/2025/04/29/audio_9315580407.mp3",
-      "https://cdn.pixabay.com/audio/2025/04/30/audio_da480a66c8.mp3",
-      "https://cdn.pixabay.com/audio/2025/04/25/audio_b5d007e8d9.mp3",
+      "media/music/song1.mp3",
+      "media/music/song2.mp3",
+      "media/music/song3.mp3",
     ];
-
-    const randomSong = Math.floor(Math.random() * Songs.length);
     const audio = document.getElementById("player"); // Get audio element
     audio.addEventListener("ended", function () {
       //Pick 1 random song then keep running
-      audio.src = Songs[randomSong];
+      audio.src = Songs[Math.floor(Math.random() * Songs.length)];
       audio.load();
       audio.play();
     });
