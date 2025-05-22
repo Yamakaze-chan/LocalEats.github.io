@@ -23,7 +23,7 @@
     <header class="fixed-top page-header">
       <div class="container-fluid container-fluid-max">
         <nav id="navbar" class="navbar navbar-expand-lg navbar-dark">
-          <a class="navbar-brand" href="index.html"
+          <a class="navbar-brand" href="#"
             ><i class="fa-solid fa-utensils" style="margin-right: 10px"></i
             >LocalEats</a
           >
@@ -109,10 +109,10 @@
           class="display-5 fw-bold mb-3"
           style="font-family: Playwrite DK Loopet"
         >
-          Discover the Best Restaurants in Melbourne
+          Discover the Best Bars in Melbourne
         </h1>
         <p class="lead mb-4">
-          Discover your ideal dining experience with our handpicked Melbourne restaurants
+          Find your perfect night out with our curated bar selection
         </p>
       </div>
     </section>
@@ -199,7 +199,7 @@
               <div class="row">
                 <div class="col-md-6">
                   <img
-                    src="https://image-service-cdn.seek.com.au/950e44cbc10d5f20806d7ba6992b8aa35ce16bb6/f3c5292cec0e05e4272d9bf9146f390d366481d0"
+                    src="/placeholder.svg"
                     class="img-fluid rounded mb-3"
                     id="modalRestaurantImage"
                     alt=""
@@ -297,389 +297,437 @@
       // Restaurant data
       const restaurants = [
         {
-    "id": 1,
-    "name": "Il Solito Posto",
-    "type": "italian",
-    "image": "https://lh3.googleusercontent.com/p/AF1QipMNOmZK596D7vm7s-pTUu-SmjQxlSkHk3Jv9Dup=s1360-w1360-h1020-rw",
-    "rating": 4.8,
-    "description": "A hidden gem offering authentic Italian cuisine in a cozy basement setting. Known for its classic dishes and extensive wine list.",
-    "features": [
-      "Homemade Pasta",
-      "Extensive Wine List",
-      "Cozy Atmosphere",
-      "Basement Dining"
-    ],
-    "address": "113 Collins St, Melbourne VIC 3000",
-    "hours": "Mon-Fri: 12pm-10pm | Sat: 5pm-10pm | Sun: Closed",
-    "price": "$$$",
-    "tags": ["popular", "authentic"],
-    "link": "https://www.ilsolitoposto.com.au/"
-  },
-  {
-    "id": 2,
-    "name": "Vue de Monde",
-    "type": "modern australian",
-    "image": "https://lh3.googleusercontent.com/p/AF1QipMT07odziwXBBJxg9Sm99_Oj3ldAPM40tWk1-UA=s1360-w1360-h1020-rw",
-    "rating": 4.9,
-    "description": "An iconic fine dining experience offering contemporary Australian cuisine with panoramic views of Melbourne from the 55th floor.",
-    "features": [
-      "Degustation Menu",
-      "Panoramic City Views",
-      "Fine Dining",
-      "Award-Winning Chef"
-    ],
-    "address": "Level 55, Rialto Towers, 525 Collins St, Melbourne VIC 3000",
-    "hours": "Tue-Sat: 6pm-11pm | Sun-Mon: Closed",
-    "price": "$$$$",
-    "tags": ["luxury", "fine dining"],
-    "link": "https://vuedemonde.com.au/"
-  },
-  {
-    "id": 3,
-    "name": "Maccaroni Trattoria Italiana",
-    "type": "italian",
-    "image": "https://media-cdn.tripadvisor.com/media/photo-s/0e/eb/94/2f/maccaroni-trattoria-italiana.jpg",
-    "rating": 4.4,
-    "description": "A rustic Italian eatery serving traditional dishes in a warm and inviting atmosphere. Popular for its handmade pasta and friendly service.",
-    "features": [
-      "Handmade Pasta",
-      "Family-Friendly",
-      "Rustic Decor",
-      "Outdoor Seating"
-    ],
-    "address": "10 Manchester Ln, Melbourne VIC 3000",
-    "hours": "Mon-Sun: 12pm-10pm",
-    "price": "$$",
-    "tags": ["casual", "family-friendly"],
-    "link": "https://www.maccaronitrattoriaitaliana.com.au/"
-  },
-  {
-    "id": 4,
-    "name": "Temaki Sushi Melbourne",
-    "type": "japanese",
-    "image": "https://lh3.googleusercontent.com/p/AF1QipMCV0CfxcsbFEoGI-npJvqES_yC_KSrBr6TgXSM=s1360-w1360-h1020-rw",
-    "rating": 4.5,
-    "description": "An intimate sushi bar offering traditional hand-rolled sushi with a modern twist, complemented by a curated selection of sake.",
-    "features": [
-      "Hand-Rolled Sushi",
-      "Sake Pairing",
-      "Intimate Setting",
-      "Omakase Experience"
-    ],
-    "address": "123 Sushi St, Melbourne VIC 3000",
-    "hours": "Mon-Sat: 12pm-10pm | Sun: Closed",
-    "price": "$$$",
-    "tags": ["authentic", "sushi"],
-    "link": "https://www.temakisushimelbourne.com.au/"
-  },
-  {
-    "id": 5,
-    "name": "Ginger Olive",
-    "type": "steakhouse",
-    "image": "https://media1.agfg.com.au/images/listing/80457/gallery/ginger-olive-15.jpg",
-    "rating": 4.6,
-    "description": "A contemporary steakhouse offering premium cuts, seafood, and an extensive wine list in a chic urban setting.",
-    "features": [
-      "Premium Steaks",
-      "Seafood Selection",
-      "Extensive Wine List",
-      "Modern Decor"
-    ],
-    "address": "456 Grill Ave, Melbourne VIC 3000",
-    "hours": "Mon-Sun: 5pm-11pm",
-    "price": "$$$",
-    "tags": ["steakhouse", "fine dining"],
-    "link": "https://www.gingerolive.com.au/"
-  },
-  {
-    "id": 6,
-    "name": "Ishizuka",
-    "type": "japanese",
-    "image": "https://resizer.otstatic.com/v2/photos/wide-huge/1/70745641.jpg",
-    "rating": 4.9,
-    "description": "An exclusive dining experience offering traditional Japanese kaiseki in an intimate, minimalist setting.",
-    "features": [
-      "Kaiseki Menu",
-      "Minimalist Decor",
-      "Intimate Setting",
-      "Seasonal Ingredients"
-    ],
-    "address": "Level B1, 139 Bourke St, Melbourne VIC 3000",
-    "hours": "Tue-Sat: 6pm-11pm | Sun-Mon: Closed",
-    "price": "$$$$",
-    "tags": ["exclusive", "kaiseki"],
-    "link": "https://www.ishizuka.com.au/"
-  },
-  {
-    "id": 7,
-    "name": "Ming Asian Fusion",
-    "type": "asian fusion",
-    "image": "https://media1.agfg.com.au/images/listing/123726/gallery/ming-asian-fusion-21.jpg",
-    "rating": 4.3,
-    "description": "A vibrant restaurant blending flavors from across Asia, offering a modern take on traditional dishes.",
-    "features": [
-      "Fusion Cuisine",
-      "Vibrant Atmosphere",
-      "Creative Cocktails",
-      "Weekend Brunch"
-    ],
-    "address": "789 Fusion Rd, Melbourne VIC 3000",
-    "hours": "Mon-Sun: 11am-11pm",
-    "price": "$$$",
-    "tags": ["fusion", "trendy"],
-    "link": "https://www.mingasianfusion.com.au/"
-  },
-  {
-    "id": 8,
-    "name": "Funghi e Tartufo",
-    "type": "vegan",
-    "image": "https://cdn.broadsheet.com.au/cache/e5/97/e597cccfe4ac3da99b4a8b0c1e39557c.jpg",
-    "rating": 4.7,
-    "description": "A plant-based Italian restaurant specializing in mushroom and truffle dishes, offering a unique dining experience.",
-    "features": [
-      "Vegan Italian",
-      "Truffle Specialties",
-      "Cozy Ambience",
-      "Cocktail Menu"
-    ],
-    "address": "321 Vegan Ln, Melbourne VIC 3000",
-    "hours": "Mon-Sun: 12pm-10pm",
-    "price": "$$$",
-    "tags": ["vegan", "italian"],
-    "link": "https://www.funghietartufo.com.au/"
-  },
-  {
-    "id": 9,
-    "name": "Kan Eang by Thai Culinary",
-    "type": "thai",
-    "image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/03/43/dc/9c/kan-eng-restaurant.jpg?w=900&h=500&s=1",
-    "rating": 4.5,
-    "description": "An authentic Thai restaurant offering traditional dishes with a modern twist, known for its vibrant flavors and ambiance.",
-    "features": [
-      "Traditional Thai",
-      "Modern Twist",
-      "Vibrant Decor",
-      "Signature Cocktails"
-    ],
-    "address": "654 Spice St, Melbourne VIC 3000",
-    "hours": "Mon-Sun: 11am-10pm",
-    "price": "$$",
-    "tags": ["thai", "authentic"],
-    "link": "https://www.kaneangthai.com.au/"
-  },
-  {
-    "id": 10,
-    "name": "IKKAI",
-    "type": "japanese",
-    "image": "https://media1.agfg.com.au/images/listing/124277/gallery/ikkai-3.jpg",
-    "rating": 4.6,
-    "description": "A contemporary Japanese restaurant offering a blend of traditional and modern dishes in a stylish setting.",
-    "features": [
-      "Sushi & Sashimi",
-      "Modern Decor",
-      "Sake Selection",
-      "Private Dining"
-    ],
-    "address": "987 Sakura Rd, Melbourne VIC 3000",
-    "hours": "Mon-Sun: 12pm-10pm",
-    "price": "$$$",
-    "tags": ["japanese", "modern"],
-    "link": "https://www.ikkai.com.au/"
-  },
-  {
-    "id": 8,
-    "name": "The Quarter",
-    "type": "modern australian",
-    "image": "https://www.swissotel.com/assets/0/92/2119/6442453024/6442453067/6442453069/6442453265/aaab7881-4688-4eca-9309-dd62d9892286.png",
-    "rating": 4.4,
-    "description": "A casual café serving hearty modern Australian brunches, great coffee, and people-watching on Degraves Street.",
-    "features": [
-      "Brunch",
-      "Outdoor Seating",
-      "Vegan Options",
-      "Pet-Friendly"
-    ],
-    "address": "27-31 Degraves St, Melbourne VIC 3000",
-    "hours": "Mon-Sun: 7am-4pm",
-    "price": "$$",
-    "tags": ["casual", "brunch"],
-    "link": "http://thequarter.com.au/"
-  },
-  {
-    "id": 9,
-    "name": "Sister of Soul",
-    "type": "vegetarian",
-    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMEHegAwubquCaA0fiPj2rQPpM2nMbM3tURQ&s",
-    "rating": 4.6,
-    "description": "A vegetarian restaurant known for its creative, sustainable dishes with global influence and vibrant atmosphere.",
-    "features": [
-      "Plant-Based Menu",
-      "Sustainable Dining",
-      "Global Cuisine",
-      "Smoothie Bar"
-    ],
-    "address": "313 Swanston St, Melbourne VIC 3000",
-    "hours": "Mon-Sun: 10am-9pm",
-    "price": "$$",
-    "tags": ["vegetarian", "eco-friendly"],
-    "link": "https://sisterofsoul.com.au/"
-  },
-  {
-    "id": 10,
-    "name": "Shujinko",
-    "type": "japanese",
-    "image": "https://cdn.broadsheet.com.au/cache/97/49/97492bc9029f2c1173c46144c3592ec9.jpg",
-    "rating": 4.2,
-    "description": "24-hour ramen joint serving authentic Japanese tonkotsu ramen in a cozy, traditional setting.",
-    "features": [
-      "24-Hour Service",
-      "Tonkotsu Ramen",
-      "Authentic Broth",
-      "Quick Service"
-    ],
-    "address": "225 Russell St, Melbourne VIC 3000",
-    "hours": "Open 24 Hours",
-    "price": "$$",
-    "tags": ["ramen", "late night"],
-    "link": "https://shujinko.com.au/"
-  },
-  {
-    "id": 11,
-    "name": "Chin Chin",
-    "type": "thai",
-    "image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/26/e6/f3/3d/chin-chin.jpg?w=900&h=500&s=1",
-    "rating": 4.5,
-    "description": "Lively Thai-fusion eatery known for bold flavors, a trendy vibe, and no-reservations dining.",
-    "features": [
-      "Spicy Dishes",
-      "Trendy Atmosphere",
-      "Fusion Menu",
-      "Cocktail Bar"
-    ],
-    "address": "125 Flinders Ln, Melbourne VIC 3000",
-    "hours": "Mon-Sun: 11am-11pm",
-    "price": "$$$",
-    "tags": ["buzzy", "fusion"],
-    "link": "https://www.chinchinrestaurant.com.au/"
-  },
-  {
-    "id": 12,
-    "name": "Tipo 00",
-    "type": "italian",
-    "image": "https://images.squarespace-cdn.com/content/v1/64d062f70d5d2b3109adc461/9122decb-ed3a-4b2e-9d2e-6310a0ba5ad2/tipo-space.jpeg",
-    "rating": 4.9,
-    "description": "A pasta bar offering hand-made Italian dishes and a carefully curated wine list in a chic setting.",
-    "features": [
-      "Fresh Pasta",
-      "Small Plates",
-      "Intimate Setting",
-      "Wine Pairing"
-    ],
-    "address": "361 Little Bourke St, Melbourne VIC 3000",
-    "hours": "Mon-Sat: 12pm-10pm",
-    "price": "$$$",
-    "tags": ["date night", "popular"],
-    "link": "https://www.tipo00.com.au/"
-  },
-  {
-    "id": 13,
-    "name": "Hero at ACMI",
-    "type": "contemporary",
-    "image": "https://thecitylane.com/wp-content/uploads/2022/12/DSCF7182.jpg",
-    "rating": 4.4,
-    "description": "Chef-led contemporary restaurant located inside the ACMI, offering bold flavors and a seasonally changing menu.",
-    "features": [
-      "Seasonal Menu",
-      "Gallery Location",
-      "Craft Cocktails",
-      "Vegetarian Friendly"
-    ],
-    "address": "Federation Square, Melbourne VIC 3000",
-    "hours": "Tue-Sun: 11am–9pm",
-    "price": "$$$",
-    "tags": ["artsy", "contemporary"],
-    "link": "https://heromelbourne.com/"
-  },
-  {
-    "id": 14,
-    "name": "Hakata Gensuke",
-    "type": "japanese",
-    "image": "https://static.ffx.io/images/$zoom_0.7875%2C$multiply_0.7725%2C$ratio_1.5%2C$width_756%2C$x_0%2C$y_330/t_crop_custom/q_86%2Cf_auto/f079a578781077b08222ad2e609f988334c0f85b",
-    "rating": 4.7,
-    "description": "Famous for its Hakata-style tonkotsu ramen with customizable toppings and noodle texture.",
-    "features": [
-      "Custom Ramen",
-      "Authentic Broth",
-      "Japanese Decor",
-      "Efficient Service"
-    ],
-    "address": "168 Russell St, Melbourne VIC 3000",
-    "hours": "Mon-Sun: 11am-9pm",
-    "price": "$$",
-    "tags": ["ramen", "authentic"],
-    "link": "https://gensuke.com.au/"
-  },
-  {
-    "id": 15,
-    "name": "Lune Croissanterie",
-    "type": "bakery",
-    "image": "https://thecitylane.com/wp-content/uploads/2019/02/DSCF2416.jpg",
-    "rating": 4.9,
-    "description": "Renowned for its world-class croissants, Lune delivers buttery pastries with layers of perfection.",
-    "features": [
-      "World-Class Croissants",
-      "Takeaway",
-      "Espresso Coffee",
-      "Modern Interior"
-    ],
-    "address": "161 Collins St, Melbourne VIC 3000",
-    "hours": "Mon-Sun: 8am-3pm",
-    "price": "$$",
-    "tags": ["bakery", "coffee"],
-    "link": "https://www.lunecroissanterie.com/"
-  },
-  {
-        "id": 16,
-        "name": "Movida",
-        "type": "spanish",
-        "image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/16/1c/fa/eb/photo-alan-benson.jpg?w=900&h=500&s=1",
-        "rating": 4.7,
-        "description": "Iconic Spanish tapas bar offering innovative share plates in a buzzing laneway setting.",
-        "features": ["Tapas", "Wine List", "Laneway Vibe", "Chef’s Specials"],
-        "address": "1 Hosier Ln, Melbourne VIC 3000",
-        "hours": "Mon-Sat: 12pm–10pm | Sun: Closed",
-        "price": "$$$",
-        "tags": ["tapas", "iconic"],
-        "link": "https://movida.com.au/"
-    },
-    {
-        "id": 17,
-        "name": "Pho Thin Melbourne",
-        "type": "vietnamese",
-        "image": "https://cdn.broadsheet.com.au/cache/44/68/4468e4b5cd8a21b1bf7beef3f803ef37.jpg",
-        "rating": 4.3,
-        "description": "Vietnamese eatery specializing in Hanoi-style pho with aromatic broth and fresh herbs.",
-        "features": ["Pho", "Quick Service", "Takeaway Friendly", "Authentic"],
-        "address": "146 Swanston St, Melbourne VIC 3000",
-        "hours": "Mon-Sun: 11am–9pm",
-        "price": "$",
-        "tags": ["pho", "quick bite"],
-        "link": "https://phothinmelbourne.com.au/"
-    },
-    {
-        "id": 28,
-        "name": "Cumulus Inc.",
-        "type": "modern australian",
-        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbBzx0m5IuHj-QbciMf--bvZzyl_LwJOuzXA&s",
-        "rating": 4.7,
-        "description": "Modern all-day eatery offering share plates, breakfast, and inventive cocktails in an airy space.",
-        "features": ["All-Day Dining", "Stylish Interior", "Cocktail Bar", "Brunch"],
-        "address": "45 Flinders Ln, Melbourne VIC 3000",
-        "hours": "Mon-Sun: 7am–11pm",
-        "price": "$$$",
-        "tags": ["brunch", "stylish"],
-        "link": "https://cumulusinc.com.au/"
-    }
+          id: 1,
+          name: "Il Solito Posto",
+          type: "italian",
+          image:
+            "https://lh3.googleusercontent.com/p/AF1QipMNOmZK596D7vm7s-pTUu-SmjQxlSkHk3Jv9Dup=s1360-w1360-h1020-rw",
+          rating: 4.8,
+          description:
+            "A hidden gem offering authentic Italian cuisine in a cozy basement setting. Known for its classic dishes and extensive wine list.",
+          features: [
+            "Homemade Pasta",
+            "Extensive Wine List",
+            "Cozy Atmosphere",
+            "Basement Dining",
+          ],
+          address: "113 Collins St, Melbourne VIC 3000",
+          hours: "Mon-Fri: 12pm-10pm | Sat: 5pm-10pm | Sun: Closed",
+          price: "$$$",
+          tags: ["popular", "authentic"],
+          link: "https://www.ilsolitoposto.com.au/",
+        },
+        {
+          id: 2,
+          name: "Vue de Monde",
+          type: "modern australian",
+          image:
+            "https://lh3.googleusercontent.com/p/AF1QipMT07odziwXBBJxg9Sm99_Oj3ldAPM40tWk1-UA=s1360-w1360-h1020-rw",
+          rating: 4.9,
+          description:
+            "An iconic fine dining experience offering contemporary Australian cuisine with panoramic views of Melbourne from the 55th floor.",
+          features: [
+            "Degustation Menu",
+            "Panoramic City Views",
+            "Fine Dining",
+            "Award-Winning Chef",
+          ],
+          address:
+            "Level 55, Rialto Towers, 525 Collins St, Melbourne VIC 3000",
+          hours: "Tue-Sat: 6pm-11pm | Sun-Mon: Closed",
+          price: "$$$$",
+          tags: ["luxury", "fine dining"],
+          link: "https://vuedemonde.com.au/",
+        },
+        {
+          id: 3,
+          name: "Maccaroni Trattoria Italiana",
+          type: "italian",
+          image:
+            "https://media-cdn.tripadvisor.com/media/photo-s/0e/eb/94/2f/maccaroni-trattoria-italiana.jpg",
+          rating: 4.4,
+          description:
+            "A rustic Italian eatery serving traditional dishes in a warm and inviting atmosphere. Popular for its handmade pasta and friendly service.",
+          features: [
+            "Handmade Pasta",
+            "Family-Friendly",
+            "Rustic Decor",
+            "Outdoor Seating",
+          ],
+          address: "10 Manchester Ln, Melbourne VIC 3000",
+          hours: "Mon-Sun: 12pm-10pm",
+          price: "$$",
+          tags: ["casual", "family-friendly"],
+          link: "https://www.maccaronitrattoriaitaliana.com.au/",
+        },
+        {
+          id: 4,
+          name: "Temaki Sushi Melbourne",
+          type: "japanese",
+          image:
+            "https://lh3.googleusercontent.com/p/AF1QipMCV0CfxcsbFEoGI-npJvqES_yC_KSrBr6TgXSM=s1360-w1360-h1020-rw",
+          rating: 4.5,
+          description:
+            "An intimate sushi bar offering traditional hand-rolled sushi with a modern twist, complemented by a curated selection of sake.",
+          features: [
+            "Hand-Rolled Sushi",
+            "Sake Pairing",
+            "Intimate Setting",
+            "Omakase Experience",
+          ],
+          address: "123 Sushi St, Melbourne VIC 3000",
+          hours: "Mon-Sat: 12pm-10pm | Sun: Closed",
+          price: "$$$",
+          tags: ["authentic", "sushi"],
+          link: "https://www.temakisushimelbourne.com.au/",
+        },
+        {
+          id: 5,
+          name: "Ginger Olive",
+          type: "steakhouse",
+          image:
+            "https://media1.agfg.com.au/images/listing/80457/gallery/ginger-olive-15.jpg",
+          rating: 4.6,
+          description:
+            "A contemporary steakhouse offering premium cuts, seafood, and an extensive wine list in a chic urban setting.",
+          features: [
+            "Premium Steaks",
+            "Seafood Selection",
+            "Extensive Wine List",
+            "Modern Decor",
+          ],
+          address: "456 Grill Ave, Melbourne VIC 3000",
+          hours: "Mon-Sun: 5pm-11pm",
+          price: "$$$",
+          tags: ["steakhouse", "fine dining"],
+          link: "https://www.gingerolive.com.au/",
+        },
+        {
+          id: 6,
+          name: "Ishizuka",
+          type: "japanese",
+          image:
+            "https://resizer.otstatic.com/v2/photos/wide-huge/1/70745641.jpg",
+          rating: 4.9,
+          description:
+            "An exclusive dining experience offering traditional Japanese kaiseki in an intimate, minimalist setting.",
+          features: [
+            "Kaiseki Menu",
+            "Minimalist Decor",
+            "Intimate Setting",
+            "Seasonal Ingredients",
+          ],
+          address: "Level B1, 139 Bourke St, Melbourne VIC 3000",
+          hours: "Tue-Sat: 6pm-11pm | Sun-Mon: Closed",
+          price: "$$$$",
+          tags: ["exclusive", "kaiseki"],
+          link: "https://www.ishizuka.com.au/",
+        },
+        {
+          id: 7,
+          name: "Ming Asian Fusion",
+          type: "asian fusion",
+          image:
+            "https://media1.agfg.com.au/images/listing/123726/gallery/ming-asian-fusion-21.jpg",
+          rating: 4.3,
+          description:
+            "A vibrant restaurant blending flavors from across Asia, offering a modern take on traditional dishes.",
+          features: [
+            "Fusion Cuisine",
+            "Vibrant Atmosphere",
+            "Creative Cocktails",
+            "Weekend Brunch",
+          ],
+          address: "789 Fusion Rd, Melbourne VIC 3000",
+          hours: "Mon-Sun: 11am-11pm",
+          price: "$$$",
+          tags: ["fusion", "trendy"],
+          link: "https://www.mingasianfusion.com.au/",
+        },
+        {
+          id: 8,
+          name: "Funghi e Tartufo",
+          type: "vegan",
+          image:
+            "https://cdn.broadsheet.com.au/cache/e5/97/e597cccfe4ac3da99b4a8b0c1e39557c.jpg",
+          rating: 4.7,
+          description:
+            "A plant-based Italian restaurant specializing in mushroom and truffle dishes, offering a unique dining experience.",
+          features: [
+            "Vegan Italian",
+            "Truffle Specialties",
+            "Cozy Ambience",
+            "Cocktail Menu",
+          ],
+          address: "321 Vegan Ln, Melbourne VIC 3000",
+          hours: "Mon-Sun: 12pm-10pm",
+          price: "$$$",
+          tags: ["vegan", "italian"],
+          link: "https://www.funghietartufo.com.au/",
+        },
+        {
+          id: 9,
+          name: "Kan Eang by Thai Culinary",
+          type: "thai",
+          image:
+            "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/03/43/dc/9c/kan-eng-restaurant.jpg?w=900&h=500&s=1",
+          rating: 4.5,
+          description:
+            "An authentic Thai restaurant offering traditional dishes with a modern twist, known for its vibrant flavors and ambiance.",
+          features: [
+            "Traditional Thai",
+            "Modern Twist",
+            "Vibrant Decor",
+            "Signature Cocktails",
+          ],
+          address: "654 Spice St, Melbourne VIC 3000",
+          hours: "Mon-Sun: 11am-10pm",
+          price: "$$",
+          tags: ["thai", "authentic"],
+          link: "https://www.kaneangthai.com.au/",
+        },
+        {
+          id: 10,
+          name: "IKKAI",
+          type: "japanese",
+          image:
+            "https://media1.agfg.com.au/images/listing/124277/gallery/ikkai-3.jpg",
+          rating: 4.6,
+          description:
+            "A contemporary Japanese restaurant offering a blend of traditional and modern dishes in a stylish setting.",
+          features: [
+            "Sushi & Sashimi",
+            "Modern Decor",
+            "Sake Selection",
+            "Private Dining",
+          ],
+          address: "987 Sakura Rd, Melbourne VIC 3000",
+          hours: "Mon-Sun: 12pm-10pm",
+          price: "$$$",
+          tags: ["japanese", "modern"],
+          link: "https://www.ikkai.com.au/",
+        },
+        {
+          id: 8,
+          name: "The Quarter",
+          type: "modern australian",
+          image:
+            "https://www.swissotel.com/assets/0/92/2119/6442453024/6442453067/6442453069/6442453265/aaab7881-4688-4eca-9309-dd62d9892286.png",
+          rating: 4.4,
+          description:
+            "A casual café serving hearty modern Australian brunches, great coffee, and people-watching on Degraves Street.",
+          features: [
+            "Brunch",
+            "Outdoor Seating",
+            "Vegan Options",
+            "Pet-Friendly",
+          ],
+          address: "27-31 Degraves St, Melbourne VIC 3000",
+          hours: "Mon-Sun: 7am-4pm",
+          price: "$$",
+          tags: ["casual", "brunch"],
+          link: "http://thequarter.com.au/",
+        },
+        {
+          id: 9,
+          name: "Sister of Soul",
+          type: "vegetarian",
+          image:
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMEHegAwubquCaA0fiPj2rQPpM2nMbM3tURQ&s",
+          rating: 4.6,
+          description:
+            "A vegetarian restaurant known for its creative, sustainable dishes with global influence and vibrant atmosphere.",
+          features: [
+            "Plant-Based Menu",
+            "Sustainable Dining",
+            "Global Cuisine",
+            "Smoothie Bar",
+          ],
+          address: "313 Swanston St, Melbourne VIC 3000",
+          hours: "Mon-Sun: 10am-9pm",
+          price: "$$",
+          tags: ["vegetarian", "eco-friendly"],
+          link: "https://sisterofsoul.com.au/",
+        },
+        {
+          id: 10,
+          name: "Shujinko",
+          type: "japanese",
+          image:
+            "https://cdn.broadsheet.com.au/cache/97/49/97492bc9029f2c1173c46144c3592ec9.jpg",
+          rating: 4.2,
+          description:
+            "24-hour ramen joint serving authentic Japanese tonkotsu ramen in a cozy, traditional setting.",
+          features: [
+            "24-Hour Service",
+            "Tonkotsu Ramen",
+            "Authentic Broth",
+            "Quick Service",
+          ],
+          address: "225 Russell St, Melbourne VIC 3000",
+          hours: "Open 24 Hours",
+          price: "$$",
+          tags: ["ramen", "late night"],
+          link: "https://shujinko.com.au/",
+        },
+        {
+          id: 11,
+          name: "Chin Chin",
+          type: "thai",
+          image:
+            "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/26/e6/f3/3d/chin-chin.jpg?w=900&h=500&s=1",
+          rating: 4.5,
+          description:
+            "Lively Thai-fusion eatery known for bold flavors, a trendy vibe, and no-reservations dining.",
+          features: [
+            "Spicy Dishes",
+            "Trendy Atmosphere",
+            "Fusion Menu",
+            "Cocktail Bar",
+          ],
+          address: "125 Flinders Ln, Melbourne VIC 3000",
+          hours: "Mon-Sun: 11am-11pm",
+          price: "$$$",
+          tags: ["buzzy", "fusion"],
+          link: "https://www.chinchinrestaurant.com.au/",
+        },
+        {
+          id: 12,
+          name: "Tipo 00",
+          type: "italian",
+          image:
+            "https://images.squarespace-cdn.com/content/v1/64d062f70d5d2b3109adc461/9122decb-ed3a-4b2e-9d2e-6310a0ba5ad2/tipo-space.jpeg",
+          rating: 4.9,
+          description:
+            "A pasta bar offering hand-made Italian dishes and a carefully curated wine list in a chic setting.",
+          features: [
+            "Fresh Pasta",
+            "Small Plates",
+            "Intimate Setting",
+            "Wine Pairing",
+          ],
+          address: "361 Little Bourke St, Melbourne VIC 3000",
+          hours: "Mon-Sat: 12pm-10pm",
+          price: "$$$",
+          tags: ["date night", "popular"],
+          link: "https://www.tipo00.com.au/",
+        },
+        {
+          id: 13,
+          name: "Hero at ACMI",
+          type: "contemporary",
+          image:
+            "https://thecitylane.com/wp-content/uploads/2022/12/DSCF7182.jpg",
+          rating: 4.4,
+          description:
+            "Chef-led contemporary restaurant located inside the ACMI, offering bold flavors and a seasonally changing menu.",
+          features: [
+            "Seasonal Menu",
+            "Gallery Location",
+            "Craft Cocktails",
+            "Vegetarian Friendly",
+          ],
+          address: "Federation Square, Melbourne VIC 3000",
+          hours: "Tue-Sun: 11am–9pm",
+          price: "$$$",
+          tags: ["artsy", "contemporary"],
+          link: "https://heromelbourne.com/",
+        },
+        {
+          id: 14,
+          name: "Hakata Gensuke",
+          type: "japanese",
+          image:
+            "https://static.ffx.io/images/$zoom_0.7875%2C$multiply_0.7725%2C$ratio_1.5%2C$width_756%2C$x_0%2C$y_330/t_crop_custom/q_86%2Cf_auto/f079a578781077b08222ad2e609f988334c0f85b",
+          rating: 4.7,
+          description:
+            "Famous for its Hakata-style tonkotsu ramen with customizable toppings and noodle texture.",
+          features: [
+            "Custom Ramen",
+            "Authentic Broth",
+            "Japanese Decor",
+            "Efficient Service",
+          ],
+          address: "168 Russell St, Melbourne VIC 3000",
+          hours: "Mon-Sun: 11am-9pm",
+          price: "$$",
+          tags: ["ramen", "authentic"],
+          link: "https://gensuke.com.au/",
+        },
+        {
+          id: 15,
+          name: "Lune Croissanterie",
+          type: "bakery",
+          image:
+            "https://thecitylane.com/wp-content/uploads/2019/02/DSCF2416.jpg",
+          rating: 4.9,
+          description:
+            "Renowned for its world-class croissants, Lune delivers buttery pastries with layers of perfection.",
+          features: [
+            "World-Class Croissants",
+            "Takeaway",
+            "Espresso Coffee",
+            "Modern Interior",
+          ],
+          address: "161 Collins St, Melbourne VIC 3000",
+          hours: "Mon-Sun: 8am-3pm",
+          price: "$$",
+          tags: ["bakery", "coffee"],
+          link: "https://www.lunecroissanterie.com/",
+        },
+        {
+          id: 16,
+          name: "Movida",
+          type: "spanish",
+          image:
+            "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/16/1c/fa/eb/photo-alan-benson.jpg?w=900&h=500&s=1",
+          rating: 4.7,
+          description:
+            "Iconic Spanish tapas bar offering innovative share plates in a buzzing laneway setting.",
+          features: ["Tapas", "Wine List", "Laneway Vibe", "Chef’s Specials"],
+          address: "1 Hosier Ln, Melbourne VIC 3000",
+          hours: "Mon-Sat: 12pm–10pm | Sun: Closed",
+          price: "$$$",
+          tags: ["tapas", "iconic"],
+          link: "https://movida.com.au/",
+        },
+        {
+          id: 17,
+          name: "Pho Thin Melbourne",
+          type: "vietnamese",
+          image:
+            "https://cdn.broadsheet.com.au/cache/44/68/4468e4b5cd8a21b1bf7beef3f803ef37.jpg",
+          rating: 4.3,
+          description:
+            "Vietnamese eatery specializing in Hanoi-style pho with aromatic broth and fresh herbs.",
+          features: ["Pho", "Quick Service", "Takeaway Friendly", "Authentic"],
+          address: "146 Swanston St, Melbourne VIC 3000",
+          hours: "Mon-Sun: 11am–9pm",
+          price: "$",
+          tags: ["pho", "quick bite"],
+          link: "https://phothinmelbourne.com.au/",
+        },
+        {
+          id: 28,
+          name: "Cumulus Inc.",
+          type: "modern australian",
+          image:
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbBzx0m5IuHj-QbciMf--bvZzyl_LwJOuzXA&s",
+          rating: 4.7,
+          description:
+            "Modern all-day eatery offering share plates, breakfast, and inventive cocktails in an airy space.",
+          features: [
+            "All-Day Dining",
+            "Stylish Interior",
+            "Cocktail Bar",
+            "Brunch",
+          ],
+          address: "45 Flinders Ln, Melbourne VIC 3000",
+          hours: "Mon-Sun: 7am–11pm",
+          price: "$$$",
+          tags: ["brunch", "stylish"],
+          link: "https://cumulusinc.com.au/",
+        },
       ];
 
       const restaurantsContainer = document.getElementById("restaurantsContainer");
@@ -829,10 +877,11 @@
 "media/music/song3.mp3",
       ];
 
+      const randomSong = Math.floor(Math.random() * Songs.length);
       const audio = document.getElementById("player"); // Get audio element
       audio.addEventListener("ended", function () {
         //Pick 1 random song then keep running
-        audio.src = Songs[Math.floor(Math.random() * Songs.length)];
+        audio.src = Songs[randomSong];
         audio.load();
         audio.play();
       });

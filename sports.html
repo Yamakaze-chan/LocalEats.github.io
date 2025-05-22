@@ -32,7 +32,7 @@
     <header class="fixed-top page-header" style="background-color: #a96700">
       <div class="container-fluid container-fluid-max">
         <nav id="navbar" class="navbar navbar-expand-lg navbar-dark">
-          <a class="navbar-brand" href="index.html"
+          <a class="navbar-brand" href="#"
             ><i class="fa-solid fa-utensils" style="margin-right: 10px"></i
             >LocalEats</a
           >
@@ -219,7 +219,7 @@
           description:
             "In the heart of the CBD, Turf Sports Bar is a traditional Australian venue with large screens private booths, a large bar and restaurant. The premise itself has wealth of history",
           link: "https://www.fanzo.com/en-au/bar/113500/turf-sports-bar",
-          img: "media/img/66.jpg",
+          img: "https://matchpint-cdn.matchpint.cloud/shared/img/pub/113500/1621580323-1666755112_original.jpeg",
           icon: "fa-baseball-bat-ball",
         },
         {
@@ -227,7 +227,7 @@
           description:
             "CBD sports bar with surround TVs and great central location, open late night",
           link: "https://www.fanzo.com/en-au/bar/158480/cq-bar",
-          img: "media/img/67.jpg",
+          img: "https://matchpint-cdn.matchpint.cloud/shared/img/pub/158480/124227019-1708562937_original.jpeg",
           icon: "fa-basketball",
         },
         {
@@ -235,7 +235,7 @@
           description:
             "We love our sports here at The Wharf Hotel. With 8 HD big screens showing Fox Sports, ESPN, Stan Sport and free to air, you can catch all the latest sporting action live throughout the venue.",
           link: "https://wharfhotel.com.au/live-sport/",
-          img: "media/img/68.jpg",
+          img: "https://wharfhotel.com.au/wp-content/uploads/2019/07/Wharf-garden-117-web-e1675208662282-1290x650.jpg",
           icon: "fa-horse",
         },
       ];
@@ -266,10 +266,11 @@
 "media/music/song3.mp3",
       ];
 
+      const randomSong = Math.floor(Math.random() * Songs.length);
       const audio = document.getElementById("player"); // Get audio element
       audio.addEventListener("ended", function () {
         //Pick 1 random song then keep running
-        audio.src = Songs[Math.floor(Math.random() * Songs.length)];
+        audio.src = Songs[randomSong];
         audio.load();
         audio.play();
       });

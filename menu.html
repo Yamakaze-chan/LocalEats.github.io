@@ -30,7 +30,7 @@
     <header class="fixed-top page-header">
       <div class="container-fluid container-fluid-max">
         <nav id="navbar" class="navbar navbar-expand-lg navbar-dark">
-          <a class="navbar-brand" href="index.html"
+          <a class="navbar-brand" href="#"
             ><i class="fa-solid fa-utensils" style="margin-right: 10px"></i
             >LocalEats</a
           >
@@ -359,10 +359,11 @@
 "media/music/song3.mp3",
       ];
 
+      const randomSong = Math.floor(Math.random() * Songs.length);
       const audio = document.getElementById("player"); // Get audio element
       audio.addEventListener("ended", function () {
         //Pick 1 random song then keep running
-        audio.src = Songs[Math.floor(Math.random() * Songs.length)];
+        audio.src = Songs[randomSong];
         audio.load();
         audio.play();
       });

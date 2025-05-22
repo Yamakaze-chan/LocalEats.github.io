@@ -30,7 +30,7 @@
     <header class="fixed-top page-header">
       <div class="container-fluid container-fluid-max">
         <nav id="navbar" class="navbar navbar-expand-lg navbar-dark">
-          <a class="navbar-brand" href="index.html"
+          <a class="navbar-brand" href="#"
             ><i class="fa-solid fa-utensils" style="margin-right: 10px"></i
             >LocalEats</a
           >
@@ -166,39 +166,39 @@
       // Add data for staff
       const staffData = [
         {
-          name: "Bryan Quach",
+          name: "Andrew",
           image:
-            "media/img/69.jpg",
+            "https://img.freepik.com/free-photo/young-bearded-man-with-striped-shirt_273609-5677.jpg?semt=ais_hybrid&w=740",
           descrription:
-            "As the CEO of a dynamic food review company, I am passionate about connecting people with exceptional dining experiences. With a strong vision to elevate food culture, I lead a dedicated team that explores, evaluates, and shares honest, high-quality reviews of restaurants, cafes, and culinary trends. My mission is to empower food lovers with trusted insights while supporting local and global food businesses through authentic exposure and strategic storytelling",
-          position: "CEO",
+            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+          position: "Leader",
           gender: "M",
         },
         {
-          name: "Mable Ha",
+          name: "Sarah",
           image:
-            "media/img/70.jpg",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Woman_at_Lover%27s_Bridge_Tanjung_Sepat_%28cropped%29.jpg/1200px-Woman_at_Lover%27s_Bridge_Tanjung_Sepat_%28cropped%29.jpg",
           descrription:
-            "A passionate food reviewer and Marketing Manager with a love for discovering hidden culinary gems and celebrating unforgettable flavours. At Local Eat, I blend my marketing expertise with a true love for food to bring you honest, insightful, and flavour-packed reviews. Whether it’s a cosy café, a bustling street food stall, or a fine dining experience, I’m here to help you find your next favourite bite. Let’s explore the best local eats—one dish at a time!",
-          position: "Food Blogger",
+            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+          position: "Leader",
           gender: "F",
         },
         {
-          name: "Mei Nguyen",
+          name: "Andrew",
           image:
-            "media/img/71.jpg",
+            "https://img.freepik.com/free-photo/young-bearded-man-with-striped-shirt_273609-5677.jpg?semt=ais_hybrid&w=740",
           descrription:
-            "In today’s dynamic publishing and design landscape, placeholder text remains essential for visual planning and content structuring. For decades, industry professionals have relied on tools like Lorem Ipsum to simulate real content during the creative process. Its longevity across centuries highlights its practical value. With the rise of digital platforms and advanced layout technologies, standardised text like this enables seamless collaboration and efficient project development across teams.",
-          position: "Designer",
-          gender: "F",
+            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+          position: "Leader",
+          gender: "M",
         },
         {
-          name: "Tu Hoang",
+          name: "Sarah",
           image:
-            "media/img/72.jpg",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Woman_at_Lover%27s_Bridge_Tanjung_Sepat_%28cropped%29.jpg/1200px-Woman_at_Lover%27s_Bridge_Tanjung_Sepat_%28cropped%29.jpg",
           descrription:
-            "In the heart of Melbourne’s vibrant food scene, helping restaurants stand out is both an art and a strategy. As the Manager of a company specializing in advertising and marketing for dining venues in the CBD, I lead a passionate team dedicated to crafting campaigns that not only drive traffic but also tell each brand’s unique story. We understand the pace, the competition, and the potential—our job is to turn great food into memorable brands.",
-          position: "Manager",
+            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+          position: "Leader",
           gender: "F",
         },
       ];
@@ -279,7 +279,6 @@
                           data.gender == "M" ? "" : "style='color:#ff2c95'"
                         }>${data.name}</p>
                         <small class="text-muted">${data.position}</small>
-
                         </div>
                     </div>
                     </div>
@@ -298,10 +297,11 @@
 "media/music/song3.mp3",
       ];
 
+      const randomSong = Math.floor(Math.random() * Songs.length);
       const audio = document.getElementById("player"); // Get audio element
       audio.addEventListener("ended", function () {
         //Pick 1 random song then keep running
-        audio.src = Songs[Math.floor(Math.random() * Songs.length)];
+        audio.src = Songs[randomSong];
         audio.load();
         audio.play();
       });

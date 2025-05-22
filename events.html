@@ -26,7 +26,7 @@
     <header class="fixed-top page-header" style="background-color: #a96700">
       <div class="container-fluid container-fluid-max">
         <nav id="navbar" class="navbar navbar-expand-lg navbar-dark">
-          <a class="navbar-brand" href="index.html"
+          <a class="navbar-brand" href="#"
             ><i class="fa-solid fa-utensils" style="margin-right: 10px"></i
             >LocalEats</a
           >
@@ -131,8 +131,8 @@
         ></div>
       </div>
 
-      <div class="row">
-        <div class="col-lg-6 p-2">
+      <div class="row flex-md-col gap-4">
+        <div class="col-lg-6">
           <div class="event-feature h-100">
             <h2 class="section-title">Private Events</h2>
             <div class="timeline">
@@ -164,7 +164,7 @@
           </div>
         </div>
 
-        <div class="col-lg-6 p-2">
+        <div class="col-lg-6">
           <div class="event-feature h-100">
             <h2 class="section-title">Corporate Events</h2>
             <ul class="list-unstyled">
@@ -253,7 +253,7 @@
             "Wrap up warm and embrace the winter chill as the Market’s sheds and laneways come alive with the inviting aromas of delicious food; the sounds of live, local musicians; and the vivid spectacle of quirky roving performers, promising a fun and not-to-be-missed night for all.",
           date: "4 Jun - 27 Aug, 2025",
           link: "https://whatson.melbourne.vic.gov.au/things-to-do/winter-night-market",
-          img: "media/img/4.jpg",
+          img: "https://whatson.melbourne.vic.gov.au/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsiZGF0YSI6IjE3NjZlNzU5LTIzMjYtNGNkZi1hYzVhLWViMDQ0ZmExYjc3NSIsInB1ciI6ImJsb2JfaWQifX0=--5cb6e0a3eb7cd8c9e89cbf8ee61fa65f797fc33f/eyJfcmFpbHMiOnsiZGF0YSI6eyJmb3JtYXQiOiJqcGciLCJncmF2aXR5IjoiQ2VudGVyIiwicmVzaXplX3RvX2ZpbGwiOls4ODAsNTkwXX0sInB1ciI6InZhcmlhdGlvbiJ9fQ==--8ba21a1f014d91c43eb97f346a0dc62d26bd59b2/08f90fa2-3bbc-45e9-a7f7-ac0d399cfeca.jpg",
           icon: "fa-calendar-day me-2",
         },
         {
@@ -262,7 +262,7 @@
             "Weave through a labyrinth of art-filled laneways in Melbourne’s heart, and hear curious tales from the city's fascinating history.You’ll have the opportunity to capture the quirk, creativity and beauty of this grand city, and discover wine bars you can return to.",
           date: "Until 7 Jul, 2025",
           link: "https://whatson.melbourne.vic.gov.au/things-to-do/art-history-food-and-wine-walking-tour",
-          img: "media/img/3.jpg",
+          img: "https://whatson.melbourne.vic.gov.au/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsiZGF0YSI6IjgxY2Y0YTJkLTc1ZTktNGQxZi05Nzc5LWUzZDQwZWIwOTNhNCIsInB1ciI6ImJsb2JfaWQifX0=--7601ef582626acb252bfbf1d3ac55c8130fc1824/eyJfcmFpbHMiOnsiZGF0YSI6eyJmb3JtYXQiOiJqcGciLCJncmF2aXR5IjoiQ2VudGVyIiwicmVzaXplX3RvX2ZpbGwiOls4ODAsNTkwXX0sInB1ciI6InZhcmlhdGlvbiJ9fQ==--8ba21a1f014d91c43eb97f346a0dc62d26bd59b2/08fc7d31-f7c3-4e43-acd2-25626c0ff9ae.jpg",
           icon: "fa-wine-glass-alt",
         },
         {
@@ -271,7 +271,7 @@
             "A funny, fearless and proudly Asian comedy lineup show featuring a rotating lineup of comedy festival favourites and rising stars.Expect big laughs, bold perspectives, and fresh jokes – this is a celebration of cultural comedy, clever storytelling, and laugh-out-loud punchlines.",
           date: "23 May - 14 Jun, 2025",
           link: "https://whatson.melbourne.vic.gov.au/things-to-do/asian-comedy-showcase-2025",
-          img: "media/img/2.jpg",
+          img: "https://whatson.melbourne.vic.gov.au/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsiZGF0YSI6IjViMDUwMGQ4LWFiMDMtNGExNy1iN2FjLWNjMWYzNzkwNzNiOSIsInB1ciI6ImJsb2JfaWQifX0=--9acfa9cb0b35c0d90f241a631e57dbd0ea257b9c/eyJfcmFpbHMiOnsiZGF0YSI6eyJmb3JtYXQiOiJqcGciLCJncmF2aXR5IjoiQ2VudGVyIiwicmVzaXplX3RvX2ZpbGwiOls4ODAsNTkwXX0sInB1ciI6InZhcmlhdGlvbiJ9fQ==--8ba21a1f014d91c43eb97f346a0dc62d26bd59b2/361db623-6661-4dea-8a1a-9c3548f61ee5.jpg",
           icon: "fa-calendar-day me-2",
         },
       ];
@@ -302,10 +302,12 @@
       const Songs = ["media/music/song1.mp3","media/music/song2.mp3",
 "media/music/song3.mp3",
       ];
+
+      const randomSong = Math.floor(Math.random() * Songs.length);
       const audio = document.getElementById("player"); // Get audio element
       audio.addEventListener("ended", function () {
         //Pick 1 random song then keep running
-        audio.src = Songs[Math.floor(Math.random() * Songs.length)];
+        audio.src = Songs[randomSong];
         audio.load();
         audio.play();
       });
